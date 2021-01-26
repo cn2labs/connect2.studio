@@ -6,13 +6,14 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 
 const IndexPage = () => {
-  const {
-    wpcontent: { page },
-  } = useStaticQuery(graphql`
-    query {
-      wpcontent {
-        page(id: "cG9zdDoy") {
-          title
+  // Get the page content from WordPress
+  const { wpPage: page } = useStaticQuery(graphql`
+    query PageData {
+      wpPage(databaseId: { eq: 2 }) {
+        title
+        content
+        metadata {
+          description
         }
       }
     }
@@ -20,10 +21,9 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title={page.title} description={page.metadata.description} />
       <h1>{page.title}</h1>
-      <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
+      <div dangerouslySetInnerHTML={{ __html: page.content }} />
       <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
         <Image />
       </div>

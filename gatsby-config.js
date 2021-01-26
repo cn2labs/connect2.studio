@@ -6,11 +6,6 @@ require("dotenv").config({
 })
 
 module.exports = {
-  siteMetadata: {
-    title: `connect2 studio`,
-    description: `Wir entwickeln Websites, Apps und Designs.`,
-    author: `@cn2studio`,
-  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
@@ -35,11 +30,26 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-source-graphql",
+      resolve: `gatsby-source-wordpress-experimental`,
       options: {
-        typeName: "WPGraphQL",
-        fieldName: "wpcontent",
-        url: `${process.env.WORDPRESS_URL}/graphql`,
+        url: process.env.WPGRAPHQL_URL,
+        schema: {
+          typePrefix: `Wp`,
+        },
+        develop: {
+          //caches media files outside of Gatsby's default cache an thus allows them to persist through a cache reset.
+          hardCacheMediaFiles: true,
+        },
+        type: {
+          Post: {
+            limit:
+              process.env.NODE_ENV === `development`
+                ? // Lets just pull 50 posts in development to make it easy on ourselves (aka. faster).
+                  50
+                : // and we don't actually need more than 5000 in production for this particular site
+                  5000,
+          },
+        },
       },
     },
   ],
