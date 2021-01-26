@@ -2,7 +2,7 @@
 
 Built on Gatsby and headless WordPress.
 
-```
+```sh
 # Installation
 npm install
 
