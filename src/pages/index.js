@@ -2,7 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
+import Container from "../components/styles/container"
 import SEO from "../components/seo"
 
 const IndexPage = () => {
@@ -22,11 +22,10 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title={page.title} description={page.metadata.description} />
-      <h1>{page.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: page.content }} />
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <Image />
-      </div>
+      <Container>
+        <h1>{page.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: page.content }} />
+      </Container>
     </Layout>
   )
 }
