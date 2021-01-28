@@ -1,33 +1,31 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
+import Fade from "react-reveal/Fade"
 
 import logo from "../images/logo_white.svg"
-
 import Container from "./styles/container"
 
 const HeaderStyles = styled.header`
-  padding: 4rem 0 8rem 0;
+  padding: 5rem 0 8rem 0;
 `
 
 const LogoStyles = styled.img`
-  :hover {
-    animation: spin 8s linear infinite;
-    animation-fill-mode: both;
-  }
+  animation: spin 16s linear infinite;
 
   @keyframes spin {
     from {
-      transform: rotate(0deg);
+      transform: rotate(0deg) translateZ(0);
     }
     to {
-      transform: rotate(359deg);
+      transform: rotate(359deg) translateZ(0);
     }
   }
 `
 
 const NavStyles = styled.nav`
   color: #fff;
+  font-family: var(--headline-font);
   font-weight: bold;
 
   a:not(:last-child) {
@@ -44,18 +42,20 @@ const Header = () => (
     <Container>
       <div className="flex flex--between">
         <Link to="/">
-          <LogoStyles src={logo} alt="connect2 studio Logo" height="64" />
+          <LogoStyles src={logo} alt="connect2 studio Logo" height="72" />
         </Link>
-        <NavStyles>
-          <Link to="/" activeClassName="active">
-            Home
-          </Link>
-          <Link to="/service">Service</Link>
-          <Link to="/team">Team</Link>
-          <Link to="/projekte">Projekte</Link>
-          <Link to="/blog">Blog</Link>
-          <Link to="/kontakt">Kontakt</Link>
-        </NavStyles>
+        <Fade>
+          <NavStyles>
+            <Link to="/" activeClassName="active">
+              Home
+            </Link>
+            <Link to="/service">Service</Link>
+            <Link to="/team">Team</Link>
+            <Link to="/projekte">Projekte</Link>
+            <Link to="/blog">Blog</Link>
+            <Link to="/kontakt">Kontakt</Link>
+          </NavStyles>
+        </Fade>
       </div>
     </Container>
   </HeaderStyles>
