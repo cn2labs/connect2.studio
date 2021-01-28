@@ -42,7 +42,7 @@ const Header = () => (
     <Container>
       <div className="flex flex--between">
         <Link to="/">
-          <LogoStyles src={logo} alt="connect2 studio Logo" height="72" />
+          <LogoStyles src={logo} alt="connect2 studio Logo" height="64" />
         </Link>
         <Fade>
           <NavStyles>

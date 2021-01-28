@@ -19,6 +19,10 @@ const IndexPage = () => {
         heroFields {
           headline
           text
+          img {
+            sourceUrl
+            altText
+          }
         }
       }
     }
@@ -28,7 +32,11 @@ const IndexPage = () => {
     <Layout>
       <SEO title={page.title} description={page.metadata.description} />
       <Container>
-        <Hero headline={page.heroFields.headline} text={page.heroFields.text} />
+        <Hero
+          headline={page.heroFields.headline}
+          text={page.heroFields.text}
+          img={page.heroFields.img}
+        />
       </Container>
     </Layout>
   )

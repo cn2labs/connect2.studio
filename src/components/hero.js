@@ -4,33 +4,41 @@ import styled from "styled-components"
 import Fade from "react-reveal/Fade"
 
 const HeroStyles = styled.section`
-  .hero--headline {
-    font-size: 8rem;
-  }
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  column-gap: 30px;
+`
 
-  .hero--text {
-    font-size: 2rem;
-    margin-top: 4rem;
-    max-width: 800px;
+const Headline = styled.h1`
+  font-size: 7.2rem;
+`
 
-    p + p {
-      margin-top: 2.4rem;
-    }
+const Text = styled.div`
+  color: #fff;
+  font-size: 2rem;
+  margin-top: 4rem;
+  max-width: 800px;
+
+  p + p {
+    margin-top: 2.4rem;
   }
 `
 
-export default function Hero({ headline, text }) {
+const Img = styled.img``
+export default function Hero({ headline, text, img }) {
   return (
     <HeroStyles>
-      <Fade cascade bottom>
-        <h1 className="hero--headline">{headline}</h1>
-      </Fade>
-      <Fade delay={500}>
-        <div
-          className="hero--text"
-          dangerouslySetInnerHTML={{ __html: text }}
-        ></div>
-      </Fade>
+      <div>
+        <Fade delay={200}>
+          <Headline>{headline}</Headline>
+        </Fade>
+        <Fade delay={500}>
+          <Text dangerouslySetInnerHTML={{ __html: text }}></Text>
+        </Fade>
+      </div>
+      {img && (
+        <Img className="hero--img" src={img.sourceUrl} alt={img.altText} />
+      )}
     </HeroStyles>
   )
 }
@@ -38,4 +46,5 @@ export default function Hero({ headline, text }) {
 Hero.propTypes = {
   headline: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
+  img: PropTypes.object,
 }

@@ -107,7 +107,7 @@ const GlobalStyles = createGlobalStyle`
     top: -100%;
     left: -100%;
     will-change: transform;
-    z-index: 0;
+    z-index: -1;
   }
 
   @keyframes grain {

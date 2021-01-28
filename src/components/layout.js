@@ -30,6 +30,7 @@ const SideNotice = styled.aside`
     justify-content: center;
     align-items: center;
     transform: rotate(-90deg);
+    transition: color 0.2s ease;
     position: absolute;
     top: 50%;
     left: -30px;
