@@ -4,7 +4,6 @@ import styled from "styled-components"
 import Container from "./styles/container"
 
 const FooterStyles = styled.footer`
-  color: #fff;
   font-size: 1.4rem;
   padding: 3rem 0;
 `

@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Container from "../components/styles/container"
 import SEO from "../components/seo"
+import Hero from "../components/hero"
 
 const IndexPage = () => {
   // Get the page content from WordPress
@@ -15,6 +16,10 @@ const IndexPage = () => {
         metadata {
           description
         }
+        heroFields {
+          headline
+          text
+        }
       }
     }
   `)
@@ -23,8 +28,7 @@ const IndexPage = () => {
     <Layout>
       <SEO title={page.title} description={page.metadata.description} />
       <Container>
-        <h1>{page.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: page.content }} />
+        <Hero headline={page.heroFields.headline} text={page.heroFields.text} />
       </Container>
     </Layout>
   )

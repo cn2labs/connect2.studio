@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import Fade from "react-reveal/Fade"
+import AnimatedCursor from "react-animated-cursor"
 
 import GlobalStyles from "./styles/globalStyles"
 import Header from "./header"
@@ -17,6 +18,10 @@ const PageContainer = styled.div`
 
 const SideNotice = styled.aside`
   --color: var(--nets-court);
+
+  :hover {
+    --color: #fff;
+  }
 
   .side-notice_text {
     color: var(--color);
@@ -50,6 +55,7 @@ const Layout = ({ children }) => {
   return (
     <PageContainer>
       <GlobalStyles />
+      <AnimatedCursor color="255, 255, 255" innerSize={10} />
       <Header />
       <main>
         <div className="grain"></div>

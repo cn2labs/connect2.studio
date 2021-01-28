@@ -7,7 +7,7 @@ import logo from "../images/logo_white.svg"
 import Container from "./styles/container"
 
 const HeaderStyles = styled.header`
-  padding: 5rem 0 8rem 0;
+  padding: 6rem 0 10rem 0;
 `
 
 const LogoStyles = styled.img`
@@ -26,7 +26,7 @@ const LogoStyles = styled.img`
 const NavStyles = styled.nav`
   color: #fff;
   font-family: var(--headline-font);
-  font-weight: bold;
+  font-size: 1.4rem;
 
   a:not(:last-child) {
     margin-right: 3rem;
