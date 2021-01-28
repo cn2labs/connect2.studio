@@ -11,6 +11,7 @@ const HeroStyles = styled.section`
 
 const Headline = styled.h1`
   font-size: 7.2rem;
+  text-shadow: 0px 0px 20px rgb(255 255 255 / 50%);
 `
 
 const Text = styled.div`

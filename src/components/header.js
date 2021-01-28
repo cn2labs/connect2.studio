@@ -34,6 +34,7 @@ const NavStyles = styled.nav`
 
   a.active {
     color: var(--lavender-soap);
+    text-shadow: 0px 0px 10px var(--lavender-soap);
   }
 `
 
