@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import Fade from "react-reveal/Fade"
 
+import CTA from "./ui/cta"
+
 const HeroStyles = styled.section`
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -10,7 +12,7 @@ const HeroStyles = styled.section`
 `
 
 const Headline = styled.h1`
-  font-size: 7.2rem;
+  font-size: 7rem;
   text-shadow: 0px 0px 20px rgb(255 255 255 / 50%);
 `
 
@@ -25,7 +27,15 @@ const Text = styled.div`
   }
 `
 
-const Img = styled.img``
+const Img = styled.img`
+  --spacing: 24rem;
+
+  max-width: unset;
+  width: calc(100% + var(--spacing));
+  position: relative;
+  left: calc(var(--spacing) / 2 * -1);
+  z-index: -1;
+`
 export default function Hero({ headline, text, img }) {
   return (
     <HeroStyles>
@@ -36,6 +46,7 @@ export default function Hero({ headline, text, img }) {
         <Fade delay={500}>
           <Text dangerouslySetInnerHTML={{ __html: text }}></Text>
         </Fade>
+        <CTA to="/">Lern uns kennen</CTA>
       </div>
       {img && (
         <Img className="hero--img" src={img.sourceUrl} alt={img.altText} />

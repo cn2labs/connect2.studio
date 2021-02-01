@@ -12,6 +12,7 @@ const HeaderStyles = styled.header`
 
 const LogoStyles = styled.img`
   animation: spin 16s linear infinite;
+  transform-origin: center;
 
   @keyframes spin {
     from {
@@ -26,7 +27,7 @@ const LogoStyles = styled.img`
 const NavStyles = styled.nav`
   color: #fff;
   font-family: var(--headline-font);
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 
   a:not(:last-child) {
     margin-right: 3rem;
@@ -34,7 +35,6 @@ const NavStyles = styled.nav`
 
   a.active {
     color: var(--lavender-soap);
-    text-shadow: 0px 0px 10px var(--lavender-soap);
   }
 `
 

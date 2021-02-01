@@ -94,6 +94,10 @@ const GlobalStyles = createGlobalStyle`
     justify-content: space-between;
   }
 
+  .ta-center {
+    text-align: center;
+  }
+
   /* GRAIN */
   .grain {
     animation: grain 6s steps(10) infinite;
