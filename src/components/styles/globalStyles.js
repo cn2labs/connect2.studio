@@ -19,6 +19,7 @@ const GlobalStyles = createGlobalStyle`
   /* VARIABLES */
   :root {
     --body-bg: #050505;
+    --almost-white: #e2e2e2;
     --black-carbon: #0F1011;
     --mommys-blonde-boy: #FFEFBD;
     --nets-court: #B5B3AC;
@@ -51,7 +52,7 @@ const GlobalStyles = createGlobalStyle`
     background-color: var(--body-bg);
     color: var(--nets-court);
     font-family: var(--body-font);
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     min-height: 100vh;
   }
 

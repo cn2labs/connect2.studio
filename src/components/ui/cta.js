@@ -26,7 +26,7 @@ const CTAStyles = styled.span`
     width: var(--size);
     height: var(--size);
     position: absolute;
-    left: calc((var(--size) / 2 - 2px) * -1);
+    left: calc((var(--size) / 2 - 4px) * -1);
     top: calc((var(--size) / 2 - 10px) * -1);
     opacity: 0.4;
     transition: opacity 0.4s ease;
@@ -34,8 +34,11 @@ const CTAStyles = styled.span`
     z-index: -1;
   }
 
-  &:hover:before {
-    animation: spinCta 16s linear infinite;
+  &.play-animation:before {
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-name: spinCta;
+    animation-duration: 16s;
     opacity: 1;
 
     @keyframes spinCta {
@@ -47,11 +50,36 @@ const CTAStyles = styled.span`
       }
     }
   }
+
+  &.pause-animation:before {
+    animation-play-state: paused;
+    opacity: 0.4;
+  }
 `
 
 export default function CTA({ to, children }) {
+  const handleMouseEnter = e => {
+    const el = e.target.classList
+
+    if (el.contains("pause-animation")) {
+      el.remove("pause-animation")
+      el.add("play-animation")
+    } else {
+      el.add("play-animation")
+    }
+  }
+
+  const handleMouseLeave = e => {
+    const el = e.target.classList
+    el.add("pause-animation")
+  }
+
   return (
-    <Link to={to}>
+    <Link
+      to={to}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <CTAStyles>{children}</CTAStyles>
     </Link>
   )

@@ -29,11 +29,12 @@ const SideNotice = styled.aside`
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: rotate(-90deg);
+    writing-mode: vertical-rl;
+    transform: rotate(180deg) translateY(50%);
     transition: color 0.2s ease;
     position: absolute;
-    top: 50%;
-    left: -30px;
+    top: 50vh;
+    left: 120px;
     z-index: 10;
 
     @media screen and (max-width: 1024px) {
@@ -45,10 +46,10 @@ const SideNotice = styled.aside`
     background: var(--color);
     content: "";
     display: inline-block;
-    height: 1px;
-    margin: 0 16px;
-    margin-bottom: 4px;
-    width: 50px;
+    height: 50px;
+    margin: 16px 0;
+    margin-left: -2px;
+    width: 1px;
   }
 `
 
@@ -61,9 +62,11 @@ const Layout = ({ children }) => {
       <main>
         <div className="grain"></div>
         <SideNotice>
-          <Fade cascade bottom delay={1000}>
+          <Fade cascade right delay={1000}>
             <div className="side-notice_text">
-              <span className="side-notice_copyright">© connect2 studio</span>
+              <span className="side-notice_copyright">
+                &copy; connect2 studio
+              </span>
               <span className="side-notice_year">
                 {new Date().getFullYear()}
               </span>

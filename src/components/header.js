@@ -34,7 +34,7 @@ const NavStyles = styled.nav`
   }
 
   a.active {
-    color: var(--lavender-soap);
+    color: var(--candy-strawberrys);
   }
 `
 

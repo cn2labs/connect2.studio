@@ -4,8 +4,13 @@ import styled from "styled-components"
 import Fade from "react-reveal/Fade"
 
 import CTA from "./ui/cta"
+import Container from "./styles/container"
 
-const HeroStyles = styled.section`
+const HeroSection = styled.section`
+  padding-bottom: 10rem;
+`
+
+const HeroGrid = styled.div`
   display: grid;
   grid-template-columns: 2fr 1fr;
   column-gap: 30px;
@@ -17,7 +22,7 @@ const Headline = styled.h1`
 `
 
 const Text = styled.div`
-  color: #fff;
+  color: var(--almost-white);
   font-size: 2rem;
   margin-top: 4rem;
   max-width: 800px;
@@ -36,27 +41,34 @@ const Img = styled.img`
   left: calc(var(--spacing) / 2 * -1);
   z-index: -1;
 `
-export default function Hero({ headline, text, img }) {
+export default function Hero({ headline, text, img, link = "/" }) {
   return (
-    <HeroStyles>
-      <div>
-        <Fade delay={200}>
-          <Headline>{headline}</Headline>
-        </Fade>
-        <Fade delay={500}>
-          <Text dangerouslySetInnerHTML={{ __html: text }}></Text>
-        </Fade>
-        <CTA to="/">Lern uns kennen</CTA>
-      </div>
-      {img && (
-        <Img className="hero--img" src={img.sourceUrl} alt={img.altText} />
-      )}
-    </HeroStyles>
+    <HeroSection>
+      <Container>
+        <HeroGrid>
+          <div>
+            <Fade delay={200}>
+              <Headline>{headline}</Headline>
+            </Fade>
+            <Fade delay={500}>
+              <Text dangerouslySetInnerHTML={{ __html: text }}></Text>
+            </Fade>
+            <Fade delay={700}>
+              <CTA to={link}>Lern uns kennen</CTA>
+            </Fade>
+          </div>
+          {img && (
+            <Img className="hero--img" src={img.sourceUrl} alt={img.altText} />
+          )}
+        </HeroGrid>
+      </Container>
+    </HeroSection>
   )
 }
 
 Hero.propTypes = {
   headline: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
+  link: PropTypes.string,
   img: PropTypes.object,
 }
