@@ -41,7 +41,7 @@ const Img = styled.img`
   left: calc(var(--spacing) / 2 * -1);
   z-index: -1;
 `
-export default function Hero({ headline, text, img, link = "/" }) {
+export default function Hero({ headline, text, img, link = "/", linkText }) {
   return (
     <HeroSection>
       <Container>
@@ -53,9 +53,11 @@ export default function Hero({ headline, text, img, link = "/" }) {
             <Fade delay={500}>
               <Text dangerouslySetInnerHTML={{ __html: text }}></Text>
             </Fade>
-            <Fade delay={700}>
-              <CTA to={link}>Lern uns kennen</CTA>
-            </Fade>
+            {link && (
+              <Fade delay={700}>
+                <CTA to={link}>{linkText}</CTA>
+              </Fade>
+            )}
           </div>
           {img && (
             <Img className="hero--img" src={img.sourceUrl} alt={img.altText} />
@@ -70,5 +72,6 @@ Hero.propTypes = {
   headline: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   link: PropTypes.string,
+  linkText: PropTypes.string,
   img: PropTypes.object,
 }

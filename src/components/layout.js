@@ -19,13 +19,15 @@ const PageContainer = styled.div`
 const SideNotice = styled.aside`
   --color: var(--nets-court);
 
+  font-family: var(--headline-font);
+
   :hover {
-    --color: #fff;
+    --color: var(--almost-white);
   }
 
   .side-notice_text {
     color: var(--color);
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,7 +35,7 @@ const SideNotice = styled.aside`
     transform: rotate(180deg) translateY(50%);
     transition: color 0.2s ease;
     position: absolute;
-    top: 50vh;
+    top: 450px;
     left: 120px;
     z-index: 10;
 
@@ -46,7 +48,7 @@ const SideNotice = styled.aside`
     background: var(--color);
     content: "";
     display: inline-block;
-    height: 50px;
+    height: 40px;
     margin: 16px 0;
     margin-left: -2px;
     width: 1px;
@@ -64,9 +66,7 @@ const Layout = ({ children }) => {
         <SideNotice>
           <Fade cascade right delay={1000}>
             <div className="side-notice_text">
-              <span className="side-notice_copyright">
-                &copy; connect2 studio
-              </span>
+              <span className="side-notice_copyright">connect2 studio</span>
               <span className="side-notice_year">
                 {new Date().getFullYear()}
               </span>

@@ -5,13 +5,18 @@ import Container from "./container"
 const SectionStyles = styled.section`
   padding: 12rem 0;
   position: relative;
+
+  &:last-child {
+    padding-bottom: 6rem;
+  }
 `
 
 const Aside = styled.aside`
   --color: var(--nets-court);
 
   color: var(--color);
-  font-size: 1.4rem;
+  font-family: var(--headline-font);
+  font-size: 1.2rem;
   transition: color 0.2s ease;
   transform: rotate(180deg) translateY(50%);
   position: absolute;
@@ -28,14 +33,14 @@ const Aside = styled.aside`
     background: var(--color);
     content: "";
     display: inline-block;
-    height: 42px;
-    margin-bottom: 16px;
+    height: 36px;
+    margin-bottom: 12px;
     margin-left: -2px;
     width: 1px;
   }
 
   :hover {
-    --color: #fff;
+    --color: var(--almost-white);
   }
 `
 

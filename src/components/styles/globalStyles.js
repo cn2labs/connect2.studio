@@ -1,6 +1,8 @@
 import { createGlobalStyle } from "styled-components"
 
 import grainBg from "../../assets/grain.png"
+import tape from "../../images/tape.png"
+
 import NeueMetanaWoff2 from "../../assets/fonts/NeueMetana-Bold.woff2"
 import NeueMetanaWoff from "../../assets/fonts/NeueMetana-Bold.woff"
 import "@fontsource/ibm-plex-sans"
@@ -50,7 +52,7 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     background-color: var(--body-bg);
-    color: var(--nets-court);
+    color: var(--almost-white);
     font-family: var(--body-font);
     font-size: 1.8rem;
     min-height: 100vh;
@@ -97,6 +99,43 @@ const GlobalStyles = createGlobalStyle`
 
   .ta-center {
     text-align: center;
+  }
+
+  .ta-right {
+    text-align: right;
+  }
+
+  .ta-left {
+    text-align: left;
+  }
+
+  .is-outlined {
+    color: transparent;
+    -webkit-text-stroke: 1.2px var(--mommys-blonde-boy);
+    transition: color 0.1s ease;
+    will-change: color;
+
+    :hover {
+      color: var(--mommys-blonde-boy);
+      -webkit-text-stroke: 0 none;
+      text-shadow: 0px 0px 20px rgb(255 255 255 / 50%);
+    }
+  }
+
+  .has-tape {
+    position: relative;
+  }
+
+  .has-tape:before {
+      content: "";
+      display: block;
+      background: url(${tape}) no-repeat center center / contain;
+      width: 210px;
+      height: 50px;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
   }
 
   /* GRAIN */

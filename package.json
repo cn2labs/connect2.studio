@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "cn2-studio",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "cn2 studio page",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Jannik Baranczyk <jb@connect2.de>",
   "dependencies": {
     "@fontsource/ibm-plex-sans": "^4.1.0",
     "babel-plugin-styled-components": "^1.12.0",
@@ -24,8 +24,7 @@
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
     "react-reveal": "^1.2.2",
-    "styled-components": "^5.2.1",
-    "use-sound": "^2.0.1"
+    "styled-components": "^5.2.1"
   },
   "devDependencies": {
     "prettier": "2.2.1"
