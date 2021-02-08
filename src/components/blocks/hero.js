@@ -3,8 +3,8 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import Fade from "react-reveal/Fade"
 
-import CTA from "./ui/cta"
-import Container from "./styles/container"
+import CTA from "../ui/cta"
+import Container from "../styles/container"
 
 const HeroSection = styled.section`
   padding-bottom: 10rem;

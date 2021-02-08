@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import Fade from "react-reveal/Fade"
@@ -39,6 +39,7 @@ const SideNotice = styled.aside`
     top: 450px;
     left: 120px;
     z-index: 10;
+    height: 100%;
 
     @media screen and (max-width: 1024px) {
       display: none;
