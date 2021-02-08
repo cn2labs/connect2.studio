@@ -3,8 +3,8 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 
 import Container from "./styles/container"
-import logo from "../images/logo_white.svg"
-import hands from "../images/hands.svg"
+import logo from "../assets/images/logo_white.svg"
+import hands from "../assets/images/hands.svg"
 
 const FooterStyles = styled.footer`
   color: #fff;

@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components"
 
 import grainBg from "../../assets/grain.png"
-import tape from "../../images/tape.png"
+import tape from "../../assets/images/tape.png"
 
 import NeueMetanaWoff2 from "../../assets/fonts/NeueMetana-Bold.woff2"
 import NeueMetanaWoff from "../../assets/fonts/NeueMetana-Bold.woff"

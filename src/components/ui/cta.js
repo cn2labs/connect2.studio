@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-import logo from "../../images/logo_white.svg"
+import logo from "../../assets/images/logo_white.svg"
 
 const CTAStyles = styled.span`
   color: var(--candy-strawberrys);

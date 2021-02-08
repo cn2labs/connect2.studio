@@ -33,7 +33,7 @@ const Aside = styled.aside`
     background: var(--color);
     content: "";
     display: inline-block;
-    height: 36px;
+    height: 24px;
     margin-bottom: 12px;
     margin-left: -2px;
     width: 1px;

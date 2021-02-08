@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import Fade from "react-reveal/Fade"
 
-import logo from "../images/logo_white.svg"
+import logo from "../assets/images/logo_white.svg"
 import Container from "./styles/container"
 
 const HeaderStyles = styled.header`
