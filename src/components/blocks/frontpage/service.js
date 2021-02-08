@@ -36,9 +36,9 @@ const Service = ({ text, img }) => (
         <div>
           <ul>
             <li>
-              <Link to="/service/entwicklung">
+              <Link to="/service/webentwicklung">
                 <ServiceHeadline className="is-outlined">
-                  Entwicklung
+                  Webentwicklung
                 </ServiceHeadline>
               </Link>
             </li>
@@ -50,9 +50,9 @@ const Service = ({ text, img }) => (
               </Link>
             </li>
             <li>
-              <Link to="/service/consulting">
+              <Link to="/service/beratung">
                 <ServiceHeadline className="is-outlined">
-                  Consulting
+                  Beratung
                 </ServiceHeadline>
               </Link>
             </li>

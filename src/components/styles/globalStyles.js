@@ -87,6 +87,11 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 
+  /* NAV */
+  nav ul {
+    list-style: none;
+  }
+
   /* UTLITY CLASSES */
   .flex {
     display: flex;

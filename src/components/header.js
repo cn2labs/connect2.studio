@@ -25,16 +25,59 @@ const LogoStyles = styled.img`
 `
 
 const NavStyles = styled.nav`
+  --submenu-distance: 0.4rem;
+
   color: #fff;
   font-family: var(--headline-font);
   font-size: 1.6rem;
 
-  a:not(:last-child) {
-    margin-right: 3rem;
+  a.active,
+  a:hover {
+    color: var(--candy-strawberrys);
   }
 
-  a.active {
-    color: var(--candy-strawberrys);
+  ul li {
+    display: block;
+    position: relative;
+
+    :not(:last-child) {
+      margin-right: 3rem;
+    }
+
+    &.has-submenu {
+      padding: var(--submenu-distance) 0;
+    }
+  }
+
+  ul li > ul {
+    font-size: 1.4rem;
+    display: none;
+    left: 0;
+    position: absolute;
+    margin-top: var(--submenu-distance);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  ul li:hover > ul {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  ul li ul li {
+    opacity: 0.6;
+    margin: 0.8rem 0;
+    width: 100%;
+    transition: opacity 0.2s ease;
+
+    :not(:last-child) {
+      margin-right: 2rem;
+    }
+
+    :hover {
+      opacity: 1;
+    }
   }
 `
 
@@ -47,14 +90,39 @@ const Header = () => (
         </Link>
         <Fade>
           <NavStyles>
-            <Link to="/" activeClassName="active">
-              Home
-            </Link>
-            <Link to="/service">Service</Link>
-            <Link to="/team">Team</Link>
-            <Link to="/projekte">Projekte</Link>
-            <Link to="/blog">Blog</Link>
-            <Link to="/kontakt">Kontakt</Link>
+            <ul className="flex flex--between">
+              <li>
+                <Link to="/" activeClassName="active">
+                  Home
+                </Link>
+              </li>
+              <li className="has-submenu">
+                <Link to="/service">Service</Link>
+                <ul>
+                  <li>
+                    <Link to="/service/webentwicklung">Webentwicklung</Link>
+                  </li>
+                  <li>
+                    <Link to="/service/design">Design</Link>
+                  </li>
+                  <li>
+                    <Link to="/service/beratung">Beratung</Link>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <Link to="/team">Team</Link>
+              </li>
+              <li>
+                <Link to="/projekte">Projekte</Link>
+              </li>
+              <li>
+                <Link to="/blog">Blog</Link>
+              </li>
+              <li>
+                <Link to="/kontakt">Kontakt</Link>
+              </li>
+            </ul>
           </NavStyles>
         </Fade>
       </div>
