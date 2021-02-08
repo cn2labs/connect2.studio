@@ -97,30 +97,46 @@ const Header = () => (
                 </Link>
               </li>
               <li className="has-submenu">
-                <Link to="/service">Service</Link>
+                <Link activeClassName="active" to="/service">
+                  Service
+                </Link>
                 <ul>
                   <li>
-                    <Link to="/service/webentwicklung">Webentwicklung</Link>
+                    <Link activeClassName="active" to="/service/webentwicklung">
+                      Webentwicklung
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/service/design">Design</Link>
+                    <Link activeClassName="active" to="/service/design">
+                      Design
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/service/beratung">Beratung</Link>
+                    <Link activeClassName="active" to="/service/beratung">
+                      Beratung
+                    </Link>
                   </li>
                 </ul>
               </li>
               <li>
-                <Link to="/team">Team</Link>
+                <Link activeClassName="active" to="/team">
+                  Team
+                </Link>
               </li>
               <li>
-                <Link to="/projekte">Projekte</Link>
+                <Link activeClassName="active" to="/projekte">
+                  Projekte
+                </Link>
               </li>
               <li>
-                <Link to="/blog">Blog</Link>
+                <Link activeClassName="active" to="/blog">
+                  Blog
+                </Link>
               </li>
               <li>
-                <Link to="/kontakt">Kontakt</Link>
+                <Link activeClassName="active" to="/kontakt">
+                  Kontakt
+                </Link>
               </li>
             </ul>
           </NavStyles>

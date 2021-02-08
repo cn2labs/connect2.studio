@@ -24,6 +24,7 @@ const Aside = styled.aside`
   left: 120px;
   z-index: 10;
   writing-mode: vertical-rl;
+  padding: 0 1rem;
 
   @media screen and (max-width: 1024px) {
     display: none;
