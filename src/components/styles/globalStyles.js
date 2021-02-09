@@ -20,13 +20,14 @@ const GlobalStyles = createGlobalStyle`
 
   /* VARIABLES */
   :root {
-    --body-bg: #050505;
+    --body-bg: #101010;
     --almost-white: #e2e2e2;
     --black-carbon: #0F1011;
     --mommys-blonde-boy: #FFEFBD;
     --nets-court: #B5B3AC;
     --candy-strawberrys: #db504a;
     --lavender-soap: #9c82e3;
+    --purple-haze: #817ff9;
 
     --headline-font: 'Neue Metana', sans-serif;
     --body-font: 'IBM Plex Sans', sans-serif;
@@ -114,10 +115,15 @@ const GlobalStyles = createGlobalStyle`
     text-align: left;
   }
 
-  .is-outlined {
+  .section--title {
+    margin-bottom: 8rem;
+  }
+
+  .is-outlined span, .is-outlined a {
     color: transparent;
     -webkit-text-stroke: 1.2px var(--mommys-blonde-boy);
     transition: color 0.1s ease;
+    letter-spacing: 1px;
     will-change: color;
 
     :hover {
@@ -141,6 +147,23 @@ const GlobalStyles = createGlobalStyle`
       top: 0;
       left: 50%;
       transform: translate(-50%, -50%);
+  }
+
+  /* TYPOGRAPHY */
+  .size-h1 {
+    font-size: 7rem;
+  }
+
+  .size-h2 {
+    font-size: 6rem;
+  }
+
+  .size-h3 {
+    font-size: 4.4rem;
+  }
+
+  .size-h4 {
+    font-size: 3.2rem;
   }
 
   /* GRAIN */

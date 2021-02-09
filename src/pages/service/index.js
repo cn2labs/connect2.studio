@@ -4,6 +4,10 @@ import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import Hero from "../../components/blocks/hero"
+import Section from "../../components/styles/section"
+import Grid from "../../components/styles/grid"
+
+import ServiceBlock from "../../components/blocks/service/serviceBlock"
 
 const ServicePage = () => {
   // Get the page content from WordPress
@@ -24,6 +28,16 @@ const ServicePage = () => {
             sourceUrl
           }
         }
+        service_serviceFields {
+          servicesHeadline
+          services {
+            ... on wpPage_ServiceServicefields_Services_Service {
+              description
+              title
+              link
+            }
+          }
+        }
       }
     }
   `)
@@ -38,6 +52,19 @@ const ServicePage = () => {
         link={page.heroFields.heroCtaLink}
         linkText={page.heroFields.heroCtaLabel}
       />
+      <Section headline={page.service_serviceFields.servicesHeadline}>
+        <Grid>
+          {page.service_serviceFields.services.map(service => (
+            <ServiceBlock
+              key={service.title}
+              title={service.title}
+              text={service.description}
+              link={service.link}
+            />
+          ))}
+        </Grid>
+      </Section>
+      <Section headline="Projekt anfragen"></Section>
     </Layout>
   )
 }

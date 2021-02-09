@@ -33,7 +33,7 @@ const NavStyles = styled.nav`
 
   a.active,
   a:hover {
-    color: var(--candy-strawberrys);
+    color: var(--mommys-blonde-boy);
   }
 
   ul li {

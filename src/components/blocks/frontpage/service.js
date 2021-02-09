@@ -38,21 +38,21 @@ const Service = ({ text, img }) => (
             <li>
               <Link to="/service/webentwicklung">
                 <ServiceHeadline className="is-outlined">
-                  Webentwicklung
+                  <span>Entwicklung</span>
                 </ServiceHeadline>
               </Link>
             </li>
             <li>
               <Link to="/service/design">
                 <ServiceHeadline className="is-outlined">
-                  Design
+                  <span>Design</span>
                 </ServiceHeadline>
               </Link>
             </li>
             <li>
               <Link to="/service/beratung">
                 <ServiceHeadline className="is-outlined">
-                  Beratung
+                  <span>Beratung</span>
                 </ServiceHeadline>
               </Link>
             </li>

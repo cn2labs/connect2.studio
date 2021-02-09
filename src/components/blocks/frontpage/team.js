@@ -26,7 +26,7 @@ const TeamImg = styled.div`
   display: grid;
   place-items: center;
 
-  :hover h2 {
+  :hover .is-outlined a {
     -webkit-text-stroke: 0 none;
     color: var(--mommys-blonde-boy);
     text-shadow: 0px 0px 20px rgb(255 255 255 / 50%);

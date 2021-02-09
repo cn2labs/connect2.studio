@@ -2,8 +2,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import Fade from "react-reveal/Fade"
-import AnimatedCursor from "react-animated-cursor"
-import { useBrowser } from "../hooks/useBrowser"
 
 import GlobalStyles from "./styles/globalStyles"
 import Header from "./header"
@@ -57,33 +55,25 @@ const SideNotice = styled.aside`
   }
 `
 
-const Layout = ({ children }) => {
-  // Workaround to fix SSR
-  const isBrowser = useBrowser()
-
-  return (
-    <PageContainer>
-      <GlobalStyles />
-      {isBrowser && <AnimatedCursor color="255, 255, 255" innerSize={10} />}
-      <Header />
-      <main>
-        <div className="grain"></div>
-        <SideNotice>
-          <Fade cascade right delay={1000}>
-            <div className="side-notice_text">
-              <span className="side-notice_copyright">connect2 studio</span>
-              <span className="side-notice_year">
-                {new Date().getFullYear()}
-              </span>
-            </div>
-          </Fade>
-        </SideNotice>
-        {children}
-      </main>
-      <Footer />
-    </PageContainer>
-  )
-}
+const Layout = ({ children }) => (
+  <PageContainer>
+    <GlobalStyles />
+    <Header />
+    <main>
+      <div className="grain"></div>
+      <SideNotice>
+        <Fade cascade right delay={1000}>
+          <div className="side-notice_text">
+            <span className="side-notice_copyright">connect2 studio</span>
+            <span className="side-notice_year">{new Date().getFullYear()}</span>
+          </div>
+        </Fade>
+      </SideNotice>
+      {children}
+    </main>
+    <Footer />
+  </PageContainer>
+)
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

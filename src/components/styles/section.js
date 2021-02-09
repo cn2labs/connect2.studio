@@ -45,11 +45,18 @@ const Aside = styled.aside`
   }
 `
 
-export default function Section({ children, aside }) {
+export default function Section({ children, aside, headline }) {
   return (
     <SectionStyles>
       {aside && <Aside>{aside}</Aside>}
-      <Container>{children}</Container>
+      <Container>
+        {headline && (
+          <h4 className="ta-center size-h3 is-outlined section--title">
+            <span>{headline}</span>
+          </h4>
+        )}
+        {children}
+      </Container>
     </SectionStyles>
   )
 }
