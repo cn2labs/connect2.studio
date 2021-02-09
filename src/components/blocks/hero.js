@@ -12,8 +12,8 @@ const HeroSection = styled.section`
 
 const HeroGrid = styled.div`
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  column-gap: 30px;
+  grid-template-columns: ${props => (props.offgrid ? "2fr 1fr" : "1fr 1fr")};
+  column-gap: ${props => (props.offgrid ? "30px" : "50px")};
 `
 
 const Headline = styled.h1`
@@ -41,11 +41,18 @@ const Img = styled.img`
   left: calc(var(--spacing) / 2 * -1);
   z-index: -1;
 `
-export default function Hero({ headline, text, img, link = "/", linkText }) {
+export default function Hero({
+  headline,
+  text,
+  img,
+  link = "/",
+  linkText,
+  offgrid = false,
+}) {
   return (
     <HeroSection>
       <Container>
-        <HeroGrid>
+        <HeroGrid offgrid={offgrid}>
           <div>
             <Fade delay={200}>
               <Headline>{headline}</Headline>
@@ -59,8 +66,10 @@ export default function Hero({ headline, text, img, link = "/", linkText }) {
               </Fade>
             )}
           </div>
-          {img && (
-            <Img className="hero--img" src={img.sourceUrl} alt={img.altText} />
+          {offgrid ? (
+            <Img src={img.sourceUrl} alt={img.altText} />
+          ) : (
+            <img src={img.sourceUrl} alt={img.altText} />
           )}
         </HeroGrid>
       </Container>
@@ -74,4 +83,5 @@ Hero.propTypes = {
   link: PropTypes.string,
   linkText: PropTypes.string,
   img: PropTypes.object,
+  offgrid: PropTypes.bool,
 }

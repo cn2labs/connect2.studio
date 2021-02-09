@@ -11,7 +11,7 @@ import Team from "../components/blocks/frontpage/team"
 const Frontpage = () => {
   // Get the page content from WordPress
   const { wpPage: page } = useStaticQuery(graphql`
-    query PageData {
+    {
       wpPage(databaseId: { eq: 2 }) {
         title
         metadata {
@@ -53,6 +53,7 @@ const Frontpage = () => {
         img={page.heroFields.heroImg}
         link={page.heroFields.heroCtaLink}
         linkText={page.heroFields.heroCtaLabel}
+        offgrid
       />
       <Service
         text={page.home_serviceFields.serviceText}

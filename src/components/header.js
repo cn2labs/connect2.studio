@@ -66,17 +66,12 @@ const NavStyles = styled.nav`
   }
 
   ul li ul li {
-    opacity: 0.6;
     margin: 0.8rem 0;
     width: 100%;
     transition: opacity 0.2s ease;
 
     :not(:last-child) {
       margin-right: 2rem;
-    }
-
-    :hover {
-      opacity: 1;
     }
   }
 `

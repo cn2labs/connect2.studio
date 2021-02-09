@@ -24,7 +24,7 @@ const FooterStyles = styled.footer`
 
 const GetInTouch = styled.div`
   background: url(${hands}) no-repeat center center / contain;
-  padding: 12rem 0;
+  padding: 8rem 0;
   margin-bottom: 3rem;
 
   h3 {
