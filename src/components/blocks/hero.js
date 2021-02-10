@@ -1,23 +1,18 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import Fade from "react-reveal/Fade"
 
 import CTA from "../ui/cta"
 import Container from "../styles/container"
+import Grid from "../styles/grid"
+import Image from "../img"
 
 const HeroSection = styled.section`
   padding-bottom: 10rem;
 `
 
-const HeroGrid = styled.div`
-  display: grid;
-  grid-template-columns: ${props => (props.offgrid ? "2fr 1fr" : "1fr 1fr")};
-  column-gap: ${props => (props.offgrid ? "30px" : "50px")};
-`
-
 const Headline = styled.h1`
-  font-size: 7rem;
+  font-size: 6rem;
   text-shadow: 0px 0px 20px rgb(255 255 255 / 50%);
 `
 
@@ -31,47 +26,25 @@ const Text = styled.div`
     margin-top: 2.4rem;
   }
 `
-
-const Img = styled.img`
-  --spacing: 24rem;
-
-  max-width: unset;
-  width: calc(100% + var(--spacing));
-  position: relative;
-  left: calc(var(--spacing) / 2 * -1);
-  z-index: -1;
-`
 export default function Hero({
   headline,
   text,
   img,
+  imgAlt,
   link = "/",
   linkText,
-  offgrid = false,
 }) {
   return (
     <HeroSection>
       <Container>
-        <HeroGrid offgrid={offgrid}>
+        <Grid cols="1.2fr 1fr" gap="100">
           <div>
-            <Fade delay={200}>
-              <Headline>{headline}</Headline>
-            </Fade>
-            <Fade delay={500}>
-              <Text dangerouslySetInnerHTML={{ __html: text }}></Text>
-            </Fade>
-            {link && (
-              <Fade delay={700}>
-                <CTA to={link}>{linkText}</CTA>
-              </Fade>
-            )}
+            <Headline>{headline}</Headline>
+            <Text dangerouslySetInnerHTML={{ __html: text }}></Text>
+            {link && <CTA to={link}>{linkText}</CTA>}
           </div>
-          {offgrid ? (
-            <Img src={img.sourceUrl} alt={img.altText} />
-          ) : (
-            <img src={img.sourceUrl} alt={img.altText} />
-          )}
-        </HeroGrid>
+          <Image fluid src={img} alt={imgAlt} />
+        </Grid>
       </Container>
     </HeroSection>
   )
@@ -83,5 +56,5 @@ Hero.propTypes = {
   link: PropTypes.string,
   linkText: PropTypes.string,
   img: PropTypes.object,
-  offgrid: PropTypes.bool,
+  imgAlt: PropTypes.string,
 }

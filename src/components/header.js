@@ -7,7 +7,7 @@ import logo from "../assets/images/logo_white.svg"
 import Container from "./styles/container"
 
 const HeaderStyles = styled.header`
-  padding: 6rem 0 10rem 0;
+  padding: 5rem 0 10rem 0;
 `
 
 const LogoStyles = styled.img`
@@ -33,7 +33,7 @@ const NavStyles = styled.nav`
 
   a.active,
   a:hover {
-    color: var(--mommys-blonde-boy);
+    color: var(--candy-strawberrys);
   }
 
   ul li {
@@ -92,22 +92,25 @@ const Header = () => (
                 </Link>
               </li>
               <li className="has-submenu">
-                <Link activeClassName="active" to="/service">
-                  Service
+                <Link activeClassName="active" to="/leistungen">
+                  Leistungen
                 </Link>
                 <ul>
                   <li>
-                    <Link activeClassName="active" to="/service/webentwicklung">
+                    <Link
+                      activeClassName="active"
+                      to="/leistungen/webentwicklung"
+                    >
                       Webentwicklung
                     </Link>
                   </li>
                   <li>
-                    <Link activeClassName="active" to="/service/design">
+                    <Link activeClassName="active" to="/leistungen/design">
                       Design
                     </Link>
                   </li>
                   <li>
-                    <Link activeClassName="active" to="/service/beratung">
+                    <Link activeClassName="active" to="/leistungen/beratung">
                       Beratung
                     </Link>
                   </li>

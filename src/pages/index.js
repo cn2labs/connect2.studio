@@ -21,13 +21,25 @@ const Frontpage = () => {
           serviceText
           serviceImg {
             altText
-            sourceUrl
+            localFile {
+              childImageSharp {
+                fluid(maxWidth: 1440) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
         home_teamFields {
           teamText
           teamImg {
-            sourceUrl
+            localFile {
+              childImageSharp {
+                fluid(maxWidth: 1440) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
         heroFields {
@@ -37,7 +49,13 @@ const Frontpage = () => {
           heroText
           heroImg {
             altText
-            sourceUrl
+            localFile {
+              childImageSharp {
+                fluid(maxWidth: 1440) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }
@@ -50,14 +68,17 @@ const Frontpage = () => {
       <Hero
         headline={page.heroFields.heroHeadline}
         text={page.heroFields.heroText}
-        img={page.heroFields.heroImg}
+        img={page.heroFields.heroImg.localFile.childImageSharp.fluid}
+        imgAlt={page.heroFields.heroImg.altText}
         link={page.heroFields.heroCtaLink}
         linkText={page.heroFields.heroCtaLabel}
-        offgrid
       />
       <Service
         text={page.home_serviceFields.serviceText}
-        img={page.home_serviceFields.serviceImg}
+        imgSrc={
+          page.home_serviceFields.serviceImg.localFile.childImageSharp.fluid
+        }
+        imgAlt={page.home_serviceFields.serviceImg.altText}
       />
       <Team
         text={page.home_teamFields.teamText}

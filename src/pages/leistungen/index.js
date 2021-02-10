@@ -7,7 +7,7 @@ import Hero from "../../components/blocks/hero"
 import Section from "../../components/styles/section"
 import Grid from "../../components/styles/grid"
 
-import ServiceBlock from "../../components/blocks/service/serviceBlock"
+import ServiceBlock from "../../components/blocks/leistungen/serviceBlock"
 
 const ServicePage = () => {
   // Get the page content from WordPress
@@ -25,7 +25,13 @@ const ServicePage = () => {
           heroText
           heroImg {
             altText
-            sourceUrl
+            localFile {
+              childImageSharp {
+                fluid(maxWidth: 1440) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
         service_serviceFields {
@@ -48,7 +54,8 @@ const ServicePage = () => {
       <Hero
         headline={page.heroFields.heroHeadline}
         text={page.heroFields.heroText}
-        img={page.heroFields.heroImg}
+        img={page.heroFields.heroImg.localFile.childImageSharp.fluid}
+        imgAlt={page.heroFields.heroImg.altText}
         link={page.heroFields.heroCtaLink}
         linkText={page.heroFields.heroCtaLabel}
       />

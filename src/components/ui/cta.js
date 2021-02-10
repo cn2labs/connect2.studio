@@ -8,7 +8,8 @@ const CTAStyles = styled.span`
   color: var(--candy-strawberrys);
   display: inline-block;
   font-family: var(--headline-font);
-  font-size: 2.4rem;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
   margin-top: 6rem;
   position: relative;
   text-shadow: 0px 0px 6px rgb(219 80 74 / 50%);
@@ -18,7 +19,7 @@ const CTAStyles = styled.span`
   }
 
   &:before {
-    --size: 60px;
+    --size: 40px;
 
     background: url(${logo}) no-repeat center center / contain;
     content: "";
