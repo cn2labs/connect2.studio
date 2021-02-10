@@ -24,7 +24,7 @@ const Image = ({ fluid, fixed, src, ...props }) => {
 Image.propTypes = {
   fluid: PropTypes.bool,
   fixed: PropTypes.bool,
-  src: PropTypes.string.isRequired,
+  src: PropTypes.object.isRequired,
 }
 
 export default Image

@@ -25,10 +25,12 @@ const ServiceHeadline = styled.h2`
   font-size: 6rem;
 `
 
+// TODO: refactor to Outline component
+
 // Component
 const Service = ({ text, imgSrc, imgAlt }) => (
   <Fade>
-    <Section aside="What we do">
+    <Section aside="Unsere Leistungen">
       <Grid cols="1.2fr 1fr" gap="100">
         <Services>
           <ul>

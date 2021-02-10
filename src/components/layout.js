@@ -35,7 +35,7 @@ const SideNotice = styled.aside`
     transition: color 0.2s ease;
     position: absolute;
     top: 450px;
-    left: 120px;
+    left: var(--side-notice-distance);
     z-index: 10;
     height: 100%;
 

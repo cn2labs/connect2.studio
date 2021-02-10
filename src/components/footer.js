@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 
 import Container from "./styles/container"
+import Outline from "./ui/outline"
 import logo from "../assets/images/logo_white.svg"
 import hands from "../assets/images/hands.svg"
 
@@ -28,7 +29,6 @@ const GetInTouch = styled.div`
   margin-bottom: 3rem;
 
   h3 {
-    font-size: 6rem;
     margin-bottom: 2rem;
   }
 
@@ -42,9 +42,9 @@ export default function Footer() {
   return (
     <FooterStyles>
       <GetInTouch className="ta-center">
-        <h3 className="is-outlined">
-          <span>Get in touch</span>
-        </h3>
+        <Outline as="h3">
+          <span>Sag mal Hallo</span>
+        </Outline>
         <a href="mailto:hi@connect2.studio" title="Schreib uns ne Mail">
           hi@connect2.studio
         </a>

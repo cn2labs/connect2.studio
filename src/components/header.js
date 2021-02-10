@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import Fade from "react-reveal/Fade"
 
 import logo from "../assets/images/logo_white.svg"
 import Container from "./styles/container"
@@ -27,9 +26,13 @@ const LogoStyles = styled.img`
 const NavStyles = styled.nav`
   --submenu-distance: 0.4rem;
 
-  color: #fff;
+  color: var(--almost-white);
   font-family: var(--headline-font);
-  font-size: 1.6rem;
+  font-size: 1.5rem;
+
+  a {
+    transition: color 0.1s ease;
+  }
 
   a.active,
   a:hover {
@@ -83,62 +86,60 @@ const Header = () => (
         <Link to="/">
           <LogoStyles src={logo} alt="connect2 studio Logo" height="64" />
         </Link>
-        <Fade>
-          <NavStyles>
-            <ul className="flex flex--between">
-              <li>
-                <Link to="/" activeClassName="active">
-                  Home
-                </Link>
-              </li>
-              <li className="has-submenu">
-                <Link activeClassName="active" to="/leistungen">
-                  Leistungen
-                </Link>
-                <ul>
-                  <li>
-                    <Link
-                      activeClassName="active"
-                      to="/leistungen/webentwicklung"
-                    >
-                      Webentwicklung
-                    </Link>
-                  </li>
-                  <li>
-                    <Link activeClassName="active" to="/leistungen/design">
-                      Design
-                    </Link>
-                  </li>
-                  <li>
-                    <Link activeClassName="active" to="/leistungen/beratung">
-                      Beratung
-                    </Link>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <Link activeClassName="active" to="/team">
-                  Team
-                </Link>
-              </li>
-              <li>
-                <Link activeClassName="active" to="/projekte">
-                  Projekte
-                </Link>
-              </li>
-              <li>
-                <Link activeClassName="active" to="/blog">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link activeClassName="active" to="/kontakt">
-                  Kontakt
-                </Link>
-              </li>
-            </ul>
-          </NavStyles>
-        </Fade>
+        <NavStyles>
+          <ul className="flex flex--between">
+            <li>
+              <Link to="/" activeClassName="active">
+                Home
+              </Link>
+            </li>
+            <li className="has-submenu">
+              <Link activeClassName="active" to="/leistungen">
+                Leistungen
+              </Link>
+              <ul>
+                <li>
+                  <Link
+                    activeClassName="active"
+                    to="/leistungen/webentwicklung"
+                  >
+                    Webentwicklung
+                  </Link>
+                </li>
+                <li>
+                  <Link activeClassName="active" to="/leistungen/design">
+                    Design
+                  </Link>
+                </li>
+                <li>
+                  <Link activeClassName="active" to="/leistungen/beratung">
+                    Beratung
+                  </Link>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <Link activeClassName="active" to="/team">
+                Team
+              </Link>
+            </li>
+            <li>
+              <Link activeClassName="active" to="/projekte">
+                Projekte
+              </Link>
+            </li>
+            <li>
+              <Link activeClassName="active" to="/blog">
+                Blog
+              </Link>
+            </li>
+            <li>
+              <Link activeClassName="active" to="/kontakt">
+                Kontakt
+              </Link>
+            </li>
+          </ul>
+        </NavStyles>
       </div>
     </Container>
   </HeaderStyles>

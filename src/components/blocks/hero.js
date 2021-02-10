@@ -8,7 +8,7 @@ import Grid from "../styles/grid"
 import Image from "../img"
 
 const HeroSection = styled.section`
-  padding-bottom: 10rem;
+  margin-bottom: 15rem;
 `
 
 const Headline = styled.h1`

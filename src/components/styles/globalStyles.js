@@ -31,6 +31,8 @@ const GlobalStyles = createGlobalStyle`
 
     --headline-font: 'Neue Metana', sans-serif;
     --body-font: 'IBM Plex Sans', sans-serif;
+
+    --side-notice-distance: 5%;
   }
 
   /* BASIC STYLES */
@@ -117,20 +119,6 @@ const GlobalStyles = createGlobalStyle`
 
   .section--title {
     margin-bottom: 8rem;
-  }
-
-  .is-outlined span, .is-outlined a {
-    color: transparent;
-    -webkit-text-stroke: 1.2px var(--mommys-blonde-boy);
-    transition: color 0.1s ease;
-    letter-spacing: 1px;
-    will-change: color;
-
-    :hover {
-      color: var(--mommys-blonde-boy);
-      -webkit-text-stroke: 0 none;
-      text-shadow: 0px 0px 20px rgb(255 255 255 / 50%);
-    }
   }
 
   .has-tape {

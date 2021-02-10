@@ -21,7 +21,7 @@ const Aside = styled.aside`
   transform: rotate(180deg) translateY(50%);
   position: absolute;
   top: 50%;
-  left: 120px;
+  left: var(--side-notice-distance);
   z-index: 10;
   writing-mode: vertical-rl;
   padding: 0 1rem;
