@@ -3,6 +3,7 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import Fade from "react-reveal/Fade"
+import BackgroundImage from "gatsby-background-image"
 
 // Ready-to-use components
 import CTA from "../../ui/cta"
@@ -20,8 +21,12 @@ const TeamStyles = styled.div`
   }
 `
 
-const TeamImg = styled.div`
-  background: url(${props => props.bg}) no-repeat center center / cover;
+const TeamTitle = styled.h2`
+  font-size: 10rem;
+`
+
+const StyledBackground = styled(BackgroundImage)`
+  background-size: cover;
   height: 60rem;
   display: grid;
   place-items: center;
@@ -33,20 +38,16 @@ const TeamImg = styled.div`
   }
 `
 
-const TeamTitle = styled.h2`
-  font-size: 10rem;
-`
-
 // Component
-const Team = ({ text, img }) => (
+const Team = ({ text, bg }) => (
   <Fade>
     <Section aside="Hello there">
       <TeamStyles>
-        <TeamImg className="has-tape" bg={img.sourceUrl}>
+        <StyledBackground Tag="div" fluid={bg}>
           <TeamTitle className="is-outlined ta-center">
             <Link to="/team">Die Crew</Link>
           </TeamTitle>
-        </TeamImg>
+        </StyledBackground>
         <div className="ta-center">
           <p>{text}</p>
           <CTA to="/team">Unser Team</CTA>

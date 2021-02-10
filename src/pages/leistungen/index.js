@@ -60,7 +60,7 @@ const ServicePage = () => {
         linkText={page.heroFields.heroCtaLabel}
       />
       <Section headline={page.service_serviceFields.servicesHeadline}>
-        <Grid>
+        <Grid repeatCols="3">
           {page.service_serviceFields.services.map(service => (
             <ServiceBlock
               key={service.title}

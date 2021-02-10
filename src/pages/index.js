@@ -82,7 +82,7 @@ const Frontpage = () => {
       />
       <Team
         text={page.home_teamFields.teamText}
-        img={page.home_teamFields.teamImg}
+        bg={page.home_teamFields.teamImg.localFile.childImageSharp.fluid}
       />
     </Layout>
   )
