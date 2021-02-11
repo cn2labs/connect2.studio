@@ -5,6 +5,7 @@ import grainBg from "../../assets/grain.png"
 import NeueMetanaWoff2 from "../../assets/fonts/NeueMetana-Bold.woff2"
 import NeueMetanaWoff from "../../assets/fonts/NeueMetana-Bold.woff"
 import "@fontsource/ibm-plex-sans"
+import "@fontsource/ibm-plex-sans/500.css"
 
 const GlobalStyles = createGlobalStyle`
   /* FONTS */
@@ -79,6 +80,10 @@ const GlobalStyles = createGlobalStyle`
     line-height: 1.6;
   }
 
+  strong, .is-bold {
+    font-weight: 500;
+  }
+
   /* Remove all animations and transitions for people that prefer not to see them */
   @media (prefers-reduced-motion: reduce) {
     * {
@@ -135,6 +140,10 @@ const GlobalStyles = createGlobalStyle`
 
   .size-h4 {
     font-size: 3.2rem;
+  }
+
+  .size-h5 {
+    font-size: 2.6rem;
   }
 
   /* GRAIN */

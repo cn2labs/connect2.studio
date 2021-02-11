@@ -6,6 +6,7 @@ import CTA from "../ui/cta"
 import Container from "../styles/container"
 import Grid from "../styles/grid"
 import Image from "../img"
+import Tagline from "../ui/tagline"
 
 const HeroSection = styled.section`
   margin-bottom: 15rem;
@@ -16,17 +17,10 @@ const Headline = styled.h1`
   text-shadow: 0px 0px 14px rgb(255 255 255 / 50%);
 `
 
-const Tagline = styled.h2`
-  color: var(--almost-white);
-  font-size: 1.4rem;
-  margin-bottom: 3rem;
-  letter-spacing: 0.7px;
-  text-transform: uppercase;
-`
-
 const Text = styled.div`
   color: var(--almost-white);
   font-size: 2rem;
+  font-weight: 500;
   margin-top: 2.75rem;
   max-width: 800px;
 

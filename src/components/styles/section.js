@@ -50,11 +50,7 @@ export default function Section({ children, aside, headline }) {
     <SectionStyles>
       {aside && <Aside>{aside}</Aside>}
       <Container>
-        {headline && (
-          <h4 className="size-h3 is-outlined section--title">
-            <span>{headline}</span>
-          </h4>
-        )}
+        {headline && <h4 className="size-h3">{headline}</h4>}
         {children}
       </Container>
     </SectionStyles>

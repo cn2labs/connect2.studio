@@ -46,7 +46,7 @@ const Team = ({ text, bg }) => (
       <TeamStyles>
         <StyledBackground Tag="div" fluid={bg}>
           <Outline as="h2" looksLike="h1">
-            <Link to="/team">Die Crew</Link>
+            <Link to="/team">Crew Love</Link>
           </Outline>
         </StyledBackground>
         <div className="ta-center">

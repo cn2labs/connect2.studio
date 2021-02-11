@@ -5,9 +5,9 @@ import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import Hero from "../../components/blocks/hero"
 import Section from "../../components/styles/section"
-import Grid from "../../components/styles/grid"
 
 import ServiceBlock from "../../components/blocks/service/serviceBlock"
+import RequestBlock from "../../components/blocks/request"
 
 const ServicePage = () => {
   // Get the page content from WordPress
@@ -39,9 +39,14 @@ const ServicePage = () => {
           servicesHeadline
           services {
             ... on wpPage_ServiceServicefields_Services_Service {
-              description
+              tagline
               title
               link
+              keywords {
+                ... on wpPage_ServiceServicefields_Services_Service_Keywords_Keyword {
+                  title
+                }
+              }
             }
           }
         }
@@ -62,18 +67,17 @@ const ServicePage = () => {
         linkText={page.heroFields.heroCtaLabel}
       />
       <Section headline={page.service_serviceFields.servicesHeadline}>
-        <Grid repeatCols="3">
-          {page.service_serviceFields.services.map(service => (
-            <ServiceBlock
-              key={service.title}
-              title={service.title}
-              text={service.description}
-              link={service.link}
-            />
-          ))}
-        </Grid>
+        {page.service_serviceFields.services.map(service => (
+          <ServiceBlock
+            key={service.tagline}
+            tagline={service.tagline}
+            title={service.title}
+            keywords={service.keywords}
+            link={service.link}
+          />
+        ))}
       </Section>
-      <Section headline="Projekt anfragen"></Section>
+      <RequestBlock />
     </Layout>
   )
 }
