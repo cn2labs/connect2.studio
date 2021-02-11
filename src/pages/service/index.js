@@ -7,7 +7,7 @@ import Hero from "../../components/blocks/hero"
 import Section from "../../components/styles/section"
 import Grid from "../../components/styles/grid"
 
-import ServiceBlock from "../../components/blocks/leistungen/serviceBlock"
+import ServiceBlock from "../../components/blocks/service/serviceBlock"
 
 const ServicePage = () => {
   // Get the page content from WordPress
@@ -22,6 +22,7 @@ const ServicePage = () => {
           heroCtaLabel
           heroCtaLink
           heroHeadline
+          heroTagline
           heroText
           heroImg {
             altText
@@ -52,6 +53,7 @@ const ServicePage = () => {
     <Layout>
       <SEO title={page.title} description={page.metadata.description} />
       <Hero
+        tagline={page.heroFields.heroTagline}
         headline={page.heroFields.heroHeadline}
         text={page.heroFields.heroText}
         img={page.heroFields.heroImg.localFile.childImageSharp.fluid}

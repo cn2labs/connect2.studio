@@ -9,7 +9,6 @@ const CTAStyles = styled.span`
   display: inline-block;
   font-family: var(--headline-font);
   font-size: 2.2rem;
-  letter-spacing: 1px;
   margin-top: 6rem;
   position: relative;
   text-shadow: 0px 0px 6px rgb(219 80 74 / 50%);

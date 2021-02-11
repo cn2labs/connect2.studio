@@ -13,13 +13,21 @@ const HeroSection = styled.section`
 
 const Headline = styled.h1`
   font-size: 6rem;
-  text-shadow: 0px 0px 20px rgb(255 255 255 / 50%);
+  text-shadow: 0px 0px 14px rgb(255 255 255 / 50%);
+`
+
+const Tagline = styled.h2`
+  color: var(--almost-white);
+  font-size: 1.4rem;
+  margin-bottom: 3rem;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
 `
 
 const Text = styled.div`
   color: var(--almost-white);
   font-size: 2rem;
-  margin-top: 4rem;
+  margin-top: 2.75rem;
   max-width: 800px;
 
   p + p {
@@ -27,6 +35,7 @@ const Text = styled.div`
   }
 `
 export default function Hero({
+  tagline,
   headline,
   text,
   img,
@@ -39,6 +48,7 @@ export default function Hero({
       <Container>
         <Grid cols="1.2fr 1fr" gap="100">
           <div>
+            {tagline && <Tagline>{tagline}</Tagline>}
             <Headline>{headline}</Headline>
             <Text dangerouslySetInnerHTML={{ __html: text }}></Text>
             {link && <CTA to={link}>{linkText}</CTA>}
@@ -51,6 +61,7 @@ export default function Hero({
 }
 
 Hero.propTypes = {
+  tagline: PropTypes.string,
   headline: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   link: PropTypes.string,

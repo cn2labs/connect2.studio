@@ -6,7 +6,7 @@ import logo from "../assets/images/logo_white.svg"
 import Container from "./styles/container"
 
 const HeaderStyles = styled.header`
-  padding: 5rem 0 10rem 0;
+  padding: 5rem 0 12rem 0;
 `
 
 const LogoStyles = styled.img`
@@ -44,7 +44,7 @@ const NavStyles = styled.nav`
     position: relative;
 
     :not(:last-child) {
-      margin-right: 3rem;
+      margin-right: 2rem;
     }
 
     &.has-submenu {
@@ -54,18 +54,19 @@ const NavStyles = styled.nav`
 
   ul li > ul {
     font-size: 1.4rem;
-    display: none;
     left: 0;
     position: absolute;
     margin-top: var(--submenu-distance);
     opacity: 0;
     visibility: hidden;
+    transform: translateY(5px);
+    transition: all 0.2s ease;
   }
 
   ul li:hover > ul {
-    display: block;
     opacity: 1;
     visibility: visible;
+    transform: translateY(0);
   }
 
   ul li ul li {
@@ -75,6 +76,10 @@ const NavStyles = styled.nav`
 
     :not(:last-child) {
       margin-right: 2rem;
+    }
+
+    a:hover {
+      color: var(--lavender-soap);
     }
   }
 `
@@ -94,25 +99,22 @@ const Header = () => (
               </Link>
             </li>
             <li className="has-submenu">
-              <Link activeClassName="active" to="/leistungen">
-                Leistungen
+              <Link activeClassName="active" to="/service">
+                Service
               </Link>
               <ul>
                 <li>
-                  <Link
-                    activeClassName="active"
-                    to="/leistungen/webentwicklung"
-                  >
-                    Webentwicklung
+                  <Link activeClassName="active" to="/service/entwicklung">
+                    Entwicklung
                   </Link>
                 </li>
                 <li>
-                  <Link activeClassName="active" to="/leistungen/design">
+                  <Link activeClassName="active" to="/service/design">
                     Design
                   </Link>
                 </li>
                 <li>
-                  <Link activeClassName="active" to="/leistungen/beratung">
+                  <Link activeClassName="active" to="/service/beratung">
                     Beratung
                   </Link>
                 </li>

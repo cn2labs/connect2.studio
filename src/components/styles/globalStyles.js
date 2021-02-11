@@ -1,7 +1,6 @@
 import { createGlobalStyle } from "styled-components"
 
 import grainBg from "../../assets/grain.png"
-import tape from "../../assets/images/tape.png"
 
 import NeueMetanaWoff2 from "../../assets/fonts/NeueMetana-Bold.woff2"
 import NeueMetanaWoff from "../../assets/fonts/NeueMetana-Bold.woff"
@@ -119,22 +118,6 @@ const GlobalStyles = createGlobalStyle`
 
   .section--title {
     margin-bottom: 8rem;
-  }
-
-  .has-tape {
-    position: relative;
-  }
-
-  .has-tape:before {
-      content: "";
-      display: block;
-      background: url(${tape}) no-repeat center center / contain;
-      width: 210px;
-      height: 50px;
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translate(-50%, -50%);
   }
 
   /* TYPOGRAPHY */

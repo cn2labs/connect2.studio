@@ -45,6 +45,7 @@ const Frontpage = () => {
         heroFields {
           heroCtaLabel
           heroCtaLink
+          heroTagline
           heroHeadline
           heroText
           heroImg {
@@ -66,6 +67,7 @@ const Frontpage = () => {
     <Layout>
       <SEO title={page.title} description={page.metadata.description} />
       <Hero
+        tagline={page.heroFields.heroTagline}
         headline={page.heroFields.heroHeadline}
         text={page.heroFields.heroText}
         img={page.heroFields.heroImg.localFile.childImageSharp.fluid}

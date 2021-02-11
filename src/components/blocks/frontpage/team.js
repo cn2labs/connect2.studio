@@ -7,6 +7,7 @@ import BackgroundImage from "gatsby-background-image"
 
 // Ready-to-use components
 import CTA from "../../ui/cta"
+import Outline from "../../ui/outline"
 import Section from "../../styles/section"
 
 // Styles
@@ -19,15 +20,15 @@ const TeamStyles = styled.div`
     margin: 2rem auto 0;
     max-width: 70ch;
   }
-`
 
-const TeamTitle = styled.h2`
-  font-size: 10rem;
+  h2 {
+    font-size: 10rem;
+  }
 `
 
 const StyledBackground = styled(BackgroundImage)`
   background-size: cover;
-  height: 60rem;
+  height: 72rem;
   display: grid;
   place-items: center;
 
@@ -44,9 +45,9 @@ const Team = ({ text, bg }) => (
     <Section aside="Unser Team">
       <TeamStyles>
         <StyledBackground Tag="div" fluid={bg}>
-          <TeamTitle className="is-outlined ta-center">
+          <Outline as="h2" looksLike="h1">
             <Link to="/team">Die Crew</Link>
-          </TeamTitle>
+          </Outline>
         </StyledBackground>
         <div className="ta-center">
           <p>{text}</p>

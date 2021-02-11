@@ -34,9 +34,9 @@ const Aside = styled.aside`
     background: var(--color);
     content: "";
     display: inline-block;
-    height: 24px;
+    height: 16px;
     margin-bottom: 12px;
-    margin-left: -2px;
+    margin-left: 4px;
     width: 1px;
   }
 
@@ -51,7 +51,7 @@ export default function Section({ children, aside, headline }) {
       {aside && <Aside>{aside}</Aside>}
       <Container>
         {headline && (
-          <h4 className="ta-center size-h3 is-outlined section--title">
+          <h4 className="size-h3 is-outlined section--title">
             <span>{headline}</span>
           </h4>
         )}

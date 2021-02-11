@@ -62,7 +62,7 @@ const Layout = ({ children }) => (
     <main>
       <div className="grain"></div>
       <SideNotice>
-        <Fade cascade right delay={1000}>
+        <Fade cascade right delay={500}>
           <div className="side-notice_text">
             <span className="side-notice_copyright">connect2 studio</span>
             <span className="side-notice_year">{new Date().getFullYear()}</span>
