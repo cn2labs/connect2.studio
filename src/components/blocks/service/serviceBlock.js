@@ -28,14 +28,14 @@ const Keywords = styled.div`
 
 const ServiceBlock = ({ tagline, title, keywords, link }) => (
   <BlockStyles>
-    <Grid repeatCols="2" gap="0">
+    <Grid cols="2" gap="0">
       <Department>
         <Tagline>&ndash; {tagline}</Tagline>
         <h3 className="size-h5">{title}</h3>
         <CTA to={`/service${link}`}>Mehr dazu</CTA>
       </Department>
       <Keywords>
-        <Grid repeatCols="2" gap="15">
+        <Grid cols="2" gap="15">
           {keywords &&
             keywords.map(keyword => (
               <span key={keyword.title}>{keyword.title}</span>

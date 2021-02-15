@@ -5,7 +5,7 @@ import Section from "../../styles/section"
 import Outline from "../../ui/outline"
 import Grid from "../../styles/grid"
 
-const Stats = () => {
+const Stats = ({ members }) => {
   const [commits, setCommits] = useState(0)
 
   // Get all public repos on page load
@@ -30,12 +30,12 @@ const Stats = () => {
   return (
     <Fade delay={200}>
       <Section>
-        <Grid repeatCols="3">
+        <Grid cols="3" className="ta-center">
           <Outline>
             <span>1 Team</span>
           </Outline>
           <Outline>
-            <span>4 Mitglieder</span>
+            <span>{members} Mitglieder</span>
           </Outline>
           <Outline>
             <span>{commits} Commits</span>

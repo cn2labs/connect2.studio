@@ -4,9 +4,14 @@ import styled from "styled-components"
 
 import CTA from "../ui/cta"
 import Container from "../styles/container"
-import Grid from "../styles/grid"
 import Image from "../img"
 import Tagline from "../ui/tagline"
+
+const HeroGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  grid-column-gap: 100px;
+`
 
 const HeroSection = styled.section`
   margin-bottom: 15rem;
@@ -40,7 +45,7 @@ export default function Hero({
   return (
     <HeroSection>
       <Container>
-        <Grid cols="1.2fr 1fr" gap="100">
+        <HeroGrid>
           <div>
             {tagline && <Tagline>{tagline}</Tagline>}
             <Headline>{headline}</Headline>
@@ -48,7 +53,7 @@ export default function Hero({
             {link && <CTA to={link}>{linkText}</CTA>}
           </div>
           <Image fluid src={img} alt={imgAlt} />
-        </Grid>
+        </HeroGrid>
       </Container>
     </HeroSection>
   )

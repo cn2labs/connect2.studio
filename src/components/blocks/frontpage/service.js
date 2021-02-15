@@ -8,7 +8,6 @@ import scribble from "../../../assets/images/scribble.svg"
 // Ready-to-use components
 import CTA from "../../ui/cta"
 import Section from "../../styles/section"
-import Grid from "../../styles/grid"
 import Outline from "../../ui/outline"
 import Image from "../../img"
 
@@ -25,6 +24,12 @@ const Services = styled.div`
   p {
     margin-top: 2.5rem;
   }
+`
+
+const ServicesGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  grid-column-gap: 100px;
 `
 
 const Tagline = styled.h3`
@@ -55,7 +60,7 @@ const ImgWithScribble = styled(Image)`
 const Service = ({ text, imgSrc, imgAlt }) => (
   <Fade delay={200}>
     <Section aside="Unser Service">
-      <Grid cols="1.2fr 1fr" gap="100">
+      <ServicesGrid>
         <ImgWithScribble fluid src={imgSrc} alt={imgAlt} />
         <Services>
           <ul>
@@ -87,7 +92,7 @@ const Service = ({ text, imgSrc, imgAlt }) => (
           <p>{text}</p>
           <CTA to="/service">Unser Service</CTA>
         </Services>
-      </Grid>
+      </ServicesGrid>
     </Section>
   </Fade>
 )

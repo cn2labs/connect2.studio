@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import Fade from "react-reveal/Fade"
 
 import Section from "../../styles/section"
 import Grid from "../../styles/grid"
@@ -45,13 +46,15 @@ const Member = ({ member }) => (
 )
 
 const Members = ({ members }) => (
-  <Section>
-    <Grid repeatCols="4" gap="100">
-      {members.map(member => (
-        <Member key={member.mail} member={member} />
-      ))}
-    </Grid>
-  </Section>
+  <Fade delay={200}>
+    <Section smallPaddingTop aside="Behind the scenes">
+      <Grid gap="100">
+        {members.map(member => (
+          <Member key={member.mail} member={member} />
+        ))}
+      </Grid>
+    </Section>
+  </Fade>
 )
 
 export default Members

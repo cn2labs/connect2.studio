@@ -70,7 +70,7 @@ const TeamPage = () => {
         linkText={page.heroFields.heroCtaLabel}
       />
       <MembersBlock members={page.team_teamFields.members} />
-      <StatsBlock />
+      <StatsBlock members={page.team_teamFields.members.length} />
     </Layout>
   )
 }

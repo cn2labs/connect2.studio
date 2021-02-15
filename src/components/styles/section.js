@@ -4,6 +4,7 @@ import Container from "./container"
 
 const SectionStyles = styled.section`
   padding: 12rem 0;
+  ${props => props.smallPaddingTop && "padding-top: 6rem;"}
   position: relative;
 
   &:last-child {
@@ -45,9 +46,14 @@ const Aside = styled.aside`
   }
 `
 
-export default function Section({ children, aside, headline }) {
+export default function Section({
+  children,
+  aside,
+  headline,
+  smallPaddingTop,
+}) {
   return (
-    <SectionStyles>
+    <SectionStyles smallPaddingTop={smallPaddingTop}>
       {aside && <Aside>{aside}</Aside>}
       <Container>
         {headline && <h4 className="size-h3">{headline}</h4>}

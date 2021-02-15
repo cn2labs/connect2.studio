@@ -29,7 +29,7 @@ const RequestButton = styled.button`
 const SendARequest = () => (
   <Fade>
     <Section>
-      <Grid repeatCols="3" gap="100" align="flex-start">
+      <Grid cols="3" gap="100" align="flex-start">
         <h4 className="size-h4">
           Überzeugt? Nice! Wir freuen uns auf deine Anfrage.<sup>*</sup>
         </h4>
