@@ -65,7 +65,7 @@ const Service = ({ text, imgSrc, imgAlt }) => (
         <Services>
           <ul>
             <li>
-              <Tagline>JAMStack &middot; PWA &middot; WordPress</Tagline>
+              <Tagline>JAMStack &middot; Web Apps &middot; WordPress</Tagline>
               <Link to="/service/entwicklung">
                 <Outline as="h2">
                   <span>Entwicklung &rarr;</span>
