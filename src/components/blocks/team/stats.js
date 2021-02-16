@@ -6,26 +6,26 @@ import Outline from "../../ui/outline"
 import Grid from "../../styles/grid"
 
 const Stats = ({ members }) => {
-  const [commits, setCommits] = useState(0)
+  // const [commits, setCommits] = useState(0)
 
-  // Get all public repos on page load
-  useEffect(() => {
-    const commitsPerRepo = 30
+  // // Get all public repos on page load
+  // useEffect(() => {
+  //   const commitsPerRepo = 30
 
-    const fetchRepos = async () => {
-      try {
-        const res = await fetch("https://api.github.com/orgs/cn2labs/repos")
-        if (!res.ok) throw Error()
-        const repos = await res.json()
-        setCommits(repos.length * commitsPerRepo)
-      } catch (error) {
-        // Hard code a value if the API doesn't work or the rate limit hits
-        setCommits(142)
-      }
-    }
+  //   const fetchRepos = async () => {
+  //     try {
+  //       const res = await fetch("https://api.github.com/orgs/cn2labs/repos")
+  //       if (!res.ok) throw Error()
+  //       const repos = await res.json()
+  //       setCommits(repos.length * commitsPerRepo)
+  //     } catch (error) {
+  //       // Hard code a value if the API doesn't work or the rate limit hits
+  //       setCommits(142)
+  //     }
+  //   }
 
-    fetchRepos()
-  }, [])
+  //   fetchRepos()
+  // }, [])
 
   return (
     <Fade delay={200}>
@@ -38,7 +38,7 @@ const Stats = ({ members }) => {
             <span>{members} Mitglieder</span>
           </Outline>
           <Outline>
-            <span>{commits} Commits</span>
+            <span>1337 Commits</span>
           </Outline>
         </Grid>
       </Section>

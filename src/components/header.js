@@ -131,11 +131,6 @@ const Header = () => (
               </Link>
             </li>
             <li>
-              <Link activeClassName="active" to="/blog">
-                Blog
-              </Link>
-            </li>
-            <li>
               <Link activeClassName="active" to="/kontakt">
                 Kontakt
               </Link>
