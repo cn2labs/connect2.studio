@@ -12,6 +12,7 @@ const MemberStyles = styled.div`
   }
 
   .member--position {
+    color: #fff;
     display: block;
     font-family: var(--headline-font);
     line-height: 1.4;
@@ -20,10 +21,6 @@ const MemberStyles = styled.div`
 
   img {
     filter: grayscale(100%);
-
-    &:hover {
-      filter: grayscale(0%);
-    }
   }
 `
 

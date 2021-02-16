@@ -32,7 +32,7 @@ const StyledBackground = styled(BackgroundImage)`
   display: grid;
   place-items: center;
 
-  :hover .is-outlined a {
+  :hover a {
     -webkit-text-stroke: 0 none;
     color: var(--mommys-blonde-boy);
     text-shadow: 0px 0px 20px rgb(255 255 255 / 50%);
@@ -46,7 +46,7 @@ const Team = ({ text, bg }) => (
       <TeamStyles>
         <StyledBackground Tag="div" fluid={bg}>
           <Outline as="h2" looksLike="h1">
-            <Link to="/team">Crew Love</Link>
+            <Link to="/team">Crewlove</Link>
           </Outline>
         </StyledBackground>
         <div className="ta-center">
