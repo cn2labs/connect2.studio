@@ -1,5 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import styled from "styled-components"
 import slugify from "slugify"
 import Fade from "react-reveal/Fade"
@@ -35,55 +35,50 @@ const ProjectCategories = styled.div`
   }
 `
 
-const makeUrl = title => slugify(title, { lower: true })
+const Project = ({ project }) => {
+  const detailsLink = slugify(project.title, { lower: true })
 
-const Project = ({ project }) => (
-  <ProjectStyles>
-    <Grid cols="2" gap="80">
-      <div>
-        <Outline>
-          {project.project_fields.link ? (
-            <a
-              href={project.project_fields.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Zur Website"
-            >
-              {project.title}
-            </a>
-          ) : (
-            <span>{project.title}</span>
-          )}
-        </Outline>
-        <ProjectText
-          dangerouslySetInnerHTML={{ __html: project.excerpt }}
-        ></ProjectText>
-        <ProjectCategories>
-          <p>
-            <strong>Das haben wir gemacht:</strong>
-            <br />
-            {project.project_fields.categories.map((category, index) => (
-              <span>
-                {category}
-                {index === project.project_fields.categories.length - 1
-                  ? "."
-                  : ","}{" "}
-              </span>
-            ))}
-          </p>
-        </ProjectCategories>
-        <CTA to={`/projekte/${makeUrl(project.title)}`}>Details</CTA>
-      </div>
-      {project.project_fields.images ? (
-        <Image
-          fluid
-          src={project.project_fields.images[0].localFile.childImageSharp.fluid}
-          alt={project.project_fields.images[0].altText}
-        />
-      ) : null}
-    </Grid>
-  </ProjectStyles>
-)
+  return (
+    <ProjectStyles>
+      <Fade>
+        <Grid cols="2" gap="80">
+          <div>
+            <Outline>
+              <Link to={detailsLink}>{project.title}</Link>
+            </Outline>
+            <ProjectText
+              dangerouslySetInnerHTML={{ __html: project.excerpt }}
+            ></ProjectText>
+            <ProjectCategories>
+              <p>
+                <strong>Das haben wir gemacht:</strong>
+                <br />
+                {project.project_fields.categories.map((category, index) => (
+                  <span>
+                    {category}
+                    {index === project.project_fields.categories.length - 1
+                      ? "."
+                      : ","}{" "}
+                  </span>
+                ))}
+              </p>
+            </ProjectCategories>
+            <CTA to={detailsLink}>Details</CTA>
+          </div>
+          {project.project_fields.images ? (
+            <Image
+              fluid
+              src={
+                project.project_fields.images[0].localFile.childImageSharp.fluid
+              }
+              alt={project.project_fields.images[0].altText}
+            />
+          ) : null}
+        </Grid>
+      </Fade>
+    </ProjectStyles>
+  )
+}
 
 const Projects = () => {
   // Get all projects from WordPress
@@ -119,13 +114,11 @@ const Projects = () => {
   const projects = data.allWpProject.nodes
 
   return (
-    <Fade>
-      <Section aside="Hall of fame">
-        {projects.map(project => (
-          <Project key={project.id} project={project} />
-        ))}
-      </Section>
-    </Fade>
+    <Section aside="Hall of fame">
+      {projects.map(project => (
+        <Project key={project.id} project={project} />
+      ))}
+    </Section>
   )
 }
 

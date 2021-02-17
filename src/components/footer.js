@@ -42,7 +42,7 @@ export default function Footer() {
   return (
     <FooterStyles>
       <GetInTouch className="ta-center">
-        <Outline as="h3">
+        <Outline align="center">
           <span>Get in touch</span>
         </Outline>
         <a href="mailto:hi@connect2.studio" title="Schreib uns ne Mail">

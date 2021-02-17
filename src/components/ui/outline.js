@@ -2,6 +2,8 @@ import React from "react"
 import styled from "styled-components"
 
 const OutlineStyles = styled.h3`
+  line-height: 1;
+
   span,
   a {
     color: transparent;
@@ -18,8 +20,8 @@ const OutlineStyles = styled.h3`
   }
 `
 
-const Outline = ({ children, as = "h3", looksLike = as }) => (
-  <OutlineStyles as={as} className={`size-${looksLike}`}>
+const Outline = ({ children, as = "h3", looksLike = as, align = "left" }) => (
+  <OutlineStyles as={as} className={`size-${looksLike} ta-${align}`}>
     {children}
   </OutlineStyles>
 )
