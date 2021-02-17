@@ -2,6 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import slugify from "slugify"
+import Fade from "react-reveal/Fade"
 
 import Section from "../styles/section"
 import Grid from "../styles/grid"
@@ -41,7 +42,18 @@ const Project = ({ project }) => (
     <Grid cols="2" gap="80">
       <div>
         <Outline>
-          <span>{project.title}</span>
+          {project.project_fields.link ? (
+            <a
+              href={project.project_fields.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Zur Website"
+            >
+              {project.title}
+            </a>
+          ) : (
+            <span>{project.title}</span>
+          )}
         </Outline>
         <ProjectText
           dangerouslySetInnerHTML={{ __html: project.excerpt }}
@@ -107,11 +119,13 @@ const Projects = () => {
   const projects = data.allWpProject.nodes
 
   return (
-    <Section aside="Hall of fame">
-      {projects.map(project => (
-        <Project key={project.id} project={project} />
-      ))}
-    </Section>
+    <Fade>
+      <Section aside="Hall of fame">
+        {projects.map(project => (
+          <Project key={project.id} project={project} />
+        ))}
+      </Section>
+    </Fade>
   )
 }
 
