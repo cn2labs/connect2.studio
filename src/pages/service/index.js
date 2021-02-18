@@ -6,7 +6,7 @@ import SEO from "../../components/seo"
 import Hero from "../../components/blocks/hero"
 import Section from "../../components/styles/section"
 
-import ServiceBlock from "../../components/blocks/service/serviceBlock"
+import ServiceBlock from "../../components/blocks/service/"
 import RequestBlock from "../../components/blocks/request"
 
 const ServicePage = () => {
