@@ -3,7 +3,7 @@
  */
 
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import styled from "styled-components"
 
 import Layout from "../components/layout"
@@ -87,6 +87,11 @@ const ProjectTemplate = ({ data, pageContext }) => {
               alt={img.altText}
             />
           ))}
+
+          {/* Back link */}
+          <p>
+            <Link to="/projekte">Zurück zur Übersicht</Link>
+          </p>
         </ProjectStyles>
       </Container>
     </Layout>
