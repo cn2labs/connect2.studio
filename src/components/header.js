@@ -82,6 +82,11 @@ const NavStyles = styled.nav`
       color: var(--lavender-soap);
     }
   }
+
+  li.cta-item {
+    color: var(--purple-haze);
+    margin-left: 2rem;
+  }
 `
 
 const Header = () => (
@@ -133,6 +138,11 @@ const Header = () => (
             <li>
               <Link activeClassName="active" to="/kontakt">
                 Kontakt
+              </Link>
+            </li>
+            <li className="cta-item">
+              <Link activeClassName="active" to="/anfrage">
+                Projektanfrage
               </Link>
             </li>
           </ul>

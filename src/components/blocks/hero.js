@@ -1,11 +1,12 @@
 import React from "react"
-import PropTypes from "prop-types"
 import styled from "styled-components"
+import Fade from "react-reveal/Fade"
 
 import CTA from "../ui/cta"
 import Container from "../styles/container"
 import Image from "../img"
 import Tagline from "../ui/tagline"
+import Outline from "../ui/outline"
 
 const HeroGrid = styled.div`
   display: grid;
@@ -59,12 +60,40 @@ export default function Hero({
   )
 }
 
-Hero.propTypes = {
-  tagline: PropTypes.string,
-  headline: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-  link: PropTypes.string,
-  linkText: PropTypes.string,
-  img: PropTypes.object,
-  imgAlt: PropTypes.string,
-}
+const LandingHeroSection = styled(HeroSection)`
+  ${Tagline} {
+    color: var(--purple-haze);
+    /* margin-bottom: 2rem; */
+  }
+
+  ${Text} {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3.5rem;
+  }
+`
+
+const HeadlineWrapper = styled.div`
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
+`
+
+export const LandingHero = ({ tagline, headline, text }) => (
+  <LandingHeroSection className="ta-center">
+    <Fade>
+      <Container>
+        <Tagline>{tagline}</Tagline>
+        <HeadlineWrapper>
+          <Outline as="h1" looksLike="h2" align="center">
+            <span>{headline}</span>
+          </Outline>
+        </HeadlineWrapper>
+        <Text
+          dangerouslySetInnerHTML={{ __html: text }}
+          className="ta-center"
+        ></Text>
+      </Container>
+    </Fade>
+  </LandingHeroSection>
+)
