@@ -10,8 +10,16 @@ import Outline from "../ui/outline"
 
 const HeroGrid = styled.div`
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  grid-column-gap: 100px;
+  grid-template-columns: 1fr;
+  grid-row-gap: 100px;
+
+  /* Width in PX > 1200px */
+  /* ==== = LARGE = ==== */
+  @media only screen and (min-width: 75em) {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    grid-column-gap: 100px;
+  }
 `
 
 const HeroSection = styled.section`
@@ -19,8 +27,13 @@ const HeroSection = styled.section`
 `
 
 const Headline = styled.h1`
-  font-size: 6rem;
+  font-size: 4rem;
   text-shadow: 0px 0px 14px rgb(255 255 255 / 50%);
+  /* Width in PX > 1200px */
+  /* ==== = LARGE = ==== */
+  @media only screen and (min-width: 75em) {
+    font-size: 6rem;
+  }
 `
 
 const Text = styled.div`

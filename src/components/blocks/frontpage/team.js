@@ -22,13 +22,21 @@ const TeamStyles = styled.div`
   }
 
   h2 {
-    font-size: 10rem;
+    font-size: 4rem;
+  }
+
+  /* Width in PX > 1200px */
+  /* ==== = LARGE = ==== */
+  @media only screen and (min-width: 75em) {
+    h2 {
+      font-size: 10rem;
+    }
   }
 `
 
 const StyledBackground = styled(BackgroundImage)`
   background-size: cover;
-  height: 72rem;
+  height: 30rem;
   display: grid;
   place-items: center;
 
@@ -36,6 +44,11 @@ const StyledBackground = styled(BackgroundImage)`
     -webkit-text-stroke: 0 none;
     color: var(--mommys-blonde-boy);
     text-shadow: 0px 0px 20px rgb(255 255 255 / 50%);
+  }
+  /* Width in PX > 1200px */
+  /* ==== = LARGE = ==== */
+  @media only screen and (min-width: 75em) {
+    height: 72rem;
   }
 `
 

@@ -28,8 +28,15 @@ const Services = styled.div`
 
 const ServicesGrid = styled.div`
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  grid-column-gap: 100px;
+  grid-template-columns: 1fr;
+  grid-row-gap: 100px;
+  /* Width in PX > 1200px */
+  /* ==== = LARGE = ==== */
+  @media only screen and (min-width: 75em) {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    grid-column-gap: 100px;
+  }
 `
 
 const Tagline = styled.h3`

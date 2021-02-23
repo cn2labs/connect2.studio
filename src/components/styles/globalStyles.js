@@ -28,6 +28,7 @@ const GlobalStyles = createGlobalStyle`
     --candy-strawberrys: #db504a;
     --lavender-soap: #9c82e3;
     --purple-haze: #817ff9;
+    --darker-than-ya-coffee: #0C0C0D;
 
     --headline-font: 'Neue Metana', sans-serif;
     --body-font: 'IBM Plex Sans', sans-serif;
@@ -68,7 +69,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   img {
-    max-width: 100%;
+    width: 100%;
   }
 
   a {
@@ -131,6 +132,29 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .size-h2 {
+    font-size: 4rem;
+  }
+
+  .size-h3 {
+    font-size: 4.4rem;
+  }
+
+  .size-h4 {
+    font-size: 3.2rem;
+  }
+
+  .size-h5 {
+    font-size: 2.6rem;
+  }
+
+  /* Width in PX > 1200px */
+/* ==== = LARGE = ==== */
+@media only screen and (min-width: 75em) {
+  .size-h1 {
+    font-size: 7rem;
+  }
+
+  .size-h2 {
     font-size: 6rem;
   }
 
@@ -145,6 +169,9 @@ const GlobalStyles = createGlobalStyle`
   .size-h5 {
     font-size: 2.6rem;
   }
+}
+
+  
 
   /* GRAIN */
   .grain {

@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Img from "gatsby-image"
+import styled from "styled-components"
 
 const Image = ({ fluid, fixed, src, ...props }) => {
   if (fluid && fixed) {

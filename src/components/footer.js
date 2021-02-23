@@ -13,6 +13,7 @@ const FooterStyles = styled.footer`
   text-align: center;
   margin-top: 8rem;
   padding: 3rem 0;
+  background-color: var(--darker-than-ya-coffee);
 
   ${Container} > * {
     flex: 1;

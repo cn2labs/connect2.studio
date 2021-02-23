@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
@@ -24,132 +24,203 @@ const LogoStyles = styled.img`
 `
 
 const NavStyles = styled.nav`
-  --submenu-distance: 0.4rem;
+  display: none;
+  /* Width in PX > 1200px */
+  /* ==== = LARGE = ==== */
+  @media only screen and (min-width: 75em) {
+    --submenu-distance: 0.4rem;
 
-  color: var(--almost-white);
-  font-family: var(--headline-font);
-  font-size: 1.5rem;
-
-  a {
-    transition: color 0.1s ease;
-  }
-
-  a.active,
-  a:hover {
-    color: var(--candy-strawberrys);
-  }
-
-  ul li {
+    color: var(--almost-white);
+    font-family: var(--headline-font);
+    font-size: 1.5rem;
     display: block;
-    position: relative;
 
-    :not(:last-child) {
-      margin-right: 2rem;
+    a {
+      transition: color 0.1s ease;
     }
 
-    &.has-submenu {
-      padding: var(--submenu-distance) 0;
-    }
-  }
-
-  ul li > ul {
-    font-size: 1.4rem;
-    left: 0;
-    position: absolute;
-    margin-top: var(--submenu-distance);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(5px);
-    transition: all 0.2s ease;
-  }
-
-  ul li:hover > ul {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
-
-  ul li ul li {
-    margin: 0.8rem 0;
-    width: 100%;
-    transition: opacity 0.2s ease;
-
-    :not(:last-child) {
-      margin-right: 2rem;
-    }
-
+    a.active,
     a:hover {
-      color: var(--lavender-soap);
+      color: var(--candy-strawberrys);
     }
-  }
 
-  li.cta-item {
-    color: var(--purple-haze);
-    margin-left: 2rem;
+    ul li {
+      display: block;
+      position: relative;
+
+      :not(:last-child) {
+        margin-right: 2rem;
+      }
+
+      &.has-submenu {
+        padding: var(--submenu-distance) 0;
+      }
+    }
+
+    ul li > ul {
+      font-size: 1.4rem;
+      left: 0;
+      position: absolute;
+      margin-top: var(--submenu-distance);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(5px);
+      transition: all 0.2s ease;
+    }
+
+    ul li:hover > ul {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    ul li ul li {
+      margin: 0.8rem 0;
+      width: 100%;
+      transition: opacity 0.2s ease;
+
+      :not(:last-child) {
+        margin-right: 2rem;
+      }
+
+      a:hover {
+        color: var(--lavender-soap);
+      }
+    }
+
+    li.cta-item {
+      color: var(--purple-haze);
+      margin-left: 2rem;
+    }
   }
 `
 
-const Header = () => (
-  <HeaderStyles>
-    <Container>
-      <div className="flex flex--between">
-        <Link to="/">
-          <LogoStyles src={logo} alt="connect2 studio Logo" height="64" />
-        </Link>
-        <NavStyles>
-          <ul className="flex flex--between">
-            <li>
-              <Link to="/" activeClassName="active">
-                Home
-              </Link>
-            </li>
-            <li className="has-submenu">
-              <Link activeClassName="active" to="/service">
-                Service
-              </Link>
-              <ul>
+const MobileMenu = styled.div`
+  display: none;
+`
+
+const Header = () => {
+  const [showMenu, setshowMenu] = useState(false)
+  const menuActive = () => {
+    setshowMenu(!showMenu)
+    const body = document.querySelector("body")
+    body.classList.toggle("no-scroll")
+  }
+  return (
+    <HeaderStyles>
+      <Container>
+        <div className="flex flex--between">
+          <Link to="/">
+            <LogoStyles src={logo} alt="connect2 studio Logo" height="64" />
+          </Link>
+          {showMenu && (
+            <MobileMenu onClick={menuActive}>
+              <ul className="flex flex--between">
                 <li>
-                  <Link activeClassName="active" to="/service/entwicklung">
-                    Entwicklung
+                  <Link to="/" activeClassName="active">
+                    Home
+                  </Link>
+                </li>
+                <li className="has-submenu">
+                  <Link activeClassName="active" to="/service">
+                    Service
+                  </Link>
+                  <ul>
+                    <li>
+                      <Link activeClassName="active" to="/service/entwicklung">
+                        Entwicklung
+                      </Link>
+                    </li>
+                    <li>
+                      <Link activeClassName="active" to="/service/design">
+                        Design
+                      </Link>
+                    </li>
+                    <li>
+                      <Link activeClassName="active" to="/service/beratung">
+                        Beratung
+                      </Link>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <Link activeClassName="active" to="/team">
+                    Team
                   </Link>
                 </li>
                 <li>
-                  <Link activeClassName="active" to="/service/design">
-                    Design
+                  <Link activeClassName="active" to="/projekte">
+                    Projekte
                   </Link>
                 </li>
                 <li>
-                  <Link activeClassName="active" to="/service/beratung">
-                    Beratung
+                  <Link activeClassName="active" to="/kontakt">
+                    Kontakt
+                  </Link>
+                </li>
+                <li className="cta-item">
+                  <Link activeClassName="active" to="/anfrage">
+                    Projektanfrage
                   </Link>
                 </li>
               </ul>
-            </li>
-            <li>
-              <Link activeClassName="active" to="/team">
-                Team
-              </Link>
-            </li>
-            <li>
-              <Link activeClassName="active" to="/projekte">
-                Projekte
-              </Link>
-            </li>
-            <li>
-              <Link activeClassName="active" to="/kontakt">
-                Kontakt
-              </Link>
-            </li>
-            <li className="cta-item">
-              <Link activeClassName="active" to="/anfrage">
-                Projektanfrage
-              </Link>
-            </li>
-          </ul>
-        </NavStyles>
-      </div>
-    </Container>
-  </HeaderStyles>
-)
+            </MobileMenu>
+          )}
+          <NavStyles>
+            <ul className="flex flex--between">
+              <li>
+                <Link to="/" activeClassName="active">
+                  Home
+                </Link>
+              </li>
+              <li className="has-submenu">
+                <Link activeClassName="active" to="/service">
+                  Service
+                </Link>
+                <ul>
+                  <li>
+                    <Link activeClassName="active" to="/service/entwicklung">
+                      Entwicklung
+                    </Link>
+                  </li>
+                  <li>
+                    <Link activeClassName="active" to="/service/design">
+                      Design
+                    </Link>
+                  </li>
+                  <li>
+                    <Link activeClassName="active" to="/service/beratung">
+                      Beratung
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <Link activeClassName="active" to="/team">
+                  Team
+                </Link>
+              </li>
+              <li>
+                <Link activeClassName="active" to="/projekte">
+                  Projekte
+                </Link>
+              </li>
+              <li>
+                <Link activeClassName="active" to="/kontakt">
+                  Kontakt
+                </Link>
+              </li>
+              <li className="cta-item">
+                <Link activeClassName="active" to="/anfrage">
+                  Projektanfrage
+                </Link>
+              </li>
+            </ul>
+          </NavStyles>
+        </div>
+      </Container>
+    </HeaderStyles>
+  )
+}
 
 export default Header
