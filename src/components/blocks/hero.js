@@ -23,7 +23,12 @@ const HeroGrid = styled.div`
 `
 
 const HeroSection = styled.section`
-  margin-bottom: 15rem;
+  margin-bottom: 8rem;
+  /* Width in PX > 1200px */
+  /* ==== = LARGE = ==== */
+  @media only screen and (min-width: 75em) {
+    margin-bottom: 15rem;
+  }
 `
 
 const Headline = styled.h1`

@@ -19,6 +19,7 @@ const RequestButton = styled.button`
   padding: 20px 10px;
   transition: background-color 0.1s ease-in, color 0.1s ease-in;
   width: 100%;
+  max-width: 300px;
 
   &:hover {
     background-color: var(--color);
@@ -29,20 +30,22 @@ const RequestButton = styled.button`
 const SendARequest = () => (
   <Fade>
     <Section smallPaddingTop>
-      <Grid cols="3" gap="100" align="flex-start">
-        <h4 className="size-h4">
-          Überzeugt? Nice! Wir freuen uns auf deine Anfrage.<sup>*</sup>
-        </h4>
-        <p>
-          <strong>
-            <sup>*</sup>Du kannst uns anrufen, uns eine Mail schreiben, oder
-            unseren Anfrage-Konfigurator ausfüllen.
-          </strong>
-        </p>
+      <div className="grid col-1 bg-col-2">
+        <div>
+          <h4 className="size-h4">
+            Überzeugt? Nice! Wir freuen uns auf deine Anfrage.<sup>*</sup>
+          </h4>
+          <p>
+            <strong>
+              <sup>*</sup>Du kannst uns anrufen, uns eine Mail schreiben, oder
+              unseren Anfrage-Konfigurator ausfüllen.
+            </strong>
+          </p>
+        </div>
         <Link to="/anfrage">
           <RequestButton>Jetzt anfragen</RequestButton>
         </Link>
-      </Grid>
+      </div>
     </Section>
   </Fade>
 )

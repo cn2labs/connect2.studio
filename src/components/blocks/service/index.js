@@ -28,7 +28,7 @@ const Keywords = styled.div`
 
 const ServiceBlock = ({ tagline, title, keywords, link }) => (
   <BlockStyles>
-    <Grid cols="2" gap="0">
+    <div className="grid col-1 bg-col-2">
       <Department>
         <Tagline>&ndash; {tagline}</Tagline>
         <h3 className="size-h5">{title}</h3>
@@ -42,7 +42,7 @@ const ServiceBlock = ({ tagline, title, keywords, link }) => (
             ))}
         </Grid>
       </Keywords>
-    </Grid>
+    </div>
   </BlockStyles>
 )
 

@@ -3,12 +3,17 @@ import styled from "styled-components"
 import Container from "./container"
 
 const SectionStyles = styled.section`
-  padding: 12rem 0;
+  padding: 8rem 0;
   ${props => props.smallPaddingTop && "padding-top: 6rem;"}
   position: relative;
 
   &:last-child {
     padding-bottom: 6rem;
+  }
+  /* Width in PX > 1200px */
+  /* ==== = LARGE = ==== */
+  @media only screen and (min-width: 75em) {
+    padding: 12rem 0;
   }
 `
 
