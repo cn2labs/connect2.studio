@@ -8,7 +8,7 @@ import "@fontsource/ibm-plex-sans"
 import "@fontsource/ibm-plex-sans/500.css"
 
 const GlobalStyles = createGlobalStyle`
-  /* FONTS */
+  /*************************************+++++**++++++****************  FONTS */
   @font-face {
     font-family: 'Neue Metana';
     src: url(${NeueMetanaWoff2}) format('woff2'),
@@ -18,7 +18,7 @@ const GlobalStyles = createGlobalStyle`
     font-display: swap;
   }
 
-  /* VARIABLES */
+  /**************************************************************** VARIABLES */
   :root {
     --body-bg: #101010;
     --almost-white: #e2e2e2;
@@ -36,7 +36,7 @@ const GlobalStyles = createGlobalStyle`
     --side-notice-distance: 5%;
   }
 
-  /* BASIC STYLES */
+  /*******************************************************************  BASIC STYLES */
   * {
     box-sizing: border-box;
     margin: 0;
@@ -100,7 +100,7 @@ const GlobalStyles = createGlobalStyle`
     list-style: none;
   }
 
-  /* UTLITY CLASSES */
+  /********************************************************* UTILITY CLASSES */
   .flex {
     display: flex;
     align-items: center;
@@ -126,7 +126,7 @@ const GlobalStyles = createGlobalStyle`
     margin-bottom: 8rem;
   }
 
-  /* TYPOGRAPHY */
+  /**********************************************++++++++++ TYPOGRAPHY */
   .size-h1 {
     font-size: 7rem;
   }
@@ -136,7 +136,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .size-h3 {
-    font-size: 4.4rem;
+    font-size: 3.8rem;
   }
 
   .size-h4 {
@@ -173,7 +173,7 @@ const GlobalStyles = createGlobalStyle`
 
   
 
-  /* GRAIN */
+  /********************************************************** GRAIN */
   .grain {
     animation: grain 6s steps(10) infinite;
     background-image: url(${grainBg});

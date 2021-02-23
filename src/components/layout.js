@@ -4,6 +4,7 @@ import styled from "styled-components"
 import Fade from "react-reveal/Fade"
 
 import GlobalStyles from "./styles/globalStyles"
+import "./styles/klaus-gridski.css"
 import Header from "./header"
 import Footer from "./footer"
 

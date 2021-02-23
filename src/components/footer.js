@@ -50,7 +50,18 @@ export default function Footer() {
           hi@connect2.studio
         </a>
       </GetInTouch>
-      <Container className="flex flex--between">
+      <Container className="flex between l-disappear">
+        <div className="ta-left">
+          <Link to="/impressum">Impressum</Link>
+        </div>
+        <div className="ta-center">
+          <img src={logo} alt="connect2 studio Logo" height="48" />
+        </div>
+        <div className="ta-right">
+          <Link to="/datenschutz">Datenschutz</Link>
+        </div>
+      </Container>
+      <Container className="disappear l-flex-appear between">
         <div className="ta-left">
           <Link to="/impressum">Impressum</Link>
           <Link to="/datenschutz">Datenschutz</Link>
