@@ -3,22 +3,21 @@ import Fade from "react-reveal/Fade"
 
 import Section from "../../styles/section"
 import Outline from "../../ui/outline"
-import Grid from "../../styles/grid"
 
 const Stats = ({ members }) => (
   <Fade delay={200}>
     <Section>
-      <Grid cols="3">
-        <Outline as="h4" looksLike="h3">
+      <div className="grid col-1 md-col-2 l-col-3 gap-4">
+        <Outline as="h4" looksLike="h4">
           <span>1 Team</span>
         </Outline>
-        <Outline as="h4" looksLike="h3">
+        <Outline as="h4" looksLike="h4">
           <span>{members} Mitglieder</span>
         </Outline>
-        <Outline as="h4" looksLike="h3">
+        <Outline as="h4" looksLike="h4">
           <span>1337 Commits</span>
         </Outline>
-      </Grid>
+      </div>
     </Section>
   </Fade>
 )

@@ -37,9 +37,9 @@ const SendARequest = () => (
     <Section smallPaddingTop>
       <div className="flex vertical v-start md-grid-appear md-col-2 md-gap-7">
         <div>
-          <h4 className="size-h4">
+          <h3 className="size-h4">
             Überzeugt? Nice! Wir freuen uns auf deine Anfrage.<sup>*</sup>
-          </h4>
+          </h3>
           <p>
             <strong>
               <sup>*</sup>Du kannst uns anrufen, uns eine Mail schreiben, oder
