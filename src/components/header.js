@@ -96,11 +96,50 @@ const NavStyles = styled.nav`
 `
 
 const MobileMenu = styled.div`
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--darker-than-ya-coffee);
+  height: 100vh;
+  width: 100%;
+  padding: 30% 10% 20% 10%;
+  div {
+    width: 100%;
+    margin-top: 3rem;
+    img {
+      animation: rotation 25s infinite linear;
+      @keyframes rotation {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(359deg);
+        }
+      }
+    }
+  }
+`
+
+const MobileMenuList = styled.ul`
+  font-family: var(--headline-font);
+  list-style: none;
+  li {
+    padding: 0.8rem 0;
+  }
+  > li:last-child {
+    color: var(--lavender-soap);
+  }
+  ul {
+    list-style: none;
+    transform: translateX(12px);
+    padding-top: 0.8rem;
+    color: var(--nets-court);
+  }
 `
 
 const Header = () => {
   const [showMenu, setshowMenu] = useState(false)
+
   const menuActive = () => {
     setshowMenu(!showMenu)
     const body = document.querySelector("body")
@@ -113,9 +152,24 @@ const Header = () => {
           <Link to="/">
             <LogoStyles src={logo} alt="connect2 studio Logo" height="64" />
           </Link>
+          <div className="l-disappear">
+            {" "}
+            <button
+              className={` hamburger hamburger--minus ${
+                showMenu ? "is-active" : null
+              }`}
+              onClick={menuActive}
+              type="button"
+            >
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+            </button>
+          </div>
+
           {showMenu && (
-            <MobileMenu onClick={menuActive}>
-              <ul className="flex flex--between">
+            <MobileMenu className="flex vertical between v-start">
+              <MobileMenuList className="flex vertical v-start">
                 <li>
                   <Link to="/" activeClassName="active">
                     Home
@@ -163,7 +217,10 @@ const Header = () => {
                     Projektanfrage
                   </Link>
                 </li>
-              </ul>
+              </MobileMenuList>
+              <div className="flex v-center h-center">
+                <img src={logo} alt="connect2 studio Logo" height="64" />
+              </div>
             </MobileMenu>
           )}
           <NavStyles>
