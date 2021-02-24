@@ -3,7 +3,6 @@ import styled from "styled-components"
 
 import CTA from "../../ui/cta"
 import Tagline from "../../ui/tagline"
-import Grid from "../../styles/grid"
 
 const BlockStyles = styled.div`
   margin: 10rem 0;
@@ -19,28 +18,32 @@ const Department = styled.div`
 
 const Keywords = styled.div`
   font-weight: 500;
-
+  column-gap: 20px;
+  margin-top: 4rem;
   span {
     line-height: 1.55em;
     margin-bottom: 15px;
+  }
+  /* Width in PX > 768px */
+  /* ==== = MEDIUM = ==== */
+  @media only screen and (min-width: 48em) {
+    column-gap: 20px;
   }
 `
 
 const ServiceBlock = ({ tagline, title, keywords, link }) => (
   <BlockStyles>
-    <div className="grid col-1 bg-col-2">
+    <div className="bg-grid-appear bg-col-2">
       <Department>
         <Tagline>&ndash; {tagline}</Tagline>
         <h3 className="size-h5">{title}</h3>
         <CTA to={`/service${link}`}>Mehr dazu</CTA>
       </Department>
-      <Keywords>
-        <Grid cols="2" gap="15">
-          {keywords &&
-            keywords.map(keyword => (
-              <span key={keyword.title}>{keyword.title}</span>
-            ))}
-        </Grid>
+      <Keywords className="grid col-2">
+        {keywords &&
+          keywords.map(keyword => (
+            <span key={keyword.title}>{keyword.title}</span>
+          ))}
       </Keywords>
     </div>
   </BlockStyles>

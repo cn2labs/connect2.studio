@@ -4,7 +4,6 @@ import { Link } from "gatsby"
 import Fade from "react-reveal/Fade"
 
 import Section from "../styles/section"
-import Grid from "../styles/grid"
 
 const RequestButton = styled.button`
   --color: var(--lavender-soap);
@@ -25,12 +24,18 @@ const RequestButton = styled.button`
     background-color: var(--color);
     color: #fff;
   }
+  margin-top: 3rem;
+  /* Width in PX > 768px */
+  /* ==== = MEDIUM = ==== */
+  @media only screen and (min-width: 48em) {
+    margin-top: 0;
+  }
 `
 
 const SendARequest = () => (
   <Fade>
     <Section smallPaddingTop>
-      <div className="grid col-1 bg-col-2">
+      <div className="flex vertical v-start md-grid-appear md-col-2 md-gap-7">
         <div>
           <h4 className="size-h4">
             Überzeugt? Nice! Wir freuen uns auf deine Anfrage.<sup>*</sup>

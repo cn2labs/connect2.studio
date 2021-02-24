@@ -155,10 +155,10 @@ const Header = () => {
           <div className="l-disappear">
             {" "}
             <button
+              onClick={menuActive}
               className={` hamburger hamburger--minus ${
                 showMenu ? "is-active" : null
               }`}
-              onClick={menuActive}
               type="button"
             >
               <span class="hamburger-box">
@@ -169,7 +169,7 @@ const Header = () => {
 
           {showMenu && (
             <MobileMenu className="flex vertical between v-start">
-              <MobileMenuList className="flex vertical v-start">
+              <MobileMenuList className="menu-list flex vertical v-start">
                 <li>
                   <Link to="/" activeClassName="active">
                     Home
