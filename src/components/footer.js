@@ -39,6 +39,18 @@ const GetInTouch = styled.div`
   }
 `
 
+const Studio = styled.img`
+  animation: rotation 25s infinite linear;
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+`
+
 export default function Footer() {
   return (
     <FooterStyles>
@@ -55,7 +67,7 @@ export default function Footer() {
           <Link to="/impressum">Impressum</Link>
         </div>
         <div className="ta-center">
-          <img src={logo} alt="connect2 studio Logo" height="48" />
+          <Studio src={logo} alt="connect2 studio Logo" height="48" />
         </div>
         <div className="ta-right">
           <Link to="/datenschutz">Datenschutz</Link>
@@ -67,7 +79,7 @@ export default function Footer() {
           <Link to="/datenschutz">Datenschutz</Link>
         </div>
         <div className="ta-center">
-          <img src={logo} alt="connect2 studio Logo" height="48" />
+          <Studio src={logo} alt="connect2 studio Logo" height="48" />
         </div>
         <div className="ta-right">
           Gebaut mit Gatsby, Liebe und viiiel Mio Mio Mate. Peace{" "}

@@ -25,9 +25,10 @@ const LogoStyles = styled.img`
 
 const NavStyles = styled.nav`
   display: none;
-  /* Width in PX > 1200px */
-  /* ==== = LARGE = ==== */
-  @media only screen and (min-width: 75em) {
+
+  /* Width in PX > 920px */
+  /* ==== = BIG = ==== */
+  @media only screen and (min-width: 62em) {
     --submenu-distance: 0.4rem;
 
     color: var(--almost-white);
@@ -99,7 +100,8 @@ const MobileMenu = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  background-color: var(--darker-than-ya-coffee);
+  z-index: 5;
+  background-color: var(--black-carbon);
   height: 100vh;
   width: 100%;
   padding: 30% 10% 20% 10%;
@@ -137,6 +139,18 @@ const MobileMenuList = styled.ul`
   }
 `
 
+export const MenuItem = ({ link, children }) => {
+  const enableScroll = () => {
+    const body = document.querySelector("body")
+    body.classList.remove("no-scroll")
+  }
+  return (
+    <Link onClick={enableScroll} to={link} activeClassName="active">
+      {children}
+    </Link>
+  )
+}
+
 const Header = () => {
   const [showMenu, setshowMenu] = useState(false)
 
@@ -152,7 +166,7 @@ const Header = () => {
           <Link to="/">
             <LogoStyles src={logo} alt="connect2 studio Logo" height="64" />
           </Link>
-          <div className="l-disappear">
+          <div className="bg-disappear">
             {" "}
             <button
               onClick={menuActive}
@@ -171,51 +185,57 @@ const Header = () => {
             <MobileMenu className="flex vertical between v-start">
               <MobileMenuList className="menu-list flex vertical v-start">
                 <li>
-                  <Link to="/" activeClassName="active">
+                  <MenuItem link="/" activeClassName="active">
                     Home
-                  </Link>
+                  </MenuItem>
                 </li>
                 <li className="has-submenu">
-                  <Link activeClassName="active" to="/service">
+                  <MenuItem activeClassName="active" link="/service">
                     Service
-                  </Link>
+                  </MenuItem>
                   <ul>
                     <li>
-                      <Link activeClassName="active" to="/service/entwicklung">
+                      <MenuItem
+                        activeClassName="active"
+                        link="/service/entwicklung"
+                      >
                         Entwicklung
-                      </Link>
+                      </MenuItem>
                     </li>
                     <li>
-                      <Link activeClassName="active" to="/service/design">
+                      <MenuItem activeClassName="active" link="/service/design">
                         Design
-                      </Link>
+                      </MenuItem>
                     </li>
                     <li>
-                      <Link activeClassName="active" to="/service/beratung">
+                      <MenuItem
+                        activeClassName="active"
+                        link="/service/beratung"
+                      >
                         Beratung
-                      </Link>
+                      </MenuItem>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <Link activeClassName="active" to="/team">
+                  <MenuItem activeClassName="active" link="/team">
                     Team
-                  </Link>
+                  </MenuItem>
                 </li>
                 <li>
-                  <Link activeClassName="active" to="/projekte">
+                  <MenuItem activeClassName="active" link="/projekte">
                     Projekte
-                  </Link>
+                  </MenuItem>
                 </li>
                 <li>
-                  <Link activeClassName="active" to="/kontakt">
+                  <MenuItem activeClassName="active" link="/kontakt">
                     Kontakt
-                  </Link>
+                  </MenuItem>
                 </li>
                 <li className="cta-item">
-                  <Link activeClassName="active" to="/anfrage">
+                  <MenuItem activeClassName="active" link="/anfrage">
                     Projektanfrage
-                  </Link>
+                  </MenuItem>
                 </li>
               </MobileMenuList>
               <div className="flex v-center h-center">

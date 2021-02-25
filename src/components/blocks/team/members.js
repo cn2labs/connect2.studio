@@ -50,7 +50,7 @@ const Member = ({ member }) => (
 const Members = ({ members }) => (
   <Fade delay={200}>
     <Section smallPaddingTop aside="Behind the scenes">
-      <div className="grid col-1 md-col-2  l-col-4 l-gap-5">
+      <div className="grid col-1 gap-7 md-col-2  l-col-4 l-gap-5">
         {members.map(member => (
           <Member key={member.mail} member={member} />
         ))}
