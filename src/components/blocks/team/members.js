@@ -25,6 +25,7 @@ const MemberStyles = styled.div`
   .member-img {
     width: 100%;
     max-width: 300px;
+    min-height: 300px;
   }
 `
 

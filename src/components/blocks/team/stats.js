@@ -7,7 +7,7 @@ import Outline from "../../ui/outline"
 const Stats = ({ members }) => (
   <Fade delay={200}>
     <Section>
-      <div className="grid col-1 md-col-2 l-col-3 gap-4">
+      <div className="xs-grid-appear col-1 gap-3 md-flex-appear between">
         <Outline as="h4" looksLike="h4">
           <span>1 Team</span>
         </Outline>

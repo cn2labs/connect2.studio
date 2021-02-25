@@ -185,7 +185,7 @@ const Header = () => {
           </div>
 
           {showMenu && (
-            <MobileMenu className="flex vertical between v-start">
+            <MobileMenu className="flex vertical between v-start bg-disappear">
               <MobileMenuList className="menu-list flex vertical v-start">
                 <li>
                   <MenuItem link="/" activeClassName="active">
