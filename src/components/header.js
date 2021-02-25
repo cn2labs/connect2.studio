@@ -105,6 +105,9 @@ const MobileMenu = styled.div`
   height: 100vh;
   width: 100%;
   padding: 30% 10% 20% 10%;
+  a.active {
+    color: var(--candy-strawberrys);
+  }
   div {
     width: 100%;
     margin-top: 3rem;
