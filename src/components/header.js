@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
+import { ThemeToggler } from "gatsby-plugin-dark-mode"
 
 import logo from "../assets/images/logo_white.svg"
 import Container from "./styles/container"
@@ -30,7 +31,6 @@ const NavStyles = styled.nav`
   /* ==== = BIG = ==== */
   @media only screen and (min-width: 62em) {
     --submenu-distance: 0.4rem;
-
     color: var(--almost-white);
     font-family: var(--headline-font);
     font-size: 1.5rem;
@@ -164,6 +164,18 @@ const Header = () => {
   }
   return (
     <HeaderStyles>
+      <ThemeToggler>
+        {({ theme, toggleTheme }) => (
+          <label>
+            <input
+              type="checkbox"
+              onChange={e => toggleTheme(e.target.checked ? "dark" : "light")}
+              checked={theme === "dark"}
+            />{" "}
+            Dark mode
+          </label>
+        )}
+      </ThemeToggler>
       <Container>
         <div className="flex flex--between">
           <Link to="/">

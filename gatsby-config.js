@@ -8,6 +8,7 @@ require("dotenv").config({
 module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-dark-mode`,
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,

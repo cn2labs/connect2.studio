@@ -30,6 +30,15 @@ const GlobalStyles = createGlobalStyle`
     --purple-haze: #817ff9;
     --darker-than-ya-coffee: #0C0C0D;
 
+    /*******************************+******+++Lightmode */
+    body.light{
+      --body-bg: #f4f4f4;
+      --almost-white: #191918;
+      --mommys-blonde-boy: #E0BC80;
+      --candy-strawberrys: #C05746;
+      --darker-than-ya-coffee: #1D1F20;
+    }
+
     --headline-font: 'Neue Metana', sans-serif;
     --body-font: 'IBM Plex Sans', sans-serif;
 
@@ -62,6 +71,8 @@ const GlobalStyles = createGlobalStyle`
     min-height: 100vh;
   }
 
+ 
+
   body.no-scroll {
     height: 100vh;
     overflow:hidden;
@@ -72,6 +83,8 @@ const GlobalStyles = createGlobalStyle`
     font-family: var(--headline-font);
     line-height: 1.2;
   }
+
+ 
 
   img {
     width: 100%;
@@ -193,6 +206,7 @@ const GlobalStyles = createGlobalStyle`
     will-change: transform;
     z-index: -1;
   }
+
 
   @keyframes grain {
     0% {

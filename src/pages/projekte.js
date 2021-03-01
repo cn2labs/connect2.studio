@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Hero from "../components/blocks/hero"
+import Swiper from "../components/swiper"
 
 import ProjectsBlock from "../components/blocks/projects"
 
@@ -50,6 +51,7 @@ const ProjectsPage = () => {
         linkText={page.heroFields.heroCtaLabel}
       />
       <ProjectsBlock />
+      <Swiper />
     </Layout>
   )
 }
