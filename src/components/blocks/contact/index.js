@@ -11,7 +11,7 @@ const ContactStyles = styled.div`
   }
 
   strong {
-    color: #fff;
+    color: var(--almost-white);
     display: block;
     margin-top: 1.5rem;
   }

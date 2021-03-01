@@ -11,7 +11,7 @@ const MemberStyles = styled.div`
   }
 
   .member--position {
-    color: #fff;
+    color: var(--almost-white);
     display: block;
     font-family: var(--headline-font);
     line-height: 1.4;

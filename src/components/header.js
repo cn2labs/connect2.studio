@@ -75,6 +75,12 @@ const Switch = styled.label`
   }
 `
 
+const SmallPrint = styled.p`
+  font-size: 1rem;
+  font-family: var(--headline-font);
+  margin-top: 3px;
+`
+
 const NavStyles = styled.nav`
   display: none;
 
@@ -347,21 +353,24 @@ const Header = () => {
                 </Link>
               </li>
             </ul>
-            <ThemeToggler>
-              {({ theme, toggleTheme }) => (
-                <Switch>
-                  <input
-                    type="checkbox"
-                    onChange={e =>
-                      toggleTheme(e.target.checked ? "dark" : "light")
-                    }
-                    checked={theme === "dark"}
-                  />{" "}
-                  <span class="slider round"></span>
-                </Switch>
-              )}
-            </ThemeToggler>
           </NavStyles>
+        </div>
+        <div className="flex vertical v-end">
+          <ThemeToggler>
+            {({ theme, toggleTheme }) => (
+              <Switch>
+                <input
+                  type="checkbox"
+                  onChange={e =>
+                    toggleTheme(e.target.checked ? "dark" : "light")
+                  }
+                  checked={theme === "dark"}
+                />{" "}
+                <span></span>
+              </Switch>
+            )}
+          </ThemeToggler>
+          <SmallPrint>Light/Dark</SmallPrint>
         </div>
       </Container>
     </HeaderStyles>

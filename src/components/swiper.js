@@ -13,7 +13,7 @@ const ImageStyles = styled.div`
   flex-direction: columns;
   align-items: flex-end;
   padding: 3rem;
-  color: white;
+  color: var(--almost-white);
   h3 {
     text-transform: uppercase;
   }

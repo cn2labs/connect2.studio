@@ -21,7 +21,7 @@ const ProjectStyles = styled.div`
   }
 
   strong {
-    color: #fff;
+    color: var(--almost-white);
   }
 `
 
