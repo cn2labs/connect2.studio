@@ -32,10 +32,10 @@ const GlobalStyles = createGlobalStyle`
 
     /*******************************+******+++Lightmode */
     body.light-mode{
-      --body-bg: #f4f4f4;
+      --body-bg: #EBEBEB;
       --almost-white: #191918;
-      --mommys-blonde-boy: #E0BC80;
-      --candy-strawberrys: #C05746;
+      --mommys-blonde-boy: #CE4760;
+      --candy-strawberrys: #585481;
       --darker-than-ya-coffee: #1D1F20;
     }
 
