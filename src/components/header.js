@@ -1,10 +1,13 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import { ThemeToggler } from "gatsby-plugin-dark-mode"
 
 import logo from "../assets/images/logo_white.svg"
+import logoDark from "../assets/images/logo_black.svg"
 import Container from "./styles/container"
+
+// Darkmode
+import useDarkMode from "use-dark-mode"
 
 const HeaderStyles = styled.header`
   padding: 5rem 0 12rem 0;
@@ -219,13 +222,26 @@ const Header = () => {
     const body = document.querySelector("body")
     body.classList.toggle("no-scroll")
   }
+
+  const darkMode = useDarkMode(true)
+
   return (
     <HeaderStyles>
       <Container>
         <div className="flex flex--between">
-          <Link to="/">
-            <LogoStyles src={logo} alt="connect2 studio Logo" height="64" />
-          </Link>
+          {darkMode.value ? (
+            <Link to="/">
+              <LogoStyles src={logo} alt="connect2 studio Logo" height="64" />
+            </Link>
+          ) : (
+            <Link to="/">
+              <LogoStyles
+                src={logoDark}
+                alt="connect2 studio Logo"
+                height="64"
+              />
+            </Link>
+          )}
           <div className="bg-disappear">
             {" "}
             <button
@@ -235,8 +251,8 @@ const Header = () => {
               }`}
               type="button"
             >
-              <span class="hamburger-box">
-                <span class="hamburger-inner"></span>
+              <span className="hamburger-box">
+                <span className="hamburger-inner"></span>
               </span>
             </button>
           </div>
@@ -356,20 +372,11 @@ const Header = () => {
           </NavStyles>
         </div>
         <div className="flex vertical v-end">
-          <ThemeToggler>
-            {({ theme, toggleTheme }) => (
-              <Switch>
-                <input
-                  type="checkbox"
-                  onChange={e =>
-                    toggleTheme(e.target.checked ? "dark" : "light")
-                  }
-                  checked={theme === "dark"}
-                />{" "}
-                <span></span>
-              </Switch>
-            )}
-          </ThemeToggler>
+          <Switch>
+            <input type="checkbox" onClick={darkMode.toggle} />{" "}
+            <span checked={darkMode.value} onChange={darkMode.toggle}></span>
+          </Switch>
+
           <SmallPrint>Light/Dark</SmallPrint>
         </div>
       </Container>

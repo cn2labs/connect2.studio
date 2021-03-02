@@ -31,7 +31,7 @@ const GlobalStyles = createGlobalStyle`
     --darker-than-ya-coffee: #0C0C0D;
 
     /*******************************+******+++Lightmode */
-    body.light{
+    body.light-mode{
       --body-bg: #f4f4f4;
       --almost-white: #191918;
       --mommys-blonde-boy: #E0BC80;
