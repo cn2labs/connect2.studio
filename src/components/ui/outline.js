@@ -33,6 +33,7 @@ const OutlineStylesLight = styled.h3`
     :hover {
       color: var(--mommys-blonde-boy);
       -webkit-text-stroke: 0 none;
+      text-shadow: 0px 0px 20px rgb(206 71 96 / 50%);
     }
   }
 `

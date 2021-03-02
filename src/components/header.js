@@ -377,7 +377,7 @@ const Header = () => {
             <span checked={darkMode.value} onChange={darkMode.toggle}></span>
           </Switch>
 
-          <SmallPrint>Light/Dark</SmallPrint>
+          <SmallPrint>Dark/Light</SmallPrint>
         </div>
       </Container>
     </HeaderStyles>
