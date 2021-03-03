@@ -168,7 +168,7 @@ const GlobalStyles = createGlobalStyle`
 
   /**********************************************++++++++++ TYPOGRAPHY */
   .size-h1 {
-    font-size: 7rem;
+    font-size: 4.5rem;
   }
 
   .size-h2 {

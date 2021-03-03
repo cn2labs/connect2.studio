@@ -12,7 +12,7 @@ import CTA from "../ui/cta"
 
 const ProjectStyles = styled.div`
   &:not(:last-child) {
-    margin-bottom: 20rem;
+    margin-bottom: 10rem;
   }
 
   ul {
@@ -22,6 +22,14 @@ const ProjectStyles = styled.div`
 
   strong {
     color: var(--almost-white);
+  }
+
+  /* Width in PX > 1200px */
+  /* ==== = LARGE = ==== */
+  @media only screen and (min-width: 75em) {
+    &:not(:last-child) {
+      margin-bottom: 20rem;
+    }
   }
 `
 
@@ -41,7 +49,7 @@ const Project = ({ project }) => {
   return (
     <ProjectStyles>
       <Fade>
-        <Grid cols="2" gap="80">
+        <div className="grid col-1 gap-5 bg-col-2">
           <div>
             <Outline>
               <Link to={detailsLink}>{project.title}</Link>
@@ -74,7 +82,7 @@ const Project = ({ project }) => {
               alt={project.project_fields.images[0].altText}
             />
           ) : null}
-        </Grid>
+        </div>
       </Fade>
     </ProjectStyles>
   )
