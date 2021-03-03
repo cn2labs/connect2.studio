@@ -45,6 +45,28 @@ const GlobalStyles = createGlobalStyle`
     --side-notice-distance: 5%;
   }
 
+  /*******************************+******+++Lightmode */
+
+  .page-transition {
+    animation: transform 0.5s ease-in-out;
+  }
+
+  @keyframes transform {
+  0% {
+    transform: translate3d(0, 20px, 0);
+    opacity: 0;
+  }
+  50% {
+    transform: translate3d(0, 20px, 0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
   /*******************************************************************  BASIC STYLES */
   * {
     box-sizing: border-box;

@@ -57,7 +57,7 @@ const SideNotice = styled.aside`
 `
 
 const Layout = ({ children }) => (
-  <PageContainer>
+  <PageContainer className="page-transition">
     <GlobalStyles />
     <Header />
     <main>
