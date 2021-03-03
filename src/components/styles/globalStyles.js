@@ -254,6 +254,11 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 
+  @media screen and (prefers-reduced-motion: reduce) { 
+    .grain {
+      animation: none;
+    }
+  }
 
   /********************************************************** HAMBURGER */
 
