@@ -5,7 +5,6 @@ import slugify from "slugify"
 import Fade from "react-reveal/Fade"
 
 import Section from "../styles/section"
-import Grid from "../styles/grid"
 import Outline from "../ui/outline"
 import Image from "../img"
 import CTA from "../ui/cta"

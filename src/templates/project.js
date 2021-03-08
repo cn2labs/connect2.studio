@@ -21,15 +21,39 @@ const ProjectStyles = styled.div`
 
   blockquote p {
     margin: 10px 0;
+    font-style: italic;
   }
 
   blockquote small {
-    font-style: italic;
+    font-family: var(--headline-font);
+    color: var(--nets-court);
+    font-size: 1.2rem;
   }
 
   ul {
     list-style: square inside;
+    color: var(--mommys-blonde-boy);
   }
+
+  /* Width in PX > 920px */
+  /* ==== = BIG = ==== */
+  @media only screen and (min-width: 62em) {
+    blockquote p {
+      margin: 10px 0;
+      text-align: right;
+      max-width: 550px;
+    }
+
+    blockquote small {
+      text-align: right;
+    }
+  }
+`
+
+const ProjectLink = styled.p`
+  font-family: var(--headline-font);
+  font-size: 1.5rem;
+  color: var(--candy-strawberrys);
 `
 
 const ProjectTemplate = ({ data, pageContext }) => {
@@ -47,9 +71,30 @@ const ProjectTemplate = ({ data, pageContext }) => {
           </Outline>
           {/* Description text */}
           <div dangerouslySetInnerHTML={{ __html: project.content }}></div>
+          <div className="flex vertical bg-horizontal between v-start">
+            {/* Project categories */}
+            <ul>
+              {details.categories.map(category => (
+                <li key={category}>{category}</li>
+              ))}
+            </ul>
+
+            {/* Client quote */}
+            {details.recommendation.quote ? (
+              <blockquote className="flex vertical v-start bg-v-end">
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: details.recommendation.quote,
+                  }}
+                ></div>
+                <small>&ndash; {details.recommendation.author}</small>
+              </blockquote>
+            ) : null}
+          </div>
+
           {/* Link to the project */}
           {details.link ? (
-            <p>
+            <ProjectLink>
               <strong>Zum Projekt:</strong>{" "}
               <a
                 href={details.link}
@@ -59,24 +104,7 @@ const ProjectTemplate = ({ data, pageContext }) => {
               >
                 {details.link}
               </a>
-            </p>
-          ) : null}
-          {/* Project categories */}
-          <ul>
-            {details.categories.map(category => (
-              <li key={category}>{category}</li>
-            ))}
-          </ul>
-          {/* Client quote */}
-          {details.recommendation.quote ? (
-            <blockquote>
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: details.recommendation.quote,
-                }}
-              ></div>
-              <small>&ndash; {details.recommendation.author}</small>
-            </blockquote>
+            </ProjectLink>
           ) : null}
           {/* Project images */}
           {details.images.map((img, index) => (
@@ -115,7 +143,7 @@ export const query = graphql`
           altText
           localFile {
             childImageSharp {
-              fluid(maxWidth: 960) {
+              fluid(maxWidth: 1700) {
                 ...GatsbyImageSharpFluid
               }
             }
