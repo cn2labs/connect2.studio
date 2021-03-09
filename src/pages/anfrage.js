@@ -7,10 +7,9 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { LandingHero } from "../components/blocks/hero"
 import Container from "../components/styles/container"
+import Section from "../components/styles/section"
 
 const FormStyle = styled(Form)`
-  width: 70%;
-  margin: 0 auto;
   div {
     margin-bottom: 5rem;
     width: 100%;
@@ -70,6 +69,21 @@ const FormStyle = styled(Form)`
     color: white;
     transition: ease-in-out 0.2s;
   }
+  /* Width in PX > 920px */
+  /* ==== = BIG = ==== */
+  @media only screen and (min-width: 62em) {
+    width: 70%;
+    margin: 0 auto;
+  }
+`
+
+const SummaryStyle = styled.div`
+  /* Width in PX > 920px */
+  /* ==== = BIG = ==== */
+  @media only screen and (min-width: 62em) {
+    width: 80%;
+    margin: 0 auto;
+  }
 `
 
 const Summary = ({ values }) => {
@@ -110,32 +124,33 @@ const Summary = ({ values }) => {
 
     // Features
     if (values.features.contactForm) setPrice(price => price + 120)
+    if (values.features.cmsTraining) setPrice(price => price + 395)
+    if (values.features.seoAnalysis) setPrice(price => price + 150)
+    if (values.features.contentConsulting) setPrice(price => price + 195)
+    if (values.features.analytics) setPrice(price => price + 150)
   }, [values])
 
   return (
-    <div>
-      <h2>Summary</h2>
+    <Section>
+      <SummaryStyle>
+        <h2>Summary</h2>
 
-      {/* DEBUGGING ONLY – REMOVE BEFORE FLIGHT */}
-      <pre style={{ border: "2px solid red", padding: "10px" }}>
-        {JSON.stringify(values, null, 2)}
-      </pre>
-      {/* /DEBUGGING ONLY */}
+        <pre style={{ border: "2px solid red", padding: "10px" }}>
+          {JSON.stringify(values, null, 2)}
+        </pre>
 
-      {/* SUMMARY LIST */}
-      {/* <ul>
-        <li>{values.siteCategory === 'static' && 'Statische Seite'}</li>
-      </ul> */}
+        {/* SUMMARY LIST */}
+        <ul>
+          <li>{values.siteCategory === "static" && "Statische Seite"}</li>
+        </ul>
 
-      {/* PRICE */}
-      <strong>
-        So ca.{" "}
-        <span style={{ color: "tomato" }}>
-          {new Intl.NumberFormat("de-DE").format(price)}€
-        </span>{" "}
-        würde dich der ganze Bums kosten
-      </strong>
-    </div>
+        {/* PRICE */}
+        <strong>
+          So ca. <span>{new Intl.NumberFormat("de-DE").format(price)}€</span>{" "}
+          würde dich der ganze Bums kosten
+        </strong>
+      </SummaryStyle>
+    </Section>
   )
 }
 
@@ -201,7 +216,7 @@ const EnquiryPage = () => {
                   <label htmlFor="company">Firma</label>
                   <Field id="company" name="company" placeholder="Firma" />
                 </div>
-                <div className="flex v-start">
+                <div className="flex vertical bg-horizontal v-start">
                   {/* --------------------------------------------------------------------------PAGE BASICS */}
                   <div className="flex vertical v-start">
                     <h3>Seitenstruktur</h3>
@@ -290,12 +305,11 @@ const EnquiryPage = () => {
                     </label>
                   </div>
                 </div>
-
                 <button type="submit">Senden</button>
               </FormStyle>
 
               {/* --------------------------------------------------------------------------SUMMARY*/}
-              {/* <Summary values={values} /> */}
+              <Summary values={values} />
             </div>
           )}
         </Formik>
