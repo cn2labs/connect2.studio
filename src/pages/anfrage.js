@@ -127,7 +127,7 @@ const Summary = ({ values }) => {
       case "cms":
         setPrice(price => price + 1000)
         break
-      case "ecommerce":
+      case "shop":
         setPrice(price => price + 1295)
         break
       default:
@@ -164,7 +164,7 @@ const Summary = ({ values }) => {
       <ul>
         {values.type === "static" && <li>Statische Seite</li>}
         {values.type === "cms" && <li>WordPress Seite</li>}
-        {values.type === "ecommerce" && <li>Shop</li>}
+        {values.type === "shop" && <li>Shop</li>}
         {values.pages === "small" && <li>1-3 Seiten</li>}
         {values.pages === "medium" && <li>3-5 Seiten</li>}
         {values.pages === "large" && <li>5-7 Seiten</li>}
