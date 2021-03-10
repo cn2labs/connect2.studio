@@ -75,7 +75,7 @@ const Service = ({ text, imgSrc, imgAlt }) => (
               <Tagline>JAMStack &middot; Web Apps &middot; WordPress</Tagline>
               <Link to="/service/entwicklung">
                 <Outline as="h2">
-                  <span>Entwicklung &rarr;</span>
+                  <span>Entwicklung</span>
                 </Outline>
               </Link>
             </li>
@@ -83,7 +83,7 @@ const Service = ({ text, imgSrc, imgAlt }) => (
               <Tagline>UI & UX &middot; CI/CD &middot; Konzeption</Tagline>
               <Link to="/service/design">
                 <Outline as="h2">
-                  <span>Design &rarr;</span>
+                  <span>Design </span>
                 </Outline>
               </Link>
             </li>
@@ -91,7 +91,7 @@ const Service = ({ text, imgSrc, imgAlt }) => (
               <Tagline>SEO &middot; Performance &middot; Relaunch</Tagline>
               <Link to="/service/beratung">
                 <Outline as="h2">
-                  <span>Beratung &rarr;</span>
+                  <span>Beratung </span>
                 </Outline>
               </Link>
             </li>

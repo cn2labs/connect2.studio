@@ -7,7 +7,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { LandingHero } from "../components/blocks/hero"
 import Container from "../components/styles/container"
-import Section from "../components/styles/section"
+
+import Arrow from "../assets/images/down-arrow.svg"
 
 const FormStyle = styled(Form)`
   div {
@@ -37,7 +38,7 @@ const FormStyle = styled(Form)`
     border: none;
     color: var(--almost-white);
     font-size: 1.6rem;
-    border-bottom: 1px solid var(--lavender-soap);
+    border-bottom: 2px solid var(--lavender-soap);
     background: none;
     padding: 3px;
     width: 100%;
@@ -51,6 +52,33 @@ const FormStyle = styled(Form)`
     height: 17px;
     width: 17px;
     margin-right: 7px;
+  }
+
+  select {
+    appearance: none;
+    border: none;
+    background: none;
+    color: var(--almost-white);
+    padding: 5px 3px;
+    width: 200px;
+    font-size: inherit;
+    font-family: var(--text-dont);
+    margin: 2px 0;
+  }
+
+  span.arrow {
+    position: relative;
+    border-top: 2px solid var(--lavender-soap);
+    margin-top: 8px;
+    :after {
+      display: block;
+      content: url(${Arrow});
+      position: absolute;
+      top: -7px;
+      right: 0;
+      height: 16px;
+      width: 16px;
+    }
   }
 
   button {
@@ -69,20 +97,19 @@ const FormStyle = styled(Form)`
     color: white;
     transition: ease-in-out 0.2s;
   }
-  /* Width in PX > 920px */
-  /* ==== = BIG = ==== */
-  @media only screen and (min-width: 62em) {
-    width: 70%;
-    margin: 0 auto;
-  }
 `
 
 const SummaryStyle = styled.div`
-  /* Width in PX > 920px */
-  /* ==== = BIG = ==== */
-  @media only screen and (min-width: 62em) {
-    width: 80%;
-    margin: 0 auto;
+  h2 {
+    margin-bottom: 1rem;
+  }
+  ul {
+    list-style: square;
+    transform: translateX(15px);
+    margin-bottom: 2rem;
+  }
+  span {
+    color: var(--mommys-blonde-boy);
   }
 `
 
@@ -93,7 +120,7 @@ const Summary = ({ values }) => {
     setPrice(0)
 
     // Site category
-    switch (values.siteCategory) {
+    switch (values.type) {
       case "static":
         setPrice(price => price + 500)
         break
@@ -101,7 +128,7 @@ const Summary = ({ values }) => {
         setPrice(price => price + 1000)
         break
       case "ecommerce":
-        setPrice(price => price + 2000)
+        setPrice(price => price + 1295)
         break
       default:
         break
@@ -131,26 +158,31 @@ const Summary = ({ values }) => {
   }, [values])
 
   return (
-    <Section>
-      <SummaryStyle>
-        <h2>Summary</h2>
+    <SummaryStyle>
+      <h2>Dein Anfrage auf einen Blick</h2>
+      {/* SUMMARY LIST */}
+      <ul>
+        {values.type === "static" && <li>Statische Seite</li>}
+        {values.type === "cms" && <li>WordPress Seite</li>}
+        {values.type === "ecommerce" && <li>Shop</li>}
+        {values.pages === "small" && <li>1-3 Seiten</li>}
+        {values.pages === "medium" && <li>3-5 Seiten</li>}
+        {values.pages === "large" && <li>5-7 Seiten</li>}
+        {values.features.contactForm && <li>Kontaktformular</li>}
+        {values.features.cmsTraining && <li>CMS-Schulung</li>}
+        {values.features.seoAnalysis && <li>Seo-Analyse</li>}
+        {values.features.contentConsulting && <li>Contentberatung</li>}
+        {values.features.analytics && <li>Matomo/ Analytics Setup</li>}
+      </ul>
 
-        <pre style={{ border: "2px solid red", padding: "10px" }}>
-          {JSON.stringify(values, null, 2)}
-        </pre>
-
-        {/* SUMMARY LIST */}
-        <ul>
-          <li>{values.siteCategory === "static" && "Statische Seite"}</li>
-        </ul>
-
-        {/* PRICE */}
+      {/* PRICE */}
+      {price > 0 && (
         <strong>
           So ca. <span>{new Intl.NumberFormat("de-DE").format(price)}€</span>{" "}
           würde dich der ganze Bums kosten
         </strong>
-      </SummaryStyle>
-    </Section>
+      )}
+    </SummaryStyle>
   )
 }
 
@@ -200,35 +232,37 @@ const EnquiryPage = () => {
             <div>
               <FormStyle>
                 {/* --------------------------------------------------------------------------BASE INFO */}
+                <div className="grid col-1 md-col-2 md-gap-5  l-col-3">
+                  <div className="flex vertical v-start">
+                    <label htmlFor="name">Name</label>
+                    <Field id="name" name="name" placeholder="Name" />
 
-                <div className="flex vertical v-start">
-                  <label htmlFor="name">Name</label>
-                  <Field id="name" name="name" placeholder="Name" />
+                    <label htmlFor="email">E-Mail</label>
+                    <Field
+                      id="email"
+                      name="email"
+                      type="email"
+                      placeholder="E-Mail"
+                    />
 
-                  <label htmlFor="email">E-Mail</label>
-                  <Field
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="E-Mail"
-                  />
+                    <label htmlFor="company">Firma</label>
+                    <Field id="company" name="company" placeholder="Firma" />
+                  </div>
 
-                  <label htmlFor="company">Firma</label>
-                  <Field id="company" name="company" placeholder="Firma" />
-                </div>
-                <div className="flex vertical bg-horizontal v-start">
                   {/* --------------------------------------------------------------------------PAGE BASICS */}
                   <div className="flex vertical v-start">
                     <h3>Seitenstruktur</h3>
                     <label htmlFor="type">Art der Seite</label>
-                    <Field as="select" id="type" name="type">
-                      <option defaultValue value="">
-                        -- Bitte wählen --
-                      </option>
-                      <option value="static">Statische Seite</option>
-                      <option value="cms">WordPress Seite</option>
-                      <option value="shop">Shop</option>
-                    </Field>
+                    <span class="arrow">
+                      <Field as="select" id="type" name="type">
+                        <option defaultValue value="">
+                          -- Bitte wählen --
+                        </option>
+                        <option value="static">Statische Seite</option>
+                        <option value="cms">WordPress Seite</option>
+                        <option value="shop">Shop</option>
+                      </Field>
+                    </span>
 
                     <label htmlFor="pages-small" className="justify">
                       <Field
@@ -305,11 +339,10 @@ const EnquiryPage = () => {
                     </label>
                   </div>
                 </div>
-                <button type="submit">Senden</button>
+                {/* --------------------------------------------------------------------------SUMMARY*/}
+                <Summary values={values} />
+                <button type="submit">Anfrage senden</button>
               </FormStyle>
-
-              {/* --------------------------------------------------------------------------SUMMARY*/}
-              <Summary values={values} />
             </div>
           )}
         </Formik>
