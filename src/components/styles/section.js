@@ -13,7 +13,7 @@ const SectionStyles = styled.section`
   /* Width in PX > 1200px */
   /* ==== = LARGE = ==== */
   @media only screen and (min-width: 75em) {
-    padding: 12rem 0;
+    padding: 5rem 10rem;
   }
 `
 

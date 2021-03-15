@@ -9,7 +9,7 @@ const DesignPage = () => {
   // Get the page content from WordPress
   const { wpPage: page } = useStaticQuery(graphql`
     {
-      wpPage(databaseId: { eq: 271 }) {
+      wpPage(databaseId: { eq: 293 }) {
         title
         metadata {
           description

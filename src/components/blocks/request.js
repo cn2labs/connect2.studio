@@ -34,7 +34,7 @@ const RequestButton = styled.button`
 
 const SendARequest = () => (
   <Fade>
-    <Section smallPaddingTop>
+    <Section>
       <div className="flex vertical v-start md-grid-appear md-col-2 md-gap-7">
         <div>
           <h3 className="size-h4">
