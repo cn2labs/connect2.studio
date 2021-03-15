@@ -20,16 +20,6 @@ const DevelopmentPage = () => {
           heroHeadline
           heroTagline
           keywords
-          heroImg {
-            altText
-            localFile {
-              childImageSharp {
-                fluid(maxWidth: 1440) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
         }
       }
     }
@@ -42,9 +32,6 @@ const DevelopmentPage = () => {
         headline={page.heroFields.heroHeadline}
         text={page.heroFields.heroText}
         keywords={page.heroFields.keywords}
-        img={page.heroFields.heroImg.localFile.childImageSharp.fluid}
-        imgAlt={page.heroFields.heroImg.altText}
-        linkText={page.heroFields.heroCtaLabel}
       />
     </Layout>
   )

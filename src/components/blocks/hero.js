@@ -8,8 +8,6 @@ import Image from "../img"
 import Tagline from "../ui/tagline"
 import Outline from "../ui/outline"
 
-import scribble from "../../assets/images/scribble.svg"
-
 const HeroGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
@@ -133,45 +131,6 @@ const CustomHeroSection = styled(HeroSection)`
   }
 `
 
-const ImageStyle = styled(Image)`
-  overflow: visible !important;
-
-  :before {
-    --width: 18rem;
-    --height: 9rem;
-
-    content: "";
-    display: block;
-    background: url(${scribble}) no-repeat center center / contain;
-    height: var(--height);
-    width: var(--width);
-    position: absolute;
-    top: -3rem;
-    left: -5rem;
-    z-index: 25;
-  }
-  /* Width in PX > 768px */
-  @media only screen and (min-width: 48em) {
-    max-height: 500px;
-  }
-`
-
-const FloatContent = styled.div`
-  height: 100%;
-  transform: translateY(-25%);
-  /* Width in PX > 768px */
-  /* ==== = MEDIUM = ==== */
-  @media only screen and (min-width: 48em) {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 0 2rem;
-    transform: translateY(0);
-    z-index: 20;
-    background-color: rgb(0 0 0 / 50%);
-  }
-`
-
 const Keywords = styled.div`
   font-family: var(--headline-font);
   font-size: 2rem;
@@ -184,19 +143,16 @@ const Keywords = styled.div`
   }
 `
 
-export const CustomHero = ({ tagline, headline, img, imgAlt, keywords }) => (
+export const CustomHero = ({ tagline, headline, keywords }) => (
   <CustomHeroSection>
     <Fade>
-      <Container className="container">
-        <ImageStyle fluid src={img} alt={imgAlt} />
-        <FloatContent className="flex vertical h-center">
-          <Tagline>{tagline}</Tagline>
-          <Headline className="ta-center">{headline}</Headline>´
-          <Keywords
-            dangerouslySetInnerHTML={{ __html: keywords }}
-            className="ta-center"
-          ></Keywords>
-        </FloatContent>
+      <Container className="ta-center">
+        <Tagline>{tagline}</Tagline>
+        <Headline className="ta-center">{headline}</Headline>
+        <Keywords
+          dangerouslySetInnerHTML={{ __html: keywords }}
+          className="ta-center"
+        ></Keywords>
       </Container>
     </Fade>
   </CustomHeroSection>
