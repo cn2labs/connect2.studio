@@ -2,7 +2,9 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../../components/layout"
-import Hero from "../../components/blocks/hero"
+
+import SEO from "../../components/seo"
+import { CustomHero } from "../../components/blocks/hero"
 
 const DevelopmentPage = () => {
   // Get the page content from WordPress
@@ -15,10 +17,9 @@ const DevelopmentPage = () => {
         }
         heroFields {
           heroCtaLabel
-          heroCtaLink
           heroHeadline
           heroTagline
-          heroText
+          keywords
           heroImg {
             altText
             localFile {
@@ -35,13 +36,14 @@ const DevelopmentPage = () => {
   `)
   return (
     <Layout>
-      <Hero
+      <SEO title={page.title} description={page.metadata.description} />
+      <CustomHero
         tagline={page.heroFields.heroTagline}
         headline={page.heroFields.heroHeadline}
         text={page.heroFields.heroText}
+        keywords={page.heroFields.keywords}
         img={page.heroFields.heroImg.localFile.childImageSharp.fluid}
         imgAlt={page.heroFields.heroImg.altText}
-        link={page.heroFields.heroCtaLink}
         linkText={page.heroFields.heroCtaLabel}
       />
     </Layout>
