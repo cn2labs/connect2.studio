@@ -2,6 +2,8 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../../components/layout"
+import ServiceContent from "../../components/blocks/service/serviceContent"
+
 import SEO from "../../components/seo"
 import { CustomHero } from "../../components/blocks/hero"
 
@@ -15,10 +17,26 @@ const DesignPage = () => {
           description
         }
         heroFields {
-          heroCtaLabel
           heroHeadline
           heroTagline
           keywords
+        }
+        services_infoField {
+          seviceContents {
+            ... on wpPage_ServicesInfofield_SeviceContents_ServiceContent {
+              text
+              headline
+              backgroundImg {
+                localFile {
+                  childImageSharp {
+                    fluid(maxWidth: 1440) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -32,6 +50,10 @@ const DesignPage = () => {
         text={page.heroFields.heroText}
         keywords={page.heroFields.keywords}
       />
+
+      {page.services_infoField.seviceContents.map((service, i) => (
+        <ServiceContent key={i} data={service} />
+      ))}
     </Layout>
   )
 }

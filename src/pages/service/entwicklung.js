@@ -17,7 +17,6 @@ const DevelopmentPage = () => {
           description
         }
         heroFields {
-          heroCtaLabel
           heroHeadline
           heroTagline
           keywords
@@ -42,7 +41,6 @@ const DevelopmentPage = () => {
       }
     }
   `)
-  console.log(page)
   return (
     <Layout>
       <SEO title={page.title} description={page.metadata.description} />
