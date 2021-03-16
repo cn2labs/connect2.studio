@@ -7,9 +7,15 @@ import Section from "../../styles/section"
 
 const StyledBackground = styled(BackgroundImage)`
   background-size: cover;
+  background-position: center center;
   margin-bottom: 3rem;
   max-height: 120px;
   height: 100%;
+  /* Width in PX > 768px */
+  /* ==== = MEDIUM = ==== */
+  @media only screen and (min-width: 48em) {
+    max-height: 80px;
+  }
 `
 
 const Headline = styled.h2`
@@ -28,16 +34,14 @@ const StyledContainer = styled(Container)`
 
 const ServiceContent = ({ data }) => (
   <Section>
-    <StyledContainer>
-      <StyledBackground
-        Tag="div"
-        fluid={data.backgroundImg.localFile.childImageSharp.fluid}
-      >
-        <Headline className="ta-center">{data.headline}</Headline>
-      </StyledBackground>
+    <StyledBackground
+      Tag="div"
+      fluid={data.backgroundImg.localFile.childImageSharp.fluid}
+    >
+      <Headline className="ta-center">{data.headline}</Headline>
+    </StyledBackground>
 
-      <p className="ta-center">{data.text}</p>
-    </StyledContainer>
+    <p className="ta-center">{data.text}</p>
   </Section>
 )
 
