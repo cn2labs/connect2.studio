@@ -35,6 +35,10 @@ const ProjectStyles = styled.div`
     color: var(--mommys-blonde-boy);
   }
 
+  img {
+    margin: 1.5rem 0;
+  }
+
   /* Width in PX > 920px */
   /* ==== = BIG = ==== */
   @media only screen and (min-width: 62em) {
