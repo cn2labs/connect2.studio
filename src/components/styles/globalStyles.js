@@ -287,7 +287,7 @@ const GlobalStyles = createGlobalStyle`
 .hamburger {
   z-index: 10;
   position: relative;
-  padding: 15px 15px;
+  padding: 15px 0;
   display: inline-block;
   cursor: pointer;
   transition-property: opacity, filter;

@@ -29,6 +29,10 @@ const HeroSection = styled.section`
   @media only screen and (min-width: 75em) {
     margin-bottom: 15rem;
   }
+
+  img {
+    max-height: 600px;
+  }
 `
 
 const Headline = styled.h1`
