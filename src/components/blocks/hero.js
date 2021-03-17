@@ -12,6 +12,7 @@ const HeroGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-row-gap: 100px;
+  align-items: start;
 
   /* Width in PX > 1200px */
   /* ==== = LARGE = ==== */
