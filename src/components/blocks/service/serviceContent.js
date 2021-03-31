@@ -39,7 +39,7 @@ const StyledBackground = styled(BackgroundImage)`
 `
 
 const ColorDiv = styled.div`
-  background-color: rgb(0, 0, 0, 0.7);
+  background-color: rgb(0, 0, 0, 0.5);
   height: 100%;
   width: 100%;
 `
@@ -56,7 +56,10 @@ const ServiceContent = ({ data }) => (
         </ColorDiv>
       </StyledBackground>
 
-      <p className="ta-center">{data.text}</p>
+      <p
+        className="ta-center"
+        dangerouslySetInnerHTML={{ __html: data.text }}
+      ></p>
     </Content>
   </Section>
 )
