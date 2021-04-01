@@ -6,6 +6,9 @@ import logo from "../assets/images/logo_white.svg"
 import logoDark from "../assets/images/logo_black.svg"
 import Container from "./styles/container"
 
+import { FiMoon } from "react-icons/fi"
+import { CgSun } from "react-icons/cg"
+
 // Darkmode
 import useDarkMode from "use-dark-mode"
 
@@ -371,13 +374,23 @@ const Header = () => {
             </ul>
           </NavStyles>
         </div>
+        {/**************************************************************************************** Light and dark switch  */}
         <div className="flex vertical v-end">
-          <Switch>
+          {/* <Switch>
             <input type="checkbox" onClick={darkMode.toggle} />{" "}
             <span checked={darkMode.value} onChange={darkMode.toggle}></span>
           </Switch>
 
-          <SmallPrint>Dark/Light</SmallPrint>
+          <SmallPrint>Dark/Light</SmallPrint> */}
+          {darkMode ? (
+            <button onClick={darkMode.toggle}>
+              <CgSun />
+            </button>
+          ) : (
+            <button onClick={darkMode.toggle}>
+              <FiMoon />
+            </button>
+          )}
         </div>
       </Container>
     </HeaderStyles>
