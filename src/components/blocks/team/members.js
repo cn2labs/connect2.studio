@@ -12,7 +12,28 @@ const MemberStyles = styled.div`
   }
 
   div.mask {
-    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all ease 0.5s;
+    opacity: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.8001401244091386) 0%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
+    z-index: 20;
+    width: 100%;
+    max-width: 300px;
+    min-height: 500px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: var(--headline-font);
+    color: var(--mommys-blonde-boy);
+    p {
+      padding: 1.75rem;
+    }
   }
 
   .member--position {
@@ -35,25 +56,7 @@ const MemberStyles = styled.div`
 
   :hover {
     div.mask {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0.8001401244091386) 0%,
-        rgba(0, 0, 0, 0.8) 100%
-      );
-      z-index: 20;
-      width: 100%;
-      max-width: 300px;
-      min-height: 500px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      font-family: var(--headline-font);
-      p {
-        transform: rotate(90deg);
-      }
+      opacity: 1;
     }
   }
 `
@@ -61,7 +64,7 @@ const MemberStyles = styled.div`
 const Member = ({ member }) => (
   <MemberStyles>
     <div className="mask">
-      <p>{member.quote}</p>
+      <p>"{member.quote}"</p>
     </div>
     <Image
       fluid

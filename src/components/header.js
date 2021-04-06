@@ -42,8 +42,7 @@ const NavStyles = styled.nav`
     font-size: 1.5rem;
     display: flex;
     align-items: center;
-      transition: color 0.1s ease;
-    }
+    transition: color 0.1s ease;
 
     div {
       margin-left: 3rem;
@@ -103,7 +102,7 @@ const NavStyles = styled.nav`
       margin-left: 2rem;
     }
   }
-  `
+`
 
 const MobileMenu = styled.div`
   position: absolute;
