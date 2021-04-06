@@ -6,8 +6,13 @@ import Section from "../../styles/section"
 import Image from "../../img"
 
 const MemberStyles = styled.div`
+  position: relative;
   h3 {
     margin: 2rem 0 1rem;
+  }
+
+  div.mask {
+    display: none;
   }
 
   .member--position {
@@ -25,12 +30,39 @@ const MemberStyles = styled.div`
   .member-img {
     width: 100%;
     max-width: 300px;
-    min-height: 300px;
+    min-height: 500px;
+  }
+
+  :hover {
+    div.mask {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.8001401244091386) 0%,
+        rgba(0, 0, 0, 0.8) 100%
+      );
+      z-index: 20;
+      width: 100%;
+      max-width: 300px;
+      min-height: 500px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-family: var(--headline-font);
+      p {
+        transform: rotate(90deg);
+      }
+    }
   }
 `
 
 const Member = ({ member }) => (
   <MemberStyles>
+    <div className="mask">
+      <p>{member.quote}</p>
+    </div>
     <Image
       fluid
       src={member.img.localFile.childImageSharp.fluid}

@@ -30,63 +30,6 @@ const LogoStyles = styled.img`
   }
 `
 
-const Switch = styled.label`
-  position: relative;
-  display: inline-block;
-  width: 40px;
-  height: 20px;
-  input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  span {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--candy-strawberrys);
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-    border-radius: 20px;
-  }
-
-  span:before {
-    position: absolute;
-    content: "";
-    height: 15px;
-    width: 15px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-    border-radius: 50%;
-  }
-
-  input:checked + span {
-    background-color: var(--candy-strawberrys);
-  }
-
-  input:focus + span {
-    box-shadow: 0 0 1px #2196f3;
-  }
-
-  input:checked + span:before {
-    -webkit-transform: translateX(18px);
-    -ms-transform: translateX(18px);
-    transform: translateX(18px);
-  }
-`
-
-const SmallPrint = styled.p`
-  font-size: 1rem;
-  font-family: var(--headline-font);
-  margin-top: 3px;
-`
-
 const NavStyles = styled.nav`
   display: none;
 
@@ -97,10 +40,13 @@ const NavStyles = styled.nav`
     color: var(--almost-white);
     font-family: var(--headline-font);
     font-size: 1.5rem;
-    display: block;
-
-    a {
+    display: flex;
+    align-items: center;
       transition: color 0.1s ease;
+    }
+
+    div {
+      margin-left: 3rem;
     }
 
     a.active,
@@ -157,7 +103,7 @@ const NavStyles = styled.nav`
       margin-left: 2rem;
     }
   }
-`
+  `
 
 const MobileMenu = styled.div`
   position: absolute;
@@ -210,6 +156,7 @@ export const MenuItem = ({ link, children }) => {
     const body = document.querySelector("body")
     body.classList.remove("no-scroll")
   }
+
   return (
     <Link onClick={enableScroll} to={link} activeClassName="active">
       {children}
@@ -322,8 +269,9 @@ const Header = () => {
               </div>
             </MobileMenu>
           )}
+
           <NavStyles>
-            <ul className="flex flex--between">
+            <ul className="flex between">
               <li>
                 <Link to="/" activeClassName="active">
                   Home
@@ -372,24 +320,21 @@ const Header = () => {
                 </Link>
               </li>
             </ul>
+            {/**************************************************************************************** Light and dark switch  */}
+            <div>
+              {darkMode.value ? (
+                <CgSun onClick={darkMode.toggle} />
+              ) : (
+                <FiMoon onClick={darkMode.toggle} />
+              )}
+            </div>
           </NavStyles>
         </div>
-        {/**************************************************************************************** Light and dark switch  */}
-        <div className="flex vertical v-end">
-          {/* <Switch>
-            <input type="checkbox" onClick={darkMode.toggle} />{" "}
-            <span checked={darkMode.value} onChange={darkMode.toggle}></span>
-          </Switch>
-
-          <SmallPrint>Dark/Light</SmallPrint> */}
-          {darkMode ? (
-            <button onClick={darkMode.toggle}>
-              <CgSun />
-            </button>
+        <div className="flex h-end bg-disappear">
+          {darkMode.value ? (
+            <CgSun onClick={darkMode.toggle} />
           ) : (
-            <button onClick={darkMode.toggle}>
-              <FiMoon />
-            </button>
+            <FiMoon onClick={darkMode.toggle} />
           )}
         </div>
       </Container>

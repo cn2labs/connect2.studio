@@ -40,6 +40,7 @@ const TeamPage = () => {
               name
               position
               mail
+              quote
               img {
                 altText
                 localFile {
