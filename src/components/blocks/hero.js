@@ -36,6 +36,8 @@ const HeroSection = styled.section`
   }
 
   img {
+    height: 100%;
+    width: 100%;
     max-height: 550px;
   }
 `
