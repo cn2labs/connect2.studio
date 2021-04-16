@@ -44,10 +44,6 @@ const MemberStyles = styled.div`
     margin-bottom: 1rem;
   }
 
-  img {
-    filter: grayscale(100%);
-  }
-
   .member-img {
     width: 100%;
     max-width: 300px;
