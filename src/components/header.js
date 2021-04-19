@@ -109,7 +109,7 @@ const MobileMenu = styled.div`
   top: 0;
   left: 0;
   z-index: 5;
-  background-color: var(--black-carbon);
+  background-color: var(--mobile-menu);
   height: 100vh;
   width: 100%;
   padding: 30% 10% 20% 10%;
@@ -172,7 +172,7 @@ const Header = () => {
     body.classList.toggle("no-scroll")
   }
 
-  const darkMode = useDarkMode(true)
+  const darkMode = useDarkMode(false)
 
   return (
     <HeaderStyles>
@@ -264,7 +264,19 @@ const Header = () => {
                 </li>
               </MobileMenuList>
               <div className="flex v-center h-center">
-                <img src={logo} alt="connect2 studio Logo" height="64" />
+                {darkMode.value ? (
+                  <Link to="/">
+                    <img src={logo} alt="connect2 studio Logo" height="64" />
+                  </Link>
+                ) : (
+                  <Link to="/">
+                    <img
+                      src={logoDark}
+                      alt="connect2 studio Logo"
+                      height="64"
+                    />
+                  </Link>
+                )}
               </div>
             </MobileMenu>
           )}
@@ -329,6 +341,7 @@ const Header = () => {
             </div>
           </NavStyles>
         </div>
+        {/****************************************************** Mobile Mode Toggler  */}
         <div className="flex h-end bg-disappear">
           {darkMode.value ? (
             <CgSun onClick={darkMode.toggle} />

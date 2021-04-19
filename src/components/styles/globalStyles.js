@@ -29,6 +29,7 @@ const GlobalStyles = createGlobalStyle`
     --lavender-soap: #9c82e3;
     --purple-haze: #817ff9;
     --darker-than-ya-coffee: #0C0C0D;
+    --mobile-menu: #0F1011;
 
     /*******************************+******+++Lightmode */
     body.light-mode{
@@ -37,6 +38,7 @@ const GlobalStyles = createGlobalStyle`
       --mommys-blonde-boy: #CE4760;
       --candy-strawberrys: #585481;
       --darker-than-ya-coffee: #1D1F20;
+      --mobile-menu: #EBEBEB;
     }
 
     --headline-font: 'Neue Metana', sans-serif;

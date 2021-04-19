@@ -17,6 +17,7 @@ const FooterStyles = styled.footer`
 
   ${Container} > * {
     flex: 1;
+    max-height: 100%;
   }
 
   a:first-child {
@@ -40,6 +41,8 @@ const GetInTouch = styled.div`
 `
 
 const Studio = styled.img`
+  height: 55px;
+  width: 55px;
   animation: rotation 25s infinite linear;
   @keyframes rotation {
     from {
@@ -48,6 +51,18 @@ const Studio = styled.img`
     to {
       transform: rotate(359deg);
     }
+  }
+`
+
+const Bugfix = styled.div`
+  margin: 0 auto;
+  max-width: 1150px;
+  padding: 0 15px;
+  width: 95%;
+  /* Width in PX > 1920px */
+  /* ==== = EXTRA LARGE = ==== */
+  @media only screen and (min-width: 121em) {
+    max-width: 1440px;
   }
 `
 
@@ -73,7 +88,7 @@ export default function Footer() {
           <Link to="/datenschutz">Datenschutz</Link>
         </div>
       </Container>
-      <Container className="disappear l-flex-appear between">
+      <Container className="disappear l-flex-appear v-center between">
         <div className="ta-left">
           <Link to="/impressum">Impressum</Link>
           <Link to="/datenschutz">Datenschutz</Link>
