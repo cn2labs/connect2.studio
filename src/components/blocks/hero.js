@@ -31,9 +31,10 @@ const HeroSection = styled.section`
     margin-bottom: 15rem;
   }
 
-  .gatsby-image-wrapper {
+  /* .gatsby-image-wrapper {
     min-height: 500px;
-  }
+    max-height: 550px;
+  } */
 
   img {
     height: 100%;

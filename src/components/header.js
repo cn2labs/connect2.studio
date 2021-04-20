@@ -13,7 +13,11 @@ import { CgSun } from "react-icons/cg"
 import useDarkMode from "use-dark-mode"
 
 const HeaderStyles = styled.header`
-  padding: 5rem 0 12rem 0;
+  padding: 5rem 0;
+  /* ==== = MEDIUM = ==== */
+  @media only screen and (min-width: 48em) {
+    padding: 5rem 0 12rem 0;
+  }
 `
 
 const LogoStyles = styled.img`
@@ -133,6 +137,10 @@ const MobileMenu = styled.div`
   }
 `
 
+const ModeSwitch = styled.div`
+  margin-right: 2.75rem;
+`
+
 const MobileMenuList = styled.ul`
   font-family: var(--headline-font);
   list-style: none;
@@ -172,7 +180,7 @@ const Header = () => {
     body.classList.toggle("no-scroll")
   }
 
-  const darkMode = useDarkMode(false)
+  const darkMode = useDarkMode(true)
 
   return (
     <HeaderStyles>
@@ -191,8 +199,17 @@ const Header = () => {
               />
             </Link>
           )}
-          <div className="bg-disappear">
-            {" "}
+
+          <div className="flex v-center bg-disappear">
+            <ModeSwitch>
+              {/****************************************************** Mobile Mode Toggler  */}
+              {darkMode.value ? (
+                <CgSun onClick={darkMode.toggle} />
+              ) : (
+                <FiMoon onClick={darkMode.toggle} />
+              )}
+            </ModeSwitch>
+
             <button
               onClick={menuActive}
               className={` hamburger hamburger--minus ${
@@ -340,14 +357,6 @@ const Header = () => {
               )}
             </div>
           </NavStyles>
-        </div>
-        {/****************************************************** Mobile Mode Toggler  */}
-        <div className="flex h-end bg-disappear">
-          {darkMode.value ? (
-            <CgSun onClick={darkMode.toggle} />
-          ) : (
-            <FiMoon onClick={darkMode.toggle} />
-          )}
         </div>
       </Container>
     </HeaderStyles>

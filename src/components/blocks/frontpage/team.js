@@ -12,7 +12,7 @@ import Section from "../../styles/section"
 
 // Styles
 const TeamStyles = styled.div`
-  div {
+  > div {
     margin-top: 6rem;
   }
 
@@ -23,6 +23,10 @@ const TeamStyles = styled.div`
 
   h2 {
     font-size: 4rem;
+  }
+
+  span {
+    margin-top: 4rem;
   }
 
   /* Width in PX > 1200px */
