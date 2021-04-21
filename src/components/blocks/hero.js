@@ -1,10 +1,10 @@
 import React from "react"
 import styled from "styled-components"
 import Fade from "react-reveal/Fade"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import CTA from "../ui/cta"
 import Container from "../styles/container"
-import Image from "../img"
 import Tagline from "../ui/tagline"
 import Outline from "../ui/outline"
 
@@ -74,6 +74,7 @@ export default function Hero({
   link = "/",
   linkText,
 }) {
+  const image = getImage(img)
   return (
     <HeroSection>
       <Container>
@@ -84,7 +85,7 @@ export default function Hero({
             <Text dangerouslySetInnerHTML={{ __html: text }}></Text>
             {link && <CTA to={link}>{linkText}</CTA>}
           </div>
-          <Image fluid src={img} alt={imgAlt} />
+          <GatsbyImage image={image} alt={imgAlt} />
         </HeroGrid>
       </Container>
     </HeroSection>

@@ -5,11 +5,11 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import styled from "styled-components"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Container from "../components/styles/container"
-import Image from "../components/img"
 import Outline from "../components/ui/outline"
 
 const ProjectStyles = styled.div`
@@ -111,14 +111,10 @@ const ProjectTemplate = ({ data, pageContext }) => {
             </ProjectLink>
           ) : null}
           {/* Project images */}
-          {details.images.map((img, index) => (
-            <Image
-              key={index}
-              fluid
-              src={img.localFile.childImageSharp.fluid}
-              alt={img.altText}
-            />
-          ))}
+          {details.images.map((img, index) => {
+            const image = getImage(img.localFile)
+            return <GatsbyImage key={index} image={image} alt={img.altText} />
+          })}
 
           {/* Back link */}
           <p>
@@ -147,9 +143,7 @@ export const query = graphql`
           altText
           localFile {
             childImageSharp {
-              fluid(maxWidth: 1700) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(formats: [AUTO, WEBP, AVIF], layout: CONSTRAINED)
             }
           }
         }

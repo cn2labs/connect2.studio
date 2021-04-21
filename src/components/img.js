@@ -28,3 +28,36 @@ Image.propTypes = {
 }
 
 export default Image
+
+// import React from "react"
+// import PropTypes from "prop-types"
+// import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
+// const Image = ({ fluid, fixed, src, ...props }) => {
+//   const image = getImage(data.file)
+
+//   if (fluid && fixed) {
+//     return (
+//       <div style={{ border: "4px solid red", padding: "10px" }}>
+//         You can't use a fluid and fixed Img component at the same time. Please
+//         choose one.
+//       </div>
+//     )
+//   }
+
+//   if (fluid) {
+//     return <GatsbyImage fluid={image} {...props} />
+//   }
+
+//   if (fixed) {
+//     return <GatsbyImage fixed={image} {...props} />
+//   }
+// }
+
+// Image.propTypes = {
+//   fluid: PropTypes.bool,
+//   fixed: PropTypes.bool,
+//   src: PropTypes.object.isRequired,
+// }
+
+// export default Image

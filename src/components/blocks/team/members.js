@@ -1,9 +1,9 @@
 import React from "react"
 import styled from "styled-components"
 import Fade from "react-reveal/Fade"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import Section from "../../styles/section"
-import Image from "../../img"
 
 const MemberStyles = styled.div`
   position: relative;
@@ -57,27 +57,29 @@ const MemberStyles = styled.div`
   }
 `
 
-const Member = ({ member }) => (
-  <MemberStyles>
-    <div className="mask">
-      <p>"{member.quote}"</p>
-    </div>
-    <Image
-      fluid
-      src={member.img.localFile.childImageSharp.fluid}
-      alt={member.img.altText}
-      className="member-img"
-    />
-    <h3>{member.name}</h3>
-    <span className="member--position">{member.position}</span>
-    <a
-      href={`mailto:${member.mail}`}
-      title={`Schreib eine Mail an ${member.name}`}
-    >
-      {member.mail}
-    </a>
-  </MemberStyles>
-)
+const Member = ({ member }) => {
+  const image = getImage(member.img.localFile)
+  return (
+    <MemberStyles>
+      <div className="mask">
+        <p>"{member.quote}"</p>
+      </div>
+      <GatsbyImage
+        image={image}
+        alt={member.img.altText}
+        className="member-img"
+      />
+      <h3>{member.name}</h3>
+      <span className="member--position">{member.position}</span>
+      <a
+        href={`mailto:${member.mail}`}
+        title={`Schreib eine Mail an ${member.name}`}
+      >
+        {member.mail}
+      </a>
+    </MemberStyles>
+  )
+}
 
 const Members = ({ members }) => (
   <Fade delay={200}>

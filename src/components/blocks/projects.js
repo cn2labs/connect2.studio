@@ -3,10 +3,10 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import styled from "styled-components"
 import slugify from "slugify"
 import Fade from "react-reveal/Fade"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import Section from "../styles/section"
 import Outline from "../ui/outline"
-import Image from "../img"
 import CTA from "../ui/cta"
 
 const ProjectStyles = styled.div`
@@ -23,11 +23,18 @@ const ProjectStyles = styled.div`
     color: var(--almost-white);
   }
 
+  > div > div:first-child {
+    margin-top: 7rem;
+  }
+
   /* Width in PX > 1200px */
   /* ==== = LARGE = ==== */
   @media only screen and (min-width: 75em) {
     &:not(:last-child) {
       margin-bottom: 20rem;
+    }
+    > div > div:first-child {
+      margin-top: 0;
     }
   }
 `
@@ -45,10 +52,12 @@ const ProjectCategories = styled.div`
 const Project = ({ project }) => {
   const detailsLink = slugify(project.title, { lower: true })
 
+  const image = getImage(project.project_fields.images[0].localFile)
+
   return (
     <ProjectStyles>
       <Fade>
-        <div className="grid col-1 gap-5 bg-col-2">
+        <div className="flex vertical v-start bg-grid-appear gap-5 bg-col-2">
           <div>
             <Outline>
               <Link to={detailsLink}>{project.title}</Link>
@@ -73,11 +82,8 @@ const Project = ({ project }) => {
             <CTA to={detailsLink}>Details</CTA>
           </div>
           {project.project_fields.images ? (
-            <Image
-              fluid
-              src={
-                project.project_fields.images[0].localFile.childImageSharp.fluid
-              }
+            <GatsbyImage
+              image={image}
               alt={project.project_fields.images[0].altText}
             />
           ) : null}
@@ -107,9 +113,10 @@ const Projects = () => {
               altText
               localFile {
                 childImageSharp {
-                  fluid(maxWidth: 960) {
-                    ...GatsbyImageSharpFluid
-                  }
+                  gatsbyImageData(
+                    formats: [AUTO, WEBP, AVIF]
+                    layout: CONSTRAINED
+                  )
                 }
               }
             }

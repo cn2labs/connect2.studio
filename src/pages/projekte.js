@@ -26,9 +26,11 @@ const ProjectsPage = () => {
             altText
             localFile {
               childImageSharp {
-                fluid(maxWidth: 1440) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(
+                  formats: [AUTO, WEBP, AVIF]
+                  aspectRatio: 1
+                  placeholder: BLURRED
+                )
               }
             }
           }
@@ -44,7 +46,7 @@ const ProjectsPage = () => {
         tagline={page.heroFields.heroTagline}
         headline={page.heroFields.heroHeadline}
         text={page.heroFields.heroText}
-        img={page.heroFields.heroImg.localFile.childImageSharp.fluid}
+        img={page.heroFields.heroImg.localFile}
         imgAlt={page.heroFields.heroImg.altText}
         link={page.heroFields.heroCtaLink}
         linkText={page.heroFields.heroCtaLabel}

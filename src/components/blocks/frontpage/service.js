@@ -5,11 +5,12 @@ import { Link } from "gatsby"
 import Fade from "react-reveal/Fade"
 import scribble from "../../../assets/images/scribble.svg"
 
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
 // Ready-to-use components
 import CTA from "../../ui/cta"
 import Section from "../../styles/section"
 import Outline from "../../ui/outline"
-import Image from "../../img"
 
 // Styles
 const Services = styled.div`
@@ -44,7 +45,7 @@ const Tagline = styled.h3`
   margin-bottom: 0.75rem;
 `
 
-const ImgWithScribble = styled(Image)`
+const ImgWithScribble = styled(GatsbyImage)`
   overflow: visible !important;
 
   :before {
@@ -64,45 +65,48 @@ const ImgWithScribble = styled(Image)`
 `
 
 // Component
-const Service = ({ text, imgSrc, imgAlt }) => (
-  <Fade delay={200}>
-    <Section aside="Unser Service">
-      <ServicesGrid>
-        <ImgWithScribble fluid src={imgSrc} alt={imgAlt} />
-        <Services>
-          <ul>
-            <li>
-              <Tagline>JAMStack &middot; Web Apps &middot; WordPress</Tagline>
-              <Link to="/service/entwicklung">
-                <Outline as="h2">
-                  <span>Entwicklung</span>
-                </Outline>
-              </Link>
-            </li>
-            <li>
-              <Tagline>UI & UX &middot; CI/CD &middot; Konzeption</Tagline>
-              <Link to="/service/design">
-                <Outline as="h2">
-                  <span>Design </span>
-                </Outline>
-              </Link>
-            </li>
-            <li>
-              <Tagline>SEO &middot; Performance &middot; Relaunch</Tagline>
-              <Link to="/service/beratung">
-                <Outline as="h2">
-                  <span>Beratung </span>
-                </Outline>
-              </Link>
-            </li>
-          </ul>
-          <p>{text}</p>
-          <CTA to="/service">Unser Service</CTA>
-        </Services>
-      </ServicesGrid>
-    </Section>
-  </Fade>
-)
+const Service = ({ text, imgSrc, imgAlt }) => {
+  const image = getImage(imgSrc)
+  return (
+    <Fade delay={200}>
+      <Section aside="Unser Service">
+        <ServicesGrid>
+          <ImgWithScribble image={image} alt={imgAlt} />
+          <Services>
+            <ul>
+              <li>
+                <Tagline>JAMStack &middot; Web Apps &middot; WordPress</Tagline>
+                <Link to="/service/entwicklung">
+                  <Outline as="h2">
+                    <span>Entwicklung</span>
+                  </Outline>
+                </Link>
+              </li>
+              <li>
+                <Tagline>UI & UX &middot; CI/CD &middot; Konzeption</Tagline>
+                <Link to="/service/design">
+                  <Outline as="h2">
+                    <span>Design </span>
+                  </Outline>
+                </Link>
+              </li>
+              <li>
+                <Tagline>SEO &middot; Performance &middot; Relaunch</Tagline>
+                <Link to="/service/beratung">
+                  <Outline as="h2">
+                    <span>Beratung </span>
+                  </Outline>
+                </Link>
+              </li>
+            </ul>
+            <p>{text}</p>
+            <CTA to="/service">Unser Service</CTA>
+          </Services>
+        </ServicesGrid>
+      </Section>
+    </Fade>
+  )
+}
 
 // Export
 export default Service

@@ -23,9 +23,7 @@ const Frontpage = () => {
             altText
             localFile {
               childImageSharp {
-                fluid(maxWidth: 1440) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(formats: [AUTO, WEBP, AVIF], aspectRatio: 1)
               }
             }
           }
@@ -52,9 +50,11 @@ const Frontpage = () => {
             altText
             localFile {
               childImageSharp {
-                fluid(maxWidth: 1440) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(
+                  formats: [AUTO, WEBP, AVIF]
+                  aspectRatio: 1
+                  placeholder: BLURRED
+                )
               }
             }
           }
@@ -70,16 +70,14 @@ const Frontpage = () => {
         tagline={page.heroFields.heroTagline}
         headline={page.heroFields.heroHeadline}
         text={page.heroFields.heroText}
-        img={page.heroFields.heroImg.localFile.childImageSharp.fluid}
+        img={page.heroFields.heroImg.localFile}
         imgAlt={page.heroFields.heroImg.altText}
         link={page.heroFields.heroCtaLink}
         linkText={page.heroFields.heroCtaLabel}
       />
       <Service
         text={page.home_serviceFields.serviceText}
-        imgSrc={
-          page.home_serviceFields.serviceImg.localFile.childImageSharp.fluid
-        }
+        imgSrc={page.home_serviceFields.serviceImg.localFile}
         imgAlt={page.home_serviceFields.serviceImg.altText}
       />
       <Team

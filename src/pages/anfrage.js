@@ -81,6 +81,10 @@ const FormStyle = styled(Form)`
     }
   }
 
+  option {
+    background: var(--body-bg);
+  }
+
   button {
     font-family: var(--headline-font);
     font-size: 1.5rem;
