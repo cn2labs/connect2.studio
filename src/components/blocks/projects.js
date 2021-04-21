@@ -35,6 +35,7 @@ const ProjectStyles = styled.div`
     }
     > div > div:first-child {
       margin-top: 0;
+      align-items: center;
     }
   }
 `
