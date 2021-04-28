@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import useDarkMode from "use-dark-mode"
+import { useDarkmode } from "../../hooks/useDarkmode"
 
 import logo from "../../assets/images/logo_white.svg"
 import logoDark from "../../assets/images/logo_black.svg"
@@ -111,7 +111,9 @@ const CTAStylesLight = styled.span`
   }
 `
 
-export default function CTA({ to, children }) {
+const CTA = ({ to, children }) => {
+  const isDark = useDarkmode(state => state.darkmode)
+
   const handleMouseEnter = e => {
     const el = e.target.classList
 
@@ -128,8 +130,6 @@ export default function CTA({ to, children }) {
     el.add("pause-animation")
   }
 
-  const darkMode = useDarkMode(true)
-
   return (
     <div>
       <Link
@@ -137,7 +137,7 @@ export default function CTA({ to, children }) {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        {darkMode.value ? (
+        {isDark ? (
           <CTAStyles>{children}</CTAStyles>
         ) : (
           <CTAStylesLight>{children}</CTAStylesLight>
@@ -146,3 +146,5 @@ export default function CTA({ to, children }) {
     </div>
   )
 }
+
+export default CTA

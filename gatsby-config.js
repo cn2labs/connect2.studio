@@ -9,7 +9,7 @@ module.exports = {
   pathPrefix: "/connect2.studio",
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-dark-mode`,
+    // `gatsby-plugin-dark-mode`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-image`,
     {

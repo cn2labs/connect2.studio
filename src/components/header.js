@@ -10,7 +10,7 @@ import { FiMoon } from "react-icons/fi"
 import { CgSun } from "react-icons/cg"
 
 // Darkmode
-import useDarkMode from "use-dark-mode"
+import { useDarkmode } from "../hooks/useDarkmode"
 
 const HeaderStyles = styled.header`
   padding: 5rem 0;
@@ -180,13 +180,14 @@ const Header = () => {
     body.classList.toggle("no-scroll")
   }
 
-  const darkMode = useDarkMode(true)
+  const isDark = useDarkmode(state => state.darkmode)
+  const toggleDarkmode = useDarkmode(state => state.toggleDarkmode)
 
   return (
     <HeaderStyles>
       <Container>
         <div className="flex flex--between">
-          {darkMode.value ? (
+          {isDark ? (
             <Link to="/">
               <LogoStyles src={logo} alt="connect2 studio Logo" height="64" />
             </Link>
@@ -203,10 +204,10 @@ const Header = () => {
           <div className="flex v-center bg-disappear">
             <ModeSwitch>
               {/****************************************************** Mobile Mode Toggler  */}
-              {darkMode.value ? (
-                <CgSun onClick={darkMode.toggle} />
+              {isDark ? (
+                <CgSun onClick={toggleDarkmode} />
               ) : (
-                <FiMoon onClick={darkMode.toggle} />
+                <FiMoon onClick={toggleDarkmode} />
               )}
             </ModeSwitch>
 
@@ -281,7 +282,7 @@ const Header = () => {
                 </li>
               </MobileMenuList>
               <div className="flex v-center h-center">
-                {darkMode.value ? (
+                {isDark ? (
                   <Link to="/">
                     <img src={logo} alt="connect2 studio Logo" height="64" />
                   </Link>
@@ -350,10 +351,10 @@ const Header = () => {
             </ul>
             {/**************************************************************************************** Light and dark switch  */}
             <div>
-              {darkMode.value ? (
-                <CgSun onClick={darkMode.toggle} />
+              {isDark ? (
+                <CgSun onClick={toggleDarkmode} />
               ) : (
-                <FiMoon onClick={darkMode.toggle} />
+                <FiMoon onClick={toggleDarkmode} />
               )}
             </div>
           </NavStyles>

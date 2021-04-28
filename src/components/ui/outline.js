@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import useDarkMode from "use-dark-mode"
+import { useDarkmode } from "../../hooks/useDarkmode"
 
 const OutlineStyles = styled.h3`
   line-height: 1;
@@ -39,10 +39,10 @@ const OutlineStylesLight = styled.h3`
 `
 
 const Outline = ({ children, as = "h3", looksLike = as, align = "left" }) => {
-  const darkMode = useDarkMode(true)
+  const isDark = useDarkmode(state => state.darkmode)
   return (
     <div>
-      {darkMode.value ? (
+      {isDark ? (
         <OutlineStyles as={as} className={`size-${looksLike} ta-${align}`}>
           {children}
         </OutlineStyles>
