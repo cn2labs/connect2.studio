@@ -117,9 +117,7 @@ const SummaryStyle = styled.div`
   }
 `
 
-const Summary = ({ values }) => {
-  const [price, setPrice] = useState(0)
-
+const Summary = ({ values, price, setPrice }) => {
   useEffect(() => {
     setPrice(0)
 
@@ -163,7 +161,7 @@ const Summary = ({ values }) => {
 
   return (
     <SummaryStyle>
-      <h2>Dein Anfrage auf einen Blick</h2>
+      <h2>Deine Anfrage auf einen Blick</h2>
       {/* SUMMARY LIST */}
       <ul>
         {values.type === "static" && <li>Statische Seite</li>}
@@ -183,7 +181,7 @@ const Summary = ({ values }) => {
       {price > 0 && (
         <strong>
           So ca. <span>{new Intl.NumberFormat("de-DE").format(price)}€</span>{" "}
-          würde dich der ganze Bums kosten
+          würde dich das Projekt kosten
         </strong>
       )}
     </SummaryStyle>
@@ -191,6 +189,9 @@ const Summary = ({ values }) => {
 }
 
 const EnquiryPage = () => {
+  const [price, setPrice] = useState(0)
+  const [isLoading, setIsLoading] = useState(false)
+
   // Get the page content from WordPress
   const { wpPage: page } = useStaticQuery(graphql`
     {
@@ -228,8 +229,46 @@ const EnquiryPage = () => {
               contactForm: false,
             },
           }}
-          onSubmit={values => {
-            console.log(values)
+          onSubmit={async values => {
+            setIsLoading(true)
+
+            const body = {
+              recipient: "kg@connect2.de",
+              subject: "Neue Projektanfrage auf connect2.studio",
+              text: `Name: ${values.name}\nE-Mail: ${values.email}\nFirma: ${
+                values.company
+              }\nSeitentyp: ${values.type}\nSeitenanzahl: ${
+                values.pages
+              }\n\nCustom Features:\n${Object.keys(values.features).filter(
+                f => values.features[f]
+              )}\n\nPreis: ${new Intl.NumberFormat("de-DE").format(price)}€`,
+            }
+
+            try {
+              const res = await fetch("https://api.cn2.it/mailer/", {
+                method: "POST",
+                withCredentials: true,
+                headers: {
+                  "Content-Type": "application/json",
+                  Authorization: `Bearer ${process.env.GATSBY_MAIL_API_KEY}`,
+                },
+                body: JSON.stringify(body),
+              })
+
+              if (!res.ok) {
+                throw new Error()
+              }
+
+              alert(
+                "Vielen Dank für deine Anfrage. Wir werden uns so schnell wie möglich bei dir melden."
+              )
+            } catch (error) {
+              alert(
+                "Ein Fehler ist aufgetreten, bitte versuche es später nochmal"
+              )
+            }
+
+            setIsLoading(false)
           }}
         >
           {({ values }) => (
@@ -239,7 +278,7 @@ const EnquiryPage = () => {
                 <div className="grid col-1 md-col-2 md-gap-5  l-col-3">
                   <div className="flex vertical v-start">
                     <label htmlFor="name">Name</label>
-                    <Field id="name" name="name" placeholder="Name" />
+                    <Field id="name" name="name" placeholder="Name" required />
 
                     <label htmlFor="email">E-Mail</label>
                     <Field
@@ -247,10 +286,16 @@ const EnquiryPage = () => {
                       name="email"
                       type="email"
                       placeholder="E-Mail"
+                      required
                     />
 
                     <label htmlFor="company">Firma</label>
-                    <Field id="company" name="company" placeholder="Firma" />
+                    <Field
+                      id="company"
+                      name="company"
+                      placeholder="Firma"
+                      required
+                    />
                   </div>
 
                   {/* --------------------------------------------------------------------------PAGE BASICS */}
@@ -309,14 +354,16 @@ const EnquiryPage = () => {
                       />
                       Kontaktformular (120€)
                     </label>
-                    <label htmlFor="cms-training" className="justify">
-                      <Field
-                        type="checkbox"
-                        name="features.cmsTraining"
-                        id="cms-training"
-                      />
-                      CMS-Schulung(395€)
-                    </label>
+                    {values.type !== "static" && (
+                      <label htmlFor="cms-training" className="justify">
+                        <Field
+                          type="checkbox"
+                          name="features.cmsTraining"
+                          id="cms-training"
+                        />
+                        CMS-Schulung(395€)
+                      </label>
+                    )}
                     <label htmlFor="seo-analysis" className="justify">
                       <Field
                         type="checkbox"
@@ -339,13 +386,15 @@ const EnquiryPage = () => {
                         name="features.analytics"
                         id="analytics"
                       />
-                      Matomo/ Analytics Setup (150€)
+                      Matomo/Analytics Setup (150€)
                     </label>
                   </div>
                 </div>
                 {/* --------------------------------------------------------------------------SUMMARY*/}
-                <Summary values={values} />
-                <button type="submit">Anfrage senden</button>
+                <Summary values={values} price={price} setPrice={setPrice} />
+                <button type="submit" disabled={isLoading}>
+                  {isLoading ? "Wird gesendet" : "Anfrage senden"}
+                </button>
               </FormStyle>
             </div>
           )}
