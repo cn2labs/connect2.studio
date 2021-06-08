@@ -33,7 +33,7 @@ const Frontpage = () => {
           teamImg {
             localFile {
               childImageSharp {
-                fluid(maxWidth: 1440) {
+                fluid(maxWidth: 1600) {
                   ...GatsbyImageSharpFluid
                 }
               }

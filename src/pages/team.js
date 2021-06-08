@@ -49,7 +49,7 @@ const TeamPage = () => {
                   childImageSharp {
                     gatsbyImageData(
                       formats: [AUTO, WEBP, AVIF]
-                      width: 300
+                      width: 800
                       placeholder: BLURRED
                     )
                   }
