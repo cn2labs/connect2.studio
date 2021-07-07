@@ -6,7 +6,6 @@ require("dotenv").config({
 })
 
 module.exports = {
-  pathPrefix: "/connect2.studio",
   plugins: [
     `gatsby-plugin-react-helmet`,
     // `gatsby-plugin-dark-mode`,

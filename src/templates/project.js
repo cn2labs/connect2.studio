@@ -8,7 +8,7 @@ import styled from "styled-components"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Container from "../components/styles/container"
 import Outline from "../components/ui/outline"
 
@@ -66,7 +66,7 @@ const ProjectTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <SEO title={project.title} />
+      <Seo title={project.title} />
       <Container>
         <ProjectStyles>
           {/* Project title */}

@@ -6,7 +6,7 @@ import Fade from "react-reveal/Fade"
 import BackgroundImage from "gatsby-background-image"
 
 // Ready-to-use components
-import CTA from "../../ui/cta"
+import Cta from "../../ui/cta"
 import Outline from "../../ui/outline"
 import Section from "../../styles/section"
 
@@ -68,7 +68,7 @@ const Team = ({ text, bg }) => (
         </StyledBackground>
         <div className="ta-center">
           <p>{text}</p>
-          <CTA to="/team">Unser Team</CTA>
+          <Cta to="/team">Unser Team</Cta>
         </div>
       </TeamStyles>
     </Section>

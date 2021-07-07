@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 import Section from "../components/styles/section"
 import Container from "../components/styles/container"
@@ -40,7 +40,7 @@ const DatenschutzPage = () => {
 
   return (
     <Layout>
-      <SEO title={page.title} description={page.metadata.description} />
+      <Seo title={page.title} description={page.metadata.description} />
       <Section>
         <Container>
           <Content

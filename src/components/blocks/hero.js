@@ -3,7 +3,7 @@ import styled from "styled-components"
 import Fade from "react-reveal/Fade"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-import CTA from "../ui/cta"
+import Cta from "../ui/cta"
 import Container from "../styles/container"
 import Tagline from "../ui/tagline"
 import Outline from "../ui/outline"
@@ -30,11 +30,6 @@ const HeroSection = styled.section`
   @media only screen and (min-width: 75em) {
     margin-bottom: 15rem;
   }
-
-  /* .gatsby-image-wrapper {
-    min-height: 500px;
-    max-height: 550px;
-  } */
 
   img {
     height: 100%;
@@ -83,7 +78,7 @@ export default function Hero({
             {tagline && <Tagline>{tagline}</Tagline>}
             <Headline>{headline}</Headline>
             <Text dangerouslySetInnerHTML={{ __html: text }}></Text>
-            {link && <CTA to={link}>{linkText}</CTA>}
+            {link && <Cta to={link}>{linkText}</Cta>}
           </div>
           <GatsbyImage image={image} alt={imgAlt} />
         </HeroGrid>
@@ -135,24 +130,28 @@ export const LandingHero = ({ tagline, headline, text }) => (
 // **********************************************************************************************CustomHero
 
 const CustomHeroSection = styled(HeroSection)`
+  margin-bottom: 8rem;
+  /* Width in PX > 1200px */
+  /* ==== = LARGE = ==== */
+  /* @media only screen and (min-width: 75em) {
+    margin-bottom: 8rem;
+  } */
+
   div.container {
     position: relative;
-  }
-
-  ${Tagline} {
-    color: var(--purple-haze);
   }
 `
 
 const Keywords = styled.div`
   font-family: var(--headline-font);
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--candy-strawberrys);
   margin-top: 3rem;
+  line-height: 1.4;
   /* Width in PX > 768px */
   /* ==== = MEDIUM = ==== */
   @media only screen and (min-width: 48em) {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 `
 

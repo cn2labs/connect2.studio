@@ -7,6 +7,7 @@ const ContactStyles = styled.div`
   margin-top: 4rem;
 
   h4 {
+    line-height: 1.6;
     margin-bottom: 1rem;
   }
 

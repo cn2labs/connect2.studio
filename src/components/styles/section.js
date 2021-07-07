@@ -32,7 +32,7 @@ const Aside = styled.aside`
   writing-mode: vertical-rl;
   padding: 0 1rem;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1335px) {
     display: none;
   }
 

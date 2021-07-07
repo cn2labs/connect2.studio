@@ -21,6 +21,7 @@ const HeaderStyles = styled.header`
 `
 
 const LogoStyles = styled.img`
+  width: auto;
   animation: spin 16s linear infinite;
   transform-origin: center;
 

@@ -46,8 +46,8 @@ const MemberStyles = styled.div`
 
   .member-img {
     width: 100%;
-    max-width: 300px;
     min-height: 500px;
+    max-width: 300px;
   }
 
   :hover {

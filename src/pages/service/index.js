@@ -2,7 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../../components/layout"
-import SEO from "../../components/seo"
+import Seo from "../../components/seo"
 import Hero from "../../components/blocks/hero"
 import Section from "../../components/styles/section"
 
@@ -58,7 +58,7 @@ const ServicePage = () => {
 
   return (
     <Layout>
-      <SEO title={page.title} description={page.metadata.description} />
+      <Seo title={page.title} description={page.metadata.description} />
       <Hero
         tagline={page.heroFields.heroTagline}
         headline={page.heroFields.heroHeadline}

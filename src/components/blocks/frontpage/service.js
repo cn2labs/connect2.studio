@@ -8,7 +8,7 @@ import scribble from "../../../assets/images/scribble.svg"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 // Ready-to-use components
-import CTA from "../../ui/cta"
+import Cta from "../../ui/cta"
 import Section from "../../styles/section"
 import Outline from "../../ui/outline"
 
@@ -91,7 +91,7 @@ const Service = ({ text, imgSrc, imgAlt }) => {
                 </Link>
               </li>
               <li>
-                <Tagline>SEO &middot; Performance &middot; Relaunch</Tagline>
+                <Tagline>Seo &middot; Performance &middot; Relaunch</Tagline>
                 <Link to="/service/beratung">
                   <Outline as="h2">
                     <span>Beratung </span>
@@ -100,7 +100,7 @@ const Service = ({ text, imgSrc, imgAlt }) => {
               </li>
             </ul>
             <p>{text}</p>
-            <CTA to="/service">Unser Service</CTA>
+            <Cta to="/service">Unser Service</Cta>
           </Services>
         </ServicesGrid>
       </Section>

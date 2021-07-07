@@ -6,7 +6,7 @@ import { useDarkmode } from "../../hooks/useDarkmode"
 import logo from "../../assets/images/logo_white.svg"
 import logoDark from "../../assets/images/logo_black.svg"
 
-const CTAStyles = styled.span`
+const CtaStyles = styled.span`
   color: var(--candy-strawberrys);
   display: inline-block;
   font-family: var(--headline-font);
@@ -59,7 +59,7 @@ const CTAStyles = styled.span`
   }
 `
 
-const CTAStylesLight = styled.span`
+const CtaStylesLight = styled.span`
   color: var(--candy-strawberrys);
   display: inline-block;
   font-family: var(--headline-font);
@@ -111,7 +111,7 @@ const CTAStylesLight = styled.span`
   }
 `
 
-const CTA = ({ to, children }) => {
+const Cta = ({ to, children }) => {
   const isDark = useDarkmode(state => state.darkmode)
 
   const handleMouseEnter = e => {
@@ -138,13 +138,13 @@ const CTA = ({ to, children }) => {
         onMouseLeave={handleMouseLeave}
       >
         {isDark ? (
-          <CTAStyles>{children}</CTAStyles>
+          <CtaStyles>{children}</CtaStyles>
         ) : (
-          <CTAStylesLight>{children}</CTAStylesLight>
+          <CtaStylesLight>{children}</CtaStylesLight>
         )}
       </Link>
     </div>
   )
 }
 
-export default CTA
+export default Cta

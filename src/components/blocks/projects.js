@@ -7,7 +7,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import Section from "../styles/section"
 import Outline from "../ui/outline"
-import CTA from "../ui/cta"
+import Cta from "../ui/cta"
 
 const ProjectStyles = styled.div`
   &:not(:last-child) {
@@ -71,7 +71,7 @@ const Project = ({ project }) => {
                 <strong>Das haben wir gemacht:</strong>
                 <br />
                 {project.project_fields.categories.map((category, index) => (
-                  <span>
+                  <span key={index}>
                     {category}
                     {index === project.project_fields.categories.length - 1
                       ? "."
@@ -80,7 +80,7 @@ const Project = ({ project }) => {
                 ))}
               </p>
             </ProjectCategories>
-            <CTA to={detailsLink}>Details</CTA>
+            <Cta to={detailsLink}>Details</Cta>
           </div>
           {project.project_fields.images ? (
             <GatsbyImage

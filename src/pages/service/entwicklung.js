@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../../components/layout"
 import ServiceContent from "../../components/blocks/service/serviceContent"
 
-import SEO from "../../components/seo"
+import Seo from "../../components/seo"
 import { CustomHero } from "../../components/blocks/hero"
 
 const DevelopmentPage = () => {
@@ -43,7 +43,7 @@ const DevelopmentPage = () => {
   `)
   return (
     <Layout>
-      <SEO title={page.title} description={page.metadata.description} />
+      <Seo title={page.title} description={page.metadata.description} />
       <CustomHero
         tagline={page.heroFields.heroTagline}
         headline={page.heroFields.heroHeadline}

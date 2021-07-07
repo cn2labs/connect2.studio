@@ -4,7 +4,7 @@ import { Formik, Field, Form } from "formik"
 import styled from "styled-components"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import { LandingHero } from "../components/blocks/hero"
 import Container from "../components/styles/container"
 
@@ -38,12 +38,16 @@ const FormStyle = styled(Form)`
     border: none;
     color: var(--almost-white);
     font-size: 1.6rem;
+    font-family: inherit;
     border-bottom: 2px solid var(--lavender-soap);
     background: none;
     padding: 3px;
     width: 100%;
-    max-width: 280px;
     height: 35px;
+
+    @media screen and (min-width: 640px) {
+      max-width: 280px;
+    }
   }
 
   input[type="checkbox"],
@@ -68,13 +72,13 @@ const FormStyle = styled(Form)`
 
   span.arrow {
     position: relative;
-    border-top: 2px solid var(--lavender-soap);
+    border-bottom: 2px solid var(--lavender-soap);
     margin-top: 8px;
     :after {
       display: block;
       content: url(${Arrow});
       position: absolute;
-      top: -7px;
+      top: 6px;
       right: 0;
       height: 16px;
       width: 16px;
@@ -94,12 +98,17 @@ const FormStyle = styled(Form)`
     border-radius: 3px;
     color: var(--candy-strawberrys);
     cursor: pointer;
-  }
 
-  button:hover {
-    background: var(--candy-strawberrys);
-    color: white;
-    transition: ease-in-out 0.2s;
+    &:hover {
+      background: var(--candy-strawberrys);
+      color: white;
+      transition: ease-in-out 0.2s;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
   }
 `
 
@@ -157,7 +166,7 @@ const Summary = ({ values, price, setPrice }) => {
     if (values.features.seoAnalysis) setPrice(price => price + 150)
     if (values.features.contentConsulting) setPrice(price => price + 195)
     if (values.features.analytics) setPrice(price => price + 150)
-  }, [values])
+  }, [values, setPrice])
 
   return (
     <SummaryStyle>
@@ -180,8 +189,8 @@ const Summary = ({ values, price, setPrice }) => {
       {/* PRICE */}
       {price > 0 && (
         <strong>
-          So ca. <span>{new Intl.NumberFormat("de-DE").format(price)}€</span>{" "}
-          würde dich das Projekt kosten
+          Das Projekt würde dich so ca.{" "}
+          <span>{new Intl.NumberFormat("de-DE").format(price)}€</span> kosten.
         </strong>
       )}
     </SummaryStyle>
@@ -211,7 +220,7 @@ const EnquiryPage = () => {
 
   return (
     <Layout>
-      <SEO title={page.title} description={page.metadata.description} />
+      <Seo title={page.title} description={page.metadata.description} />
       <LandingHero
         tagline={page.heroFields.heroTagline}
         headline={page.heroFields.heroHeadline}
@@ -233,7 +242,7 @@ const EnquiryPage = () => {
             setIsLoading(true)
 
             const body = {
-              recipient: "kg@connect2.de",
+              recipient: "support@connect2.de",
               subject: "Neue Projektanfrage auf connect2.studio",
               text: `Name: ${values.name}\nE-Mail: ${values.email}\nFirma: ${
                 values.company
@@ -302,7 +311,7 @@ const EnquiryPage = () => {
                   <div className="flex vertical v-start">
                     <h3>Seitenstruktur</h3>
                     <label htmlFor="type">Art der Seite</label>
-                    <span class="arrow">
+                    <span className="arrow">
                       <Field as="select" id="type" name="type">
                         <option defaultValue value="">
                           -- Bitte wählen --
@@ -370,7 +379,7 @@ const EnquiryPage = () => {
                         name="features.seoAnalysis"
                         id="seo-analysis"
                       />
-                      SEO Analyse (150€)
+                      Seo Analyse (150€)
                     </label>
                     <label htmlFor="content-consulting" className="justify">
                       <Field
@@ -393,7 +402,7 @@ const EnquiryPage = () => {
                 {/* --------------------------------------------------------------------------SUMMARY*/}
                 <Summary values={values} price={price} setPrice={setPrice} />
                 <button type="submit" disabled={isLoading}>
-                  {isLoading ? "Wird gesendet" : "Anfrage senden"}
+                  {isLoading ? "Wird gesendet..." : "Anfrage senden"}
                 </button>
               </FormStyle>
             </div>

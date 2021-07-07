@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import CTA from "../../ui/cta"
+import Cta from "../../ui/cta"
 import Tagline from "../../ui/tagline"
 
 const BlockStyles = styled.div`
@@ -37,7 +37,7 @@ const ServiceBlock = ({ tagline, title, keywords, link }) => (
       <Department>
         <Tagline>&ndash; {tagline}</Tagline>
         <h3 className="size-h5">{title}</h3>
-        <CTA to={`/service${link}`}>Mehr dazu</CTA>
+        <Cta to={`/service${link}`}>Mehr dazu</Cta>
       </Department>
       <Keywords className="grid col-2">
         {keywords &&

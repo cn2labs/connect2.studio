@@ -40,7 +40,7 @@ const SideNotice = styled.aside`
     z-index: 10;
     height: 100%;
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1335px) {
       display: none;
     }
   }

@@ -6,6 +6,7 @@ const Tagline = styled.h2`
   margin-bottom: 3rem;
   letter-spacing: 0.7px;
   text-transform: uppercase;
+  line-height: 1.6;
 `
 
 export default Tagline

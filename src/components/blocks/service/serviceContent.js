@@ -34,8 +34,9 @@ const Content = styled.div`
 const StyledBackground = styled(BackgroundImage)`
   background-size: cover;
   background-position: center center;
-  height: 400px;
+  height: 500px;
   width: 100%;
+  margin-bottom: 4rem;
 `
 
 const ColorDiv = styled.div`
@@ -45,7 +46,7 @@ const ColorDiv = styled.div`
 `
 
 const ServiceContent = ({ data }) => (
-  <Section>
+  <Section smallPaddingTop>
     <Content className="flex vertical v-center">
       <StyledBackground
         Tag="div"
