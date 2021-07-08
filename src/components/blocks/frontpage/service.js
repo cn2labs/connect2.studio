@@ -64,7 +64,7 @@ const ImgWithScribble = styled(GatsbyImage)`
   }
 
   @media screen and (max-width: 75em) {
-    display: none;
+    display: none !important;
   }
 `
 
