@@ -95,8 +95,6 @@ const GlobalStyles = createGlobalStyle`
     min-height: 100vh;
   }
 
- 
-
   body.no-scroll {
     height: 100vh;
     overflow:hidden;
@@ -107,8 +105,6 @@ const GlobalStyles = createGlobalStyle`
     font-family: var(--headline-font);
     line-height: 1.2;
   }
-
- 
 
   img {
     width: 100%;
@@ -175,6 +171,10 @@ const GlobalStyles = createGlobalStyle`
 
   .size-h2 {
     font-size: 4rem;
+
+    @media screen and (max-width: 375px) {
+      font-size: 3.6rem;
+    }
   }
 
   .size-h3 {

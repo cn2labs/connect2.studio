@@ -59,7 +59,7 @@ const StyledBackground = styled(BackgroundImage)`
 // Component
 const Team = ({ text, bg }) => (
   <Fade>
-    <Section aside="Unser Team">
+    <Section aside="Unser Team" smallPaddingTop>
       <TeamStyles>
         <StyledBackground Tag="div" fluid={bg}>
           <Outline as="h2" looksLike="h1">

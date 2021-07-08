@@ -39,8 +39,13 @@ const HeroSection = styled.section`
 `
 
 const Headline = styled.h1`
-  font-size: 4rem;
+  font-size: 3.6rem;
   text-shadow: 0px 0px 14px rgb(255 255 255 / 50%);
+
+  @media screen and (min-width: 768px) {
+    font-size: 4rem;
+  }
+
   /* Width in PX > 1200px */
   /* ==== = LARGE = ==== */
   @media only screen and (min-width: 75em) {
@@ -57,6 +62,10 @@ const Text = styled.div`
 
   p + p {
     margin-top: 2.4rem;
+  }
+
+  @media screen and (max-width: 425px) {
+    font-size: 1.8rem;
   }
 `
 // ********************************************************************************************** default Hero

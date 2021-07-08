@@ -20,7 +20,7 @@ const Content = styled.div`
     }
   }
 
-  p {
+  .service-text {
     max-width: 700px;
     margin-top: 3rem;
   }
@@ -57,10 +57,10 @@ const ServiceContent = ({ data }) => (
         </ColorDiv>
       </StyledBackground>
 
-      <p
-        className="ta-center"
+      <div
+        className="ta-center service-text"
         dangerouslySetInnerHTML={{ __html: data.text }}
-      ></p>
+      ></div>
     </Content>
   </Section>
 )

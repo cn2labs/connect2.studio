@@ -133,13 +133,13 @@ const Summary = ({ values, price, setPrice }) => {
     // Site category
     switch (values.type) {
       case "static":
-        setPrice(price => price + 500)
+        setPrice(price => price + 995)
         break
       case "cms":
-        setPrice(price => price + 1000)
+        setPrice(price => price + 2495)
         break
       case "shop":
-        setPrice(price => price + 1295)
+        setPrice(price => price + 5995)
         break
       default:
         break
@@ -151,10 +151,10 @@ const Summary = ({ values, price, setPrice }) => {
         setPrice(price => price + 150)
         break
       case "medium":
-        setPrice(price => price + 500)
+        setPrice(price => price + 600)
         break
       case "large":
-        setPrice(price => price + 1000)
+        setPrice(price => price + 900)
         break
       default:
         break
@@ -181,7 +181,7 @@ const Summary = ({ values, price, setPrice }) => {
         {values.pages === "large" && <li>5-7 Seiten</li>}
         {values.features.contactForm && <li>Kontaktformular</li>}
         {values.features.cmsTraining && <li>CMS-Schulung</li>}
-        {values.features.seoAnalysis && <li>Seo-Analyse</li>}
+        {values.features.seoAnalysis && <li>SEO-Analyse</li>}
         {values.features.contentConsulting && <li>Contentberatung</li>}
         {values.features.analytics && <li>Matomo/ Analytics Setup</li>}
       </ul>
@@ -379,7 +379,7 @@ const EnquiryPage = () => {
                         name="features.seoAnalysis"
                         id="seo-analysis"
                       />
-                      Seo Analyse (150€)
+                      SEO Analyse (150€)
                     </label>
                     <label htmlFor="content-consulting" className="justify">
                       <Field

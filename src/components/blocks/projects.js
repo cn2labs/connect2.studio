@@ -23,10 +23,6 @@ const ProjectStyles = styled.div`
     color: var(--almost-white);
   }
 
-  > div > div:first-child {
-    margin-top: 7rem;
-  }
-
   /* Width in PX > 1200px */
   /* ==== = LARGE = ==== */
   @media only screen and (min-width: 75em) {
