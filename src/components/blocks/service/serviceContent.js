@@ -23,6 +23,10 @@ const Content = styled.div`
   .service-text {
     max-width: 700px;
     margin-top: 3rem;
+
+    a {
+      color: var(--purple-haze);
+    }
   }
   /* Width in PX > 1200px */
   /* ==== = LARGE = ==== */
