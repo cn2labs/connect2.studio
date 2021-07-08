@@ -62,6 +62,10 @@ const ImgWithScribble = styled(GatsbyImage)`
     left: -5rem;
     z-index: 10;
   }
+
+  @media screen and (max-width: 75em) {
+    display: none;
+  }
 `
 
 // Component
