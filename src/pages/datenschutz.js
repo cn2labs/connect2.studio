@@ -25,6 +25,8 @@ const DatenschutzPage = () => {
   `)
 
   const Content = styled.div`
+    word-break: break-all;
+
     h2 {
       padding: 2rem 0 1rem 0;
     }

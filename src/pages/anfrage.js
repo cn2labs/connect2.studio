@@ -148,8 +148,12 @@ const Summary = ({ values, price, setPrice }) => {
     // Pages
     switch (values.pages) {
       case "small":
-        setPrice(price => price + 150)
-        break
+        if (values.type !== "cms") {
+          setPrice(price => price + 150)
+          break
+        } else {
+          break
+        }
       case "medium":
         setPrice(price => price + 600)
         break
@@ -176,9 +180,11 @@ const Summary = ({ values, price, setPrice }) => {
         {values.type === "static" && <li>Statische Seite</li>}
         {values.type === "cms" && <li>WordPress Seite</li>}
         {values.type === "shop" && <li>Shop</li>}
-        {values.pages === "small" && <li>1-3 Seiten</li>}
-        {values.pages === "medium" && <li>3-5 Seiten</li>}
-        {values.pages === "large" && <li>5-7 Seiten</li>}
+        {values.pages === "small" && (
+          <li>1-3 Unterseiten{values.type === "cms" && " (inkl.)"}</li>
+        )}
+        {values.pages === "medium" && <li>3-5 Unterseiten</li>}
+        {values.pages === "large" && <li>5-7 Unterseiten</li>}
         {values.features.contactForm && <li>Kontaktformular</li>}
         {values.features.cmsTraining && <li>CMS-Schulung</li>}
         {values.features.seoAnalysis && <li>SEO-Analyse</li>}
@@ -329,7 +335,7 @@ const EnquiryPage = () => {
                         id="pages-small"
                         value="small"
                       />
-                      1-3 Seiten
+                      1-3 Unterseiten
                     </label>
 
                     <label htmlFor="pages-medium" className="justify">
@@ -339,18 +345,20 @@ const EnquiryPage = () => {
                         id="pages-medium"
                         value="medium"
                       />
-                      3-5 Seiten
+                      3-5 Unterseiten
                     </label>
 
-                    <label htmlFor="pages-large" className="justify">
-                      <Field
-                        type="radio"
-                        name="pages"
-                        id="pages-large"
-                        value="large"
-                      />
-                      5-7 Seiten
-                    </label>
+                    {values.type !== "static" && (
+                      <label htmlFor="pages-large" className="justify">
+                        <Field
+                          type="radio"
+                          name="pages"
+                          id="pages-large"
+                          value="large"
+                        />
+                        5-7 Unterseiten
+                      </label>
+                    )}
                   </div>
                   {/* --------------------------------------------------------------------------FEATURES */}
                   <div className="flex vertical v-start">
