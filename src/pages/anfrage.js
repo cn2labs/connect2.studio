@@ -134,6 +134,7 @@ const Summary = ({ values, price, setPrice }) => {
     switch (values.type) {
       case "static":
         setPrice(price => price + 995)
+        values.pages = "small"
         break
       case "cms":
         setPrice(price => price + 2495)
@@ -338,26 +339,27 @@ const EnquiryPage = () => {
                       1-3 Unterseiten
                     </label>
 
-                    <label htmlFor="pages-medium" className="justify">
-                      <Field
-                        type="radio"
-                        name="pages"
-                        id="pages-medium"
-                        value="medium"
-                      />
-                      3-5 Unterseiten
-                    </label>
-
                     {values.type !== "static" && (
-                      <label htmlFor="pages-large" className="justify">
-                        <Field
-                          type="radio"
-                          name="pages"
-                          id="pages-large"
-                          value="large"
-                        />
-                        5-7 Unterseiten
-                      </label>
+                      <>
+                        <label htmlFor="pages-medium" className="justify">
+                          <Field
+                            type="radio"
+                            name="pages"
+                            id="pages-medium"
+                            value="medium"
+                          />
+                          3-5 Unterseiten
+                        </label>
+                        <label htmlFor="pages-large" className="justify">
+                          <Field
+                            type="radio"
+                            name="pages"
+                            id="pages-large"
+                            value="large"
+                          />
+                          5-7 Unterseiten
+                        </label>
+                      </>
                     )}
                   </div>
                   {/* --------------------------------------------------------------------------FEATURES */}
