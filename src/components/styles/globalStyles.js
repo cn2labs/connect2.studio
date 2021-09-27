@@ -4,6 +4,8 @@ import grainBg from "../../assets/grain.png"
 
 import NeueMetanaWoff2 from "../../assets/fonts/NeueMetana-Bold.woff2"
 import NeueMetanaWoff from "../../assets/fonts/NeueMetana-Bold.woff"
+import BandeinsStrangeBold from "../../assets/fonts/BandeinsStrange-Bold.woff2"
+import BandeinsStrangeBoldExtended from "../../assets/fonts/BandeinsStrange-BoldExtendedHalf.woff2"
 import "@fontsource/ibm-plex-sans"
 import "@fontsource/ibm-plex-sans/500.css"
 
@@ -18,12 +20,28 @@ const GlobalStyles = createGlobalStyle`
     font-display: swap;
   }
 
+  @font-face {
+    font-family: 'Bandeins Strange';
+    src: url(${BandeinsStrangeBold}) format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Bandeins Strange Extended';
+    src: url(${BandeinsStrangeBoldExtended}) format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+
   /**************************************************************** VARIABLES */
   :root {
     --body-bg: #101010;
     --almost-white: #e2e2e2;
     --black-carbon: #0F1011;
-    --mommys-blonde-boy: #FFEFBD;
+    --mommys-blonde-boy: #AE8CF3;
     --nets-court: #B5B3AC;
     --candy-strawberrys: #db504a;
     --lavender-soap: #9c82e3;
@@ -41,7 +59,8 @@ const GlobalStyles = createGlobalStyle`
       --mobile-menu: #EBEBEB;
     }
 
-    --headline-font: 'Neue Metana', sans-serif;
+    --headline-font: 'Bandeins Strange', sans-serif;
+    --headline-font-extended: 'Bandeins Strange Extended';
     --body-font: 'IBM Plex Sans', sans-serif;
 
     --side-notice-distance: 5%;

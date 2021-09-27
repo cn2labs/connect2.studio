@@ -42,7 +42,6 @@ const Aside = styled.aside`
     display: inline-block;
     height: 16px;
     margin-bottom: 12px;
-    margin-left: 4px;
     width: 1px;
   }
 

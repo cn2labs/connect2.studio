@@ -28,8 +28,8 @@ const CtaStyles = styled.span`
     width: var(--size);
     height: var(--size);
     position: absolute;
-    left: calc((var(--size) / 2 - 4px) * -1);
-    top: calc((var(--size) / 2 - 10px) * -1);
+    left: calc((var(--size) / 2 - 5px) * -1);
+    top: calc((var(--size) / 2 - 12px) * -1);
     opacity: 0.4;
     transition: opacity 0.4s ease;
     will-change: opacity;

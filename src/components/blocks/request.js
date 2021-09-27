@@ -32,11 +32,17 @@ const RequestButton = styled.button`
   }
 `
 
+const RequestBlockStyles = styled.div`
+  p {
+    margin-top: 1.4rem;
+  }
+`
+
 const SendARequest = () => (
   <Fade>
     <Section>
       <div className="flex vertical v-start md-grid-appear md-col-2 md-gap-7">
-        <div>
+        <RequestBlockStyles>
           <h3 className="size-h4">
             Überzeugt? Nice! Wir freuen uns auf deine Anfrage.<sup>*</sup>
           </h3>
@@ -46,7 +52,7 @@ const SendARequest = () => (
               unseren Anfrage-Konfigurator ausfüllen.
             </strong>
           </p>
-        </div>
+        </RequestBlockStyles>
         <Link to="/anfrage">
           <RequestButton>Jetzt anfragen</RequestButton>
         </Link>

@@ -13,6 +13,10 @@ import { CgSun } from "react-icons/cg"
 import { useDarkmode } from "../hooks/useDarkmode"
 
 const HeaderStyles = styled.header`
+  .darkmode-toggle:hover {
+    cursor: pointer;
+  }
+
   padding: 5rem 0;
   /* ==== = MEDIUM = ==== */
   @media only screen and (min-width: 48em) {
@@ -276,7 +280,7 @@ const Header = () => {
                     Kontakt
                   </MenuItem>
                 </li>
-                <li className="cta-item">
+                <li>
                   <MenuItem activeClassName="active" link="/anfrage">
                     Projektanfrage
                   </MenuItem>
@@ -344,14 +348,14 @@ const Header = () => {
                   Kontakt
                 </Link>
               </li>
-              <li className="cta-item">
+              <li>
                 <Link activeClassName="active" to="/anfrage">
                   Projektanfrage
                 </Link>
               </li>
             </ul>
             {/**************************************************************************************** Light and dark switch  */}
-            <div>
+            <div className="flex v-center h-center darkmode-toggle">
               {isDark ? (
                 <CgSun onClick={toggleDarkmode} />
               ) : (

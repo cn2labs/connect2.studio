@@ -19,6 +19,10 @@ const ProjectStyles = styled.div`
     margin: 25px 0;
   }
 
+  h1 {
+    font-family: var(--headline-font-extended);
+  }
+
   blockquote p {
     margin: 10px 0;
     font-style: italic;
@@ -118,7 +122,7 @@ const ProjectTemplate = ({ data, pageContext }) => {
 
           {/* Back link */}
           <p>
-            <Link to="/projekte">Zurück zur Übersicht</Link>
+            <Link to="/projekte">&larr; Zurück zur Übersicht</Link>
           </p>
         </ProjectStyles>
       </Container>

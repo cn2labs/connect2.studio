@@ -6,6 +6,8 @@ import Container from "./styles/container"
 import Outline from "./ui/outline"
 import logo from "../assets/images/logo_white.svg"
 import hands from "../assets/images/hands.svg"
+import hillcloudLogo from "../assets/images/hillcloud.svg"
+import cn2Logo from "../assets/images/cn2-logo.svg"
 
 const FooterStyles = styled.footer`
   color: #fff;
@@ -22,6 +24,22 @@ const FooterStyles = styled.footer`
 
   a:first-child {
     margin-right: 1rem;
+  }
+
+  .partner-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    a {
+      opacity: 0.5;
+      transition: opacity ease 0.2s;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
   }
 `
 
@@ -41,8 +59,8 @@ const GetInTouch = styled.div`
 `
 
 const Studio = styled.img`
-  height: 55px;
-  width: 55px;
+  height: 45px;
+  width: 45px;
   animation: rotation 25s infinite linear;
   @keyframes rotation {
     from {
@@ -81,8 +99,22 @@ export default function Footer() {
           <Link to="/impressum">Impressum</Link>
           <Link to="/datenschutz">Datenschutz</Link>
         </div>
-        <div className="ta-center">
-          <Studio src={logo} alt="connect2 studio Logo" height="48" />
+        <div className="partner-logos">
+          <Studio src={logo} alt="connect2 studio Logo" height="45" />
+          <a
+            href="https://connect2.gmbh"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={cn2Logo} alt="connect2 Logo" height="24" />
+          </a>
+          <a
+            href="https://alsfeld.cloud"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={hillcloudLogo} alt="hillcloud Logo" height="16" />
+          </a>
         </div>
         <div className="ta-right">
           Gebaut mit Gatsby, Liebe und viiiel Mio Mio Mate. Peace{" "}
