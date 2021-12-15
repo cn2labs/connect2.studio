@@ -94,7 +94,7 @@ const Projects = () => {
   // Get all projects from WordPress
   const data = useStaticQuery(graphql`
     {
-      allWpProject {
+      allWpProject(sort: { fields: date, order: DESC }) {
         nodes {
           id
           title
