@@ -11,7 +11,7 @@ import { Helmet } from "react-helmet"
 import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
 
-function Seo({ description, lang, meta, metakeywords }) {
+function Seo({ description, lang, meta, metakeywords, title }) {
   const { pathname } = useLocation()
 
   const {
@@ -39,8 +39,8 @@ function Seo({ description, lang, meta, metakeywords }) {
       htmlAttributes={{
         lang,
       }}
-      title={defaultTitle ? `%s | ${defaultTitle}` : null}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      title={defaultTitle}
+      titleTemplate={defaultTitle}
       meta={[
         {
           name: `description`,
