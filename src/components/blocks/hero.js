@@ -38,7 +38,7 @@ const HeroSection = styled.section`
   }
 `
 
-const Headline = styled.h1`
+const Headline = styled.h2`
   font-family: var(--headline-font-extended);
   font-size: 3.6rem;
   text-shadow: 0px 0px 14px rgb(174 140 243 / 60%);

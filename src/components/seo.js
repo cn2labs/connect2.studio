@@ -30,6 +30,7 @@ function Seo({ description, lang, meta, title }) {
   )
 
   const metaDescription = description || siteMetadata.description
+
   const defaultTitle = siteMetadata.title
   const url = `https://connect2.studio${pathname}`
 
@@ -45,6 +46,7 @@ function Seo({ description, lang, meta, title }) {
           name: `description`,
           content: metaDescription,
         },
+
         {
           property: `og:title`,
           content: title,
@@ -78,6 +80,7 @@ Seo.defaultProps = {
 
 Seo.propTypes = {
   description: PropTypes.string,
+
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
