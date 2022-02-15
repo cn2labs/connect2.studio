@@ -15,7 +15,9 @@ const Frontpage = () => {
       wpPage(databaseId: { eq: 2 }) {
         title
         metadata {
+          title
           description
+          metakeywords
         }
         home_serviceFields {
           serviceText
@@ -65,7 +67,7 @@ const Frontpage = () => {
 
   return (
     <Layout>
-      <Seo title={page.title} description={page.metadata.description} />
+      <Seo title={page.metadata.title} description={page.metadata.description} metakeywords={page.metadata.metakeywords} />
       <Hero
         tagline={page.heroFields.heroTagline}
         headline={page.heroFields.heroHeadline}
