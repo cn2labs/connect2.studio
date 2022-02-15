@@ -11,7 +11,7 @@ import { Helmet } from "react-helmet"
 import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
 
-function Seo({ description, lang, meta, title }) {
+function Seo({ description, lang, meta, metakeywords, title }) {
   const { pathname } = useLocation()
 
   const {
@@ -30,8 +30,13 @@ function Seo({ description, lang, meta, title }) {
   )
 
   const metaDescription = description || siteMetadata.description
+<<<<<<< HEAD
 
   const defaultTitle = siteMetadata.title
+=======
+  const metaKeywords = metakeywords || siteMetadata.metakeywords
+  const defaultTitle = title || siteMetadata.title
+>>>>>>> 1c5a48de4b891d14f9a45e2f2c764b5082b838f2
   const url = `https://connect2.studio${pathname}`
 
   return (
@@ -39,14 +44,18 @@ function Seo({ description, lang, meta, title }) {
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      title={defaultTitle}
+      titleTemplate={defaultTitle}
       meta={[
         {
           name: `description`,
           content: metaDescription,
         },
 
+        {
+          name: `keywords`,
+          content: metaKeywords,
+        },
         {
           property: `og:title`,
           content: title,
