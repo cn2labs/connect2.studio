@@ -30,13 +30,8 @@ function Seo({ description, lang, meta, metakeywords, title }) {
   )
 
   const metaDescription = description || siteMetadata.description
-<<<<<<< HEAD
-
-  const defaultTitle = siteMetadata.title
-=======
   const metaKeywords = metakeywords || siteMetadata.metakeywords
   const defaultTitle = title || siteMetadata.title
->>>>>>> 1c5a48de4b891d14f9a45e2f2c764b5082b838f2
   const url = `https://connect2.studio${pathname}`
 
   return (
@@ -75,6 +70,10 @@ function Seo({ description, lang, meta, metakeywords, title }) {
         {
           property: `og:image`,
           content: "https://connect2.studio/og_img.png",
+        },
+        {
+          name: `google-site-verification`,
+          content: "t_m7eJWXQTDt6pJTFNPdNReYsFGeLjvAiOpMlCt0SrI",
         },
       ].concat(meta)}
     />
