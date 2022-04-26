@@ -245,13 +245,13 @@ const Header = () => {
                     <li>
                       <MenuItem
                         activeClassName="active"
-                        link="/service/entwicklung"
+                        link="/service/webentwicklung"
                       >
                         Entwicklung
                       </MenuItem>
                     </li>
                     <li>
-                      <MenuItem activeClassName="active" link="/service/design">
+                      <MenuItem activeClassName="active" link="/service/webdesign">
                         Design
                       </MenuItem>
                     </li>
@@ -317,12 +317,12 @@ const Header = () => {
                 </Link>
                 <ul>
                   <li>
-                    <Link activeClassName="active" to="/service/entwicklung">
+                    <Link activeClassName="active" to="/service/webentwicklung">
                       Entwicklung
                     </Link>
                   </li>
                   <li>
-                    <Link activeClassName="active" to="/service/design">
+                    <Link activeClassName="active" to="/service/webdesign">
                       Design
                     </Link>
                   </li>

@@ -80,7 +80,7 @@ const Service = ({ text, imgSrc, imgAlt }) => {
             <ul>
               <li>
                 <Tagline>JAMStack &middot; Web Apps &middot; WordPress</Tagline>
-                <Link to="/service/entwicklung">
+                <Link to="/service/webentwicklung">
                   <Outline as="h2">
                     <span>Entwicklung</span>
                   </Outline>
@@ -88,7 +88,7 @@ const Service = ({ text, imgSrc, imgAlt }) => {
               </li>
               <li>
                 <Tagline>UI & UX &middot; CI/CD &middot; Konzeption</Tagline>
-                <Link to="/service/design">
+                <Link to="/service/webdesign">
                   <Outline as="h2">
                     <span>Design </span>
                   </Outline>
