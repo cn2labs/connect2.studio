@@ -67,6 +67,7 @@ const Member = ({ member }) => {
       <GatsbyImage
         image={image}
         alt={member.img.altText}
+        tilte={member.img.altText}
         className="member-img"
       />
       <h3>{member.name}</h3>

@@ -193,11 +193,11 @@ const Header = () => {
       <Container>
         <div className="flex flex--between">
           {isDark ? (
-            <Link to="/">
+            <Link title="connect2 studio Logo" to="/">
               <LogoStyles src={logo} alt="connect2 studio Logo" height="64" />
             </Link>
           ) : (
-            <Link to="/">
+            <Link title="connect2 studio Logo" to="/">
               <LogoStyles
                 src={logoDark}
                 alt="connect2 studio Logo"
@@ -233,17 +233,18 @@ const Header = () => {
             <MobileMenu className="flex vertical between v-start bg-disappear">
               <MobileMenuList className="menu-list flex vertical v-start">
                 <li>
-                  <MenuItem link="/" activeClassName="active">
+                  <MenuItem title="Home" link="/" activeClassName="active">
                     Home
                   </MenuItem>
                 </li>
                 <li className="has-submenu">
-                  <MenuItem activeClassName="active" link="/service">
+                  <MenuItem title="Service" activeClassName="active" link="/service">
                     Service
                   </MenuItem>
                   <ul>
                     <li>
                       <MenuItem
+                        title="Entwicklung"
                         activeClassName="active"
                         link="/service/webentwicklung"
                       >
@@ -251,12 +252,13 @@ const Header = () => {
                       </MenuItem>
                     </li>
                     <li>
-                      <MenuItem activeClassName="active" link="/service/webdesign">
+                      <MenuItem title="Design" activeClassName="active" link="/service/webdesign">
                         Design
                       </MenuItem>
                     </li>
                     <li>
                       <MenuItem
+                        title="Beratung"
                         activeClassName="active"
                         link="/service/beratung"
                       >
@@ -266,33 +268,33 @@ const Header = () => {
                   </ul>
                 </li>
                 <li>
-                  <MenuItem activeClassName="active" link="/team">
+                  <MenuItem title="Team" activeClassName="active" link="/team">
                     Team
                   </MenuItem>
                 </li>
                 <li>
-                  <MenuItem activeClassName="active" link="/projekte">
+                  <MenuItem title="Projekte" activeClassName="active" link="/projekte">
                     Projekte
                   </MenuItem>
                 </li>
                 <li>
-                  <MenuItem activeClassName="active" link="/kontakt">
+                  <MenuItem title="Kontakt" activeClassName="active" link="/kontakt">
                     Kontakt
                   </MenuItem>
                 </li>
                 <li>
-                  <MenuItem activeClassName="active" link="/anfrage">
+                  <MenuItem title="Anfrage" activeClassName="active" link="/anfrage">
                     Projektanfrage
                   </MenuItem>
                 </li>
               </MobileMenuList>
               <div className="flex v-center h-center">
                 {isDark ? (
-                  <Link to="/">
+                  <Link title="connect2 Studio Logo" to="/">
                     <img src={logo} alt="connect2 studio Logo" height="64" />
                   </Link>
                 ) : (
-                  <Link to="/">
+                  <Link title="connect2 Studio Logo" to="/">
                     <img
                       src={logoDark}
                       alt="connect2 studio Logo"
@@ -307,49 +309,49 @@ const Header = () => {
           <NavStyles>
             <ul className="flex between">
               <li>
-                <Link to="/" activeClassName="active">
+                <Link title="Home" to="/" activeClassName="active">
                   Home
                 </Link>
               </li>
               <li className="has-submenu">
-                <Link activeClassName="active" to="/service">
+                <Link title="Service" activeClassName="active" to="/service">
                   Service
                 </Link>
                 <ul>
                   <li>
-                    <Link activeClassName="active" to="/service/webentwicklung">
+                    <Link title="Webentwicklung" activeClassName="active" to="/service/webentwicklung">
                       Entwicklung
                     </Link>
                   </li>
                   <li>
-                    <Link activeClassName="active" to="/service/webdesign">
+                    <Link title="Webdesign" activeClassName="active" to="/service/webdesign">
                       Design
                     </Link>
                   </li>
                   <li>
-                    <Link activeClassName="active" to="/service/beratung">
+                    <Link title="Beratung" activeClassName="active" to="/service/beratung">
                       Beratung
                     </Link>
                   </li>
                 </ul>
               </li>
               <li>
-                <Link activeClassName="active" to="/team">
+                <Link title="Team" activeClassName="active" to="/team">
                   Team
                 </Link>
               </li>
               <li>
-                <Link activeClassName="active" to="/projekte">
+                <Link title="Projekte" activeClassName="active" to="/projekte">
                   Projekte
                 </Link>
               </li>
               <li>
-                <Link activeClassName="active" to="/kontakt">
+                <Link title="Kontakt" activeClassName="active" to="/kontakt">
                   Kontakt
                 </Link>
               </li>
               <li>
-                <Link activeClassName="active" to="/anfrage">
+                <Link title="Anfrage" activeClassName="active" to="/anfrage">
                   Projektanfrage
                 </Link>
               </li>
