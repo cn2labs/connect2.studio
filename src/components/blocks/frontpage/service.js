@@ -82,7 +82,7 @@ const Service = ({ text, imgSrc, imgAlt }) => {
                 <Tagline>JAMStack &middot; Web Apps &middot; WordPress</Tagline>
                 <Link title="Webentwicklung" to="/service/webentwicklung">
                   <Outline as="h2">
-                    <span>Webntwicklung</span>
+                    <span>Webentwicklung</span>
                   </Outline>
                 </Link>
               </li>
