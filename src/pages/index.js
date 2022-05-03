@@ -74,6 +74,7 @@ const Frontpage = () => {
         text={page.heroFields.heroText}
         img={page.heroFields.heroImg.localFile}
         imgAlt={page.heroFields.heroImg.altText}
+        imgTitle={page.heroFields.heroImg.altText}
         link={page.heroFields.heroCtaLink}
         linkText={page.heroFields.heroCtaLabel}
       />

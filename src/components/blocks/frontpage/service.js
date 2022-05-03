@@ -75,28 +75,28 @@ const Service = ({ text, imgSrc, imgAlt }) => {
     <Fade delay={200}>
       <Section aside="Unser Service">
         <ServicesGrid>
-          <ImgWithScribble image={image} alt={imgAlt} />
+          <ImgWithScribble image={image} alt={imgAlt} title={imgAlt} />
           <Services>
             <ul>
               <li>
                 <Tagline>JAMStack &middot; Web Apps &middot; WordPress</Tagline>
-                <Link to="/service/entwicklung">
+                <Link title="Webentwicklung" to="/service/webentwicklung">
                   <Outline as="h2">
-                    <span>Entwicklung</span>
+                    <span>Webentwicklung</span>
                   </Outline>
                 </Link>
               </li>
               <li>
                 <Tagline>UI & UX &middot; CI/CD &middot; Konzeption</Tagline>
-                <Link to="/service/design">
+                <Link title="Webdesign" to="/service/webdesign">
                   <Outline as="h2">
-                    <span>Design </span>
+                    <span>Webdesign </span>
                   </Outline>
                 </Link>
               </li>
               <li>
                 <Tagline>Seo &middot; Performance &middot; Relaunch</Tagline>
-                <Link to="/service/beratung">
+                <Link title="Beratung" to="/service/beratung">
                   <Outline as="h2">
                     <span>Beratung </span>
                   </Outline>
@@ -104,7 +104,7 @@ const Service = ({ text, imgSrc, imgAlt }) => {
               </li>
             </ul>
             <p>{text}</p>
-            <Cta to="/service">Unser Service</Cta>
+            <Cta title="Unser Service" to="/service">Unser Service</Cta>
           </Services>
         </ServicesGrid>
       </Section>

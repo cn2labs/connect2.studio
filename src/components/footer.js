@@ -91,17 +91,18 @@ export default function Footer() {
           <Studio src={logo} alt="connect2 studio Logo" height="48" />
         </div>
         <div className="ta-right">
-          <Link to="/datenschutz">Datenschutz</Link>
+          <Link title="Datenschutz" to="/datenschutz">Datenschutz</Link>
         </div>
       </Container>
       <Container className="disappear l-flex-appear v-center between">
         <div className="ta-left">
-          <Link to="/impressum">Impressum</Link>
-          <Link to="/datenschutz">Datenschutz</Link>
+          <Link title="Impressum" to="/impressum">Impressum</Link>
+          <Link title="Datenschutz" to="/datenschutz">Datenschutz</Link>
         </div>
         <div className="partner-logos">
           <Studio src={logo} alt="connect2 studio Logo" height="45" />
           <a
+            title="connect2 Link"
             href="https://connect2.gmbh"
             target="_blank"
             rel="noopener noreferrer"
@@ -109,6 +110,7 @@ export default function Footer() {
             <img src={cn2Logo} alt="connect2 Logo" height="24" />
           </a>
           <a
+            title="hillcloud Link"
             href="https://alsfeld.cloud"
             target="_blank"
             rel="noopener noreferrer"

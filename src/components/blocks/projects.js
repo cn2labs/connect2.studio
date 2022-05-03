@@ -57,7 +57,7 @@ const Project = ({ project }) => {
         <div className="flex vertical v-start bg-grid-appear gap-5 bg-col-2">
           <div>
             <Outline>
-              <Link to={detailsLink}>{project.title}</Link>
+              <Link title={project.title} to={detailsLink}>{project.title}</Link>
             </Outline>
             <ProjectText
               dangerouslySetInnerHTML={{ __html: project.excerpt }}
@@ -76,12 +76,13 @@ const Project = ({ project }) => {
                 ))}
               </p>
             </ProjectCategories>
-            <Cta to={detailsLink}>Details</Cta>
+            <Cta title="Details" to={detailsLink}>Details</Cta>
           </div>
           {project.project_fields.images ? (
             <GatsbyImage
               image={image}
               alt={project.project_fields.images[0].altText}
+              title={project.project_fields.images[0].altText}
             />
           ) : null}
         </div>

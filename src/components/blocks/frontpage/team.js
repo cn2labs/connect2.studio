@@ -63,12 +63,12 @@ const Team = ({ text, bg }) => (
       <TeamStyles>
         <StyledBackground Tag="div" fluid={bg}>
           <Outline as="h2" looksLike="h1">
-            <Link to="/team">Crewlove</Link>
+            <Link title="Crewlove" to="/team">Crewlove</Link>
           </Outline>
         </StyledBackground>
         <div className="ta-center">
           <p>{text}</p>
-          <Cta to="/team">Unser Team</Cta>
+          <Cta title="Unser Team" to="/team">Unser Team</Cta>
         </div>
       </TeamStyles>
     </Section>

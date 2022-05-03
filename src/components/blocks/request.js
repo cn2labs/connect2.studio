@@ -53,7 +53,7 @@ const SendARequest = () => (
             </strong>
           </p>
         </RequestBlockStyles>
-        <Link to="/anfrage">
+        <Link title="Projektanfrage" to="/anfrage">
           <RequestButton>Jetzt anfragen</RequestButton>
         </Link>
       </div>

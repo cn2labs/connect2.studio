@@ -76,6 +76,7 @@ export default function Hero({
   text,
   img,
   imgAlt,
+  imgTitle,
   link = "/",
   linkText,
 }) {
@@ -90,7 +91,7 @@ export default function Hero({
             <Text dangerouslySetInnerHTML={{ __html: text }}></Text>
             {link && <Cta to={link}>{linkText}</Cta>}
           </div>
-          <GatsbyImage image={image} alt={imgAlt} />
+          <GatsbyImage image={image} alt={imgAlt} title={imgAlt} />
         </HeroGrid>
       </Container>
     </HeroSection>

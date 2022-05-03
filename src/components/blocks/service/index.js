@@ -37,7 +37,7 @@ const ServiceBlock = ({ tagline, title, keywords, link }) => (
       <Department>
         <Tagline>&ndash; {tagline}</Tagline>
         <h3 className="size-h5">{title}</h3>
-        <Cta to={`/service${link}`}>Mehr dazu</Cta>
+        <Cta title="Mehr dazu" to={`/service${link}`}>Mehr dazu</Cta>
       </Department>
       <Keywords className="grid col-2">
         {keywords &&
