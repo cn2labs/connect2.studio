@@ -137,10 +137,10 @@ const Summary = ({ values, price, setPrice }) => {
         values.pages = "small"
         break
       case "cms":
-        setPrice(price => price + 2495)
+        setPrice(price => price + 2995)
         break
       case "shop":
-        setPrice(price => price + 5995)
+        setPrice(price => price + 6495)
         break
       default:
         break
@@ -166,10 +166,10 @@ const Summary = ({ values, price, setPrice }) => {
     }
 
     // Features
-    if (values.features.contactForm) setPrice(price => price + 120)
-    if (values.features.cmsTraining) setPrice(price => price + 395)
+    if (values.features.contactForm) setPrice(price => price + 150)
+    if (values.features.cmsTraining) setPrice(price => price + 450)
     if (values.features.seoAnalysis) setPrice(price => price + 150)
-    if (values.features.contentConsulting) setPrice(price => price + 195)
+    if (values.features.contentConsulting) setPrice(price => price + 250)
     if (values.features.analytics) setPrice(price => price + 150)
   }, [values, setPrice])
 
@@ -371,7 +371,7 @@ const EnquiryPage = () => {
                         name="features.contactForm"
                         id="contact-form"
                       />
-                      Kontaktformular (120€)
+                      Kontaktformular (150€)
                     </label>
                     {values.type !== "static" && (
                       <label htmlFor="cms-training" className="justify">
@@ -380,7 +380,7 @@ const EnquiryPage = () => {
                           name="features.cmsTraining"
                           id="cms-training"
                         />
-                        CMS-Schulung(395€)
+                        CMS-Schulung(450€)
                       </label>
                     )}
                     <label htmlFor="seo-analysis" className="justify">
@@ -397,7 +397,7 @@ const EnquiryPage = () => {
                         name="features.contentConsulting"
                         id="content-consulting"
                       />
-                      Contentberatung (195€)
+                      Contentberatung (250€)
                     </label>
                     <label htmlFor="analytics" className="justify">
                       <Field
