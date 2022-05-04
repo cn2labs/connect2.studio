@@ -12,7 +12,7 @@ const Spacer = styled.div`
 
 const NotFoundPage = () => (
   <Layout>
-    <Seo title="404: Not found" />
+    <Seo title="404 Not found" />
 
     <Container>
       <Spacer>
