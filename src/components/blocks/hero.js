@@ -89,7 +89,7 @@ export default function Hero({
             {tagline && <Tagline>{tagline}</Tagline>}
             <Headline>{headline}</Headline>
             <Text dangerouslySetInnerHTML={{ __html: text }}></Text>
-            {/* {link && <Cta to={link}>{linkText}</Cta>} */}
+            {link && <Cta to={link}>{linkText}</Cta>}
           </div>
           <GatsbyImage image={image} alt={imgAlt} title={imgAlt} />
         </HeroGrid>
