@@ -8,6 +8,7 @@ import logo from "../assets/images/logo_white.svg"
 import hands from "../assets/images/hands.svg"
 import hillcloudLogo from "../assets/images/hillcloud.svg"
 import cn2Logo from "../assets/images/cn2-logo.svg"
+import okdesigns from "../assets/images/okdesigns.svg"
 
 const FooterStyles = styled.footer`
   color: #fff;
@@ -91,13 +92,19 @@ export default function Footer() {
           <Studio src={logo} alt="connect2 studio Logo" height="48" />
         </div>
         <div className="ta-right">
-          <Link title="Datenschutz" to="/datenschutz">Datenschutz</Link>
+          <Link title="Datenschutz" to="/datenschutz">
+            Datenschutz
+          </Link>
         </div>
       </Container>
       <Container className="disappear l-flex-appear v-center between">
         <div className="ta-left">
-          <Link title="Impressum" to="/impressum">Impressum</Link>
-          <Link title="Datenschutz" to="/datenschutz">Datenschutz</Link>
+          <Link title="Impressum" to="/impressum">
+            Impressum
+          </Link>
+          <Link title="Datenschutz" to="/datenschutz">
+            Datenschutz
+          </Link>
         </div>
         <div className="partner-logos">
           <Studio src={logo} alt="connect2 studio Logo" height="45" />
@@ -117,9 +124,17 @@ export default function Footer() {
           >
             <img src={hillcloudLogo} alt="hillcloud Logo" height="16" />
           </a>
+          <a
+            title="okdesigns Link"
+            href="https://www.okdesigns.de/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={okdesigns} alt="okdesigns Logo" height="18" />
+          </a>
         </div>
         <div className="ta-right">
-          Gebaut mit Gatsby, Liebe und viiiel Mio Mio Mate. Peace{" "}
+          Gebaut mit Gatsby und viiiel Mio Mio Mate.{" "}
           <span role="img" aria-label="Peace emoji">
             ✌🏼
           </span>

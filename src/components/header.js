@@ -238,10 +238,14 @@ const Header = () => {
                   </MenuItem>
                 </li>
                 <li className="has-submenu">
-                  <MenuItem title="Service" activeClassName="active" link="/service">
+                  <MenuItem
+                    title="Service"
+                    activeClassName="active"
+                    link="/service"
+                  >
                     Service
                   </MenuItem>
-                  <ul>
+                  {/* <ul>
                     <li>
                       <MenuItem
                         title="Entwicklung"
@@ -252,7 +256,11 @@ const Header = () => {
                       </MenuItem>
                     </li>
                     <li>
-                      <MenuItem title="Design" activeClassName="active" link="/service/webdesign">
+                      <MenuItem
+                        title="Design"
+                        activeClassName="active"
+                        link="/service/webdesign"
+                      >
                         Design
                       </MenuItem>
                     </li>
@@ -265,28 +273,37 @@ const Header = () => {
                         Beratung
                       </MenuItem>
                     </li>
-                  </ul>
+                  </ul> */}
                 </li>
                 <li>
-                  <MenuItem title="Team" activeClassName="active" link="/team">
+                  <a
+                    href="https://connect2.de/team/"
+                    target="_blank"
+                    title="Team"
+                    activeClassName="active"
+                  >
+                    {" "}
                     Team
-                  </MenuItem>
+                  </a>
                 </li>
-                <li>
-                  <MenuItem title="Projekte" activeClassName="active" link="/projekte">
+                {/* <li>
+                  <MenuItem
+                    title="Projekte"
+                    activeClassName="active"
+                    link="/projekte"
+                  >
                     Projekte
                   </MenuItem>
-                </li>
-                <li>
-                  <MenuItem title="Kontakt" activeClassName="active" link="/kontakt">
+                </li> */}
+                {/* <li>
+                  <MenuItem
+                    title="Kontakt"
+                    activeClassName="active"
+                    link="/kontakt"
+                  >
                     Kontakt
                   </MenuItem>
-                </li>
-                <li>
-                  <MenuItem title="Anfrage" activeClassName="active" link="/anfrage">
-                    Projektanfrage
-                  </MenuItem>
-                </li>
+                </li> */}
               </MobileMenuList>
               <div className="flex v-center h-center">
                 {isDark ? (
@@ -317,44 +334,57 @@ const Header = () => {
                 <Link title="Service" activeClassName="active" to="/service">
                   Service
                 </Link>
-                <ul>
+                {/* <ul>
                   <li>
-                    <Link title="Webentwicklung" activeClassName="active" to="/service/webentwicklung">
+                    <Link
+                      title="Webentwicklung"
+                      activeClassName="active"
+                      to="/service/webentwicklung"
+                    >
                       Entwicklung
                     </Link>
                   </li>
                   <li>
-                    <Link title="Webdesign" activeClassName="active" to="/service/webdesign">
+                    <Link
+                      title="Webdesign"
+                      activeClassName="active"
+                      to="/service/webdesign"
+                    >
                       Design
                     </Link>
                   </li>
                   <li>
-                    <Link title="Beratung" activeClassName="active" to="/service/beratung">
+                    <Link
+                      title="Beratung"
+                      activeClassName="active"
+                      to="/service/beratung"
+                    >
                       Beratung
                     </Link>
                   </li>
-                </ul>
+                </ul> */}
               </li>
               <li>
-                <Link title="Team" activeClassName="active" to="/team">
+                <a
+                  href="https://connect2.de/team/"
+                  target="_blank"
+                  title="Team"
+                  activeClassName="active"
+                >
+                  {" "}
                   Team
-                </Link>
+                </a>
               </li>
-              <li>
+              {/* <li>
                 <Link title="Projekte" activeClassName="active" to="/projekte">
                   Projekte
                 </Link>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <Link title="Kontakt" activeClassName="active" to="/kontakt">
                   Kontakt
                 </Link>
-              </li>
-              <li>
-                <Link title="Anfrage" activeClassName="active" to="/anfrage">
-                  Projektanfrage
-                </Link>
-              </li>
+              </li> */}
             </ul>
             {/**************************************************************************************** Light and dark switch  */}
             <div className="flex v-center h-center darkmode-toggle">

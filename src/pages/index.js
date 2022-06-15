@@ -67,7 +67,11 @@ const Frontpage = () => {
 
   return (
     <Layout>
-      <Seo title={page.metadata.title} description={page.metadata.description} metakeywords={page.metadata.metakeywords} />
+      <Seo
+        title={page.metadata.title}
+        description={page.metadata.description}
+        metakeywords={page.metadata.metakeywords}
+      />
       <Hero
         tagline={page.heroFields.heroTagline}
         headline={page.heroFields.heroHeadline}
@@ -83,10 +87,10 @@ const Frontpage = () => {
         imgSrc={page.home_serviceFields.serviceImg.localFile}
         imgAlt={page.home_serviceFields.serviceImg.altText}
       />
-      <Team
+      {/* <Team
         text={page.home_teamFields.teamText}
         bg={page.home_teamFields.teamImg.localFile.childImageSharp.fluid}
-      />
+      /> */}
     </Layout>
   )
 }
